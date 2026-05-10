@@ -1,0 +1,62 @@
+spring:
+  application:
+    name: store-backend
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/maie_couture}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  mail:
+    host: ${MAIL_HOST:}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: ${MAIL_SMTP_AUTH:true}
+          starttls:
+            enable: ${MAIL_SMTP_STARTTLS:true}
+
+server:
+  servlet:
+    context-path: /api/v1
+
+app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:5173}
+  admin:
+    seed:
+      email: ${ADMIN_SEED_EMAIL:admin@maiecouture.com}
+      password: ${ADMIN_SEED_PASSWORD:ChangeMe123!}
+  shipping:
+    domestic-country-code: ${SHIPPING_DOMESTIC_COUNTRY_CODE:PS}
+    domestic-fee: ${SHIPPING_DOMESTIC_FEE:5.00}
+    international-fee: ${SHIPPING_INTERNATIONAL_FEE:25.00}
+    fallback-fee: ${SHIPPING_FALLBACK_FEE:15.00}
+    country-fees:
+      PS: ${SHIPPING_FEE_PS:5.00}
+      IL: ${SHIPPING_FEE_IL:15.00}
+      JO: ${SHIPPING_FEE_JO:20.00}
+      AE: ${SHIPPING_FEE_AE:25.00}
+      SA: ${SHIPPING_FEE_SA:25.00}
+      QA: ${SHIPPING_FEE_QA:25.00}
+  lahza:
+    enabled: ${LAHZA_ENABLED:false}
+    base-url: ${LAHZA_BASE_URL:https://api.lahza.io}
+    secret-key: ${LAHZA_SECRET_KEY:}
+    callback-url: ${LAHZA_CALLBACK_URL:http://localhost:8080/api/v1/public/payments/lahza/callback}
+  notifications:
+    enabled: ${ORDER_EMAIL_ENABLED:false}
+    from-email: ${ORDER_EMAIL_FROM:no-reply@maiecouture.com}
+    from-name: ${ORDER_EMAIL_FROM_NAME:Maie Couture}
+    reply-to: ${ORDER_EMAIL_REPLY_TO:atelier@maiecouture.com}

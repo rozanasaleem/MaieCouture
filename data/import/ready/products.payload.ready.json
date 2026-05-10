@@ -1,0 +1,5110 @@
+[
+  {
+    "name": "Lavender Infused Soap",
+    "slug": "lavender-infused-soap",
+    "shortDescription": "Indulge in the soothing, aromatic experience of Maie Couture's Lavender Infused Soap, crafted to elevate your daily routine. This luxurious soap not only revitalizes your skin with",
+    "fullDescription": "Indulge in the soothing, aromatic experience of Maie Couture's Lavender Infused Soap, crafted to elevate your daily routine. This luxurious soap not only revitalizes your skin with its gentle cleansing properties but also enriches your senses with the calming essence of lavender. Made with premium, natural ingredients and inspired by the traditional craftsmanship of nablus soap, our Lavender Infused Soap aligns perfectly with Maie Couture's commitment to quality and elegance. Suitable for all skin types, it promises a refreshing cleanse that leaves your skin feeling soft and fragrant. Elevate your self-care routine with a touch of sophistication only at Maie Couture.",
+    "price": 45.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_0b3555d6d232457c848f402baa21b3d0~mv2.png",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 3-5 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_0b3555d6d232457c848f402baa21b3d0~mv2.png",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_df20a87b8ef34d2498cc679c29ffd333~mv2.png",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3723a2842e31467fb9866a822a35843c~mv2.png",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_28ba2da157294674a21a46351a8ccd62~mv2.png",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_bffd28338e3548dca6289a56286745a6~mv2.png",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c3c2bb3cf2c1498bbc379b3edb6be71d~mv2.png",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_d931f746a644469c92e05835b72d4c7e~mv2.png",
+        "sortOrder": 7
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "LAVENDER_INFUSED_SOAP_001",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 6
+  },
+  {
+    "name": "Cedar Wood Soap",
+    "slug": "cedar-wood-soap",
+    "shortDescription": "Experience the natural luxury of our Cedar Wood Soap, exclusively available at Maie Couture. Crafted with premium cedar wood extracts, this soap offers a refreshing and earthy arom",
+    "fullDescription": "Experience the natural luxury of our Cedar Wood Soap, exclusively available at Maie Couture. Crafted with premium cedar wood extracts, this soap offers a refreshing and earthy aroma that invigorates your senses. Perfect for all skin types, it promises a gentle yet effective cleanse, leaving your skin feeling soft and rejuvenated. Embrace the essence of nature while supporting Maie Couture's values of quality and sustainability. Elevate your skincare routine today.",
+    "price": 45.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_eec14089e38c4b688dd43c2afc2df76e~mv2.png",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 3-5 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_eec14089e38c4b688dd43c2afc2df76e~mv2.png",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_df20a87b8ef34d2498cc679c29ffd333~mv2.png",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3723a2842e31467fb9866a822a35843c~mv2.png",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_28ba2da157294674a21a46351a8ccd62~mv2.png",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_d7c21868a1b948239ffc7305fe8ced13~mv2.png",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c3c2bb3cf2c1498bbc379b3edb6be71d~mv2.png",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_d931f746a644469c92e05835b72d4c7e~mv2.png",
+        "sortOrder": 7
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "CEDAR_WOOD_SOAP_001",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 6
+  },
+  {
+    "name": "Mint Soap",
+    "slug": "mint-soap",
+    "shortDescription": "Discover Nablus Soap’s Mint Soap at Maie Couture. This delightful, hand-crafted soap with natural mint extracts offers a refreshing cleanse. Ideal for those who appreciate elegance",
+    "fullDescription": "Discover Nablus Soap’s Mint Soap at Maie Couture. This delightful, hand-crafted soap with natural mint extracts offers a refreshing cleanse. Ideal for those who appreciate elegance and purity, it pairs beautifully with our high-quality clothing and showcases our artisanship. Enjoy a revitalizing bath that leaves your skin feeling refreshed. Embrace tradition and luxury with Nablus Soap’s Mint Soap.",
+    "price": 45.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_59365758559646448e59e0fbbe73d474~mv2.png",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 3-5 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_59365758559646448e59e0fbbe73d474~mv2.png",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_df20a87b8ef34d2498cc679c29ffd333~mv2.png",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3723a2842e31467fb9866a822a35843c~mv2.png",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_28ba2da157294674a21a46351a8ccd62~mv2.png",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_b0281b275a384378918f15f7d1a4c2ca~mv2.png",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c3c2bb3cf2c1498bbc379b3edb6be71d~mv2.png",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_d931f746a644469c92e05835b72d4c7e~mv2.png",
+        "sortOrder": 7
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MINT_SOAP_001",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 6
+  },
+  {
+    "name": "Damascus Rose Soap",
+    "slug": "damascus-rose-soap",
+    "shortDescription": "Experience the fragrance of Damascus Rose Soap by Maie Couture. Crafted by Nablus Soap artisans, it provides a gentle cleanse with a rose essence. Each bar embodies our commitment",
+    "fullDescription": "Experience the fragrance of Damascus Rose Soap by Maie Couture. Crafted by Nablus Soap artisans, it provides a gentle cleanse with a rose essence. Each bar embodies our commitment to quality and care. Enhance your skincare routine with this refined product. Discover tradition's impact with our Damascus Rose Soap.",
+    "price": 45.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_696334c246b740abac7a48dccb7b3128~mv2.png",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 3-5 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_696334c246b740abac7a48dccb7b3128~mv2.png",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_df20a87b8ef34d2498cc679c29ffd333~mv2.png",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3723a2842e31467fb9866a822a35843c~mv2.png",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_28ba2da157294674a21a46351a8ccd62~mv2.png",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_492707868bc94173a9f82134b29401bd~mv2.png",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c3c2bb3cf2c1498bbc379b3edb6be71d~mv2.png",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_d931f746a644469c92e05835b72d4c7e~mv2.png",
+        "sortOrder": 7
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "DAMASCUS_ROSE_SOAP_001",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 6
+  },
+  {
+    "name": "Black Seeds Soap",
+    "slug": "black-seeds-soap",
+    "shortDescription": "Discover the nourishing benefits of our Black Seeds Soap, a luxurious addition to Maie Couture’s self-care range. Infused with the essence of traditional nabulsi soap, this handcra",
+    "fullDescription": "Discover the nourishing benefits of our Black Seeds Soap, a luxurious addition to Maie Couture’s self-care range. Infused with the essence of traditional nabulsi soap, this handcrafted bar gently cleanses and revitalizes your skin, leaving it feeling refreshed and invigorated. At Maie Couture, we value quality and authenticity, ensuring each product enhances your daily routine. Elevate your skincare ritual with our Black Seeds Soap, meticulously crafted to meet Maie Couture's high standards of excellence. Treat your skin to this exquisite soap and experience the timeless allure of nabulsi soap.",
+    "price": 45.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_701d83418b874ed2b4e8af85f5e8f08e~mv2.png",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 3-5 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_701d83418b874ed2b4e8af85f5e8f08e~mv2.png",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_df20a87b8ef34d2498cc679c29ffd333~mv2.png",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3723a2842e31467fb9866a822a35843c~mv2.png",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_28ba2da157294674a21a46351a8ccd62~mv2.png",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_695be81d676c4b2e84e7cd3603909c47~mv2.png",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c3c2bb3cf2c1498bbc379b3edb6be71d~mv2.png",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_d931f746a644469c92e05835b72d4c7e~mv2.png",
+        "sortOrder": 7
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_SEEDS_SOAP_001",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 6
+  },
+  {
+    "name": "Tea Tree and Charcoal Soap",
+    "slug": "tea-tree-and-charcoal-soap",
+    "shortDescription": "Experience the benefits of Maie Couture's Tea Tree and Charcoal Soap. Crafted in Nabulsi tradition, it combines tea tree oil and activated charcoal for a deep, refreshing cleanse.",
+    "fullDescription": "Experience the benefits of Maie Couture's Tea Tree and Charcoal Soap. Crafted in Nabulsi tradition, it combines tea tree oil and activated charcoal for a deep, refreshing cleanse. Ideal for those who value quality skincare, wellness, and sophistication. Elevate your routine with this luxurious, authentic soap.",
+    "price": 45.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_6bef28db4fe248a482f06c7a7e5c8855~mv2.png",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 3-5 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_6bef28db4fe248a482f06c7a7e5c8855~mv2.png",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_df20a87b8ef34d2498cc679c29ffd333~mv2.png",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3723a2842e31467fb9866a822a35843c~mv2.png",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_28ba2da157294674a21a46351a8ccd62~mv2.png",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_6d1a44da2ea1452bbf92159f51c8166e~mv2.png",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c3c2bb3cf2c1498bbc379b3edb6be71d~mv2.png",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_d931f746a644469c92e05835b72d4c7e~mv2.png",
+        "sortOrder": 7
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "TEA_TREE_AND_CHARCOAL_SOAP_001",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 6
+  },
+  {
+    "name": "Embroidered Dress with Bow Detail",
+    "slug": "embroidered-dress-with-bow-detail",
+    "shortDescription": "Embroidered Dress with Bow Detail: An elegant evening silhouette crafted for elevated occasions.",
+    "fullDescription": "Embroidered Dress with Bow Detail is part of Maie Couture's curated edit, designed for formal dressing, receptions, and elevated celebrations. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 2000.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_71999f2eee8c430d93876ff9947a4214~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_71999f2eee8c430d93876ff9947a4214~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_9e3eeef34fed44cab336fcbeb115c9b1~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_2c538bacb6a448fbbb59d461c391e6db~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_eca85dd1393d4199859959160e696190~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_1d0c61f2b7a241119f65b00a5c5a2bfc~mv2.jpg",
+        "sortOrder": 5
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "EMBROIDERED_DRESS_WITH_BOW_DETAIL_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "EMBROIDERED_DRESS_WITH_BOW_DETAIL_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "EMBROIDERED_DRESS_WITH_BOW_DETAIL_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "EMBROIDERED_DRESS_WITH_BOW_DETAIL_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "EMBROIDERED_DRESS_WITH_BOW_DETAIL_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "High Neck Red Embroidered Dress",
+    "slug": "high-neck-red-embroidered-dress",
+    "shortDescription": "High Neck Red Embroidered Dress: An elegant evening silhouette crafted for elevated occasions.",
+    "fullDescription": "High Neck Red Embroidered Dress is part of Maie Couture's curated edit, designed for formal dressing, receptions, and elevated celebrations. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_fb5ca937cc194c098c2c80250ebcb3f2~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_fb5ca937cc194c098c2c80250ebcb3f2~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3e5ffb22aff6439ea2833f46c349bfbc~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3d96ab434e37438cbd0638cc274e55e7~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c91e59e76f12495d965dfbd0b6069536~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HIGH_NECK_RED_EMBROIDERED_DRESS_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HIGH_NECK_RED_EMBROIDERED_DRESS_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HIGH_NECK_RED_EMBROIDERED_DRESS_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HIGH_NECK_RED_EMBROIDERED_DRESS_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HIGH_NECK_RED_EMBROIDERED_DRESS_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Floral Embroidered Dress",
+    "slug": "floral-embroidered-dress",
+    "shortDescription": "Floral Embroidered Dress in Black: An elegant evening silhouette crafted for elevated occasions.",
+    "fullDescription": "Floral Embroidered Dress in Black is part of Maie Couture's curated edit, designed for formal dressing, receptions, and elevated celebrations. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1800.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_b188e6c1949443f7a9dc3058b2a027e2~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_461342fb33ad4a88bf27d018bb256e0b~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_31138e4ae1d24ae9a74a666cc896ed55~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_835c0da94d464ef3b19850ce141a0b26~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_99c15acab26546978a6ec072469a7dd8~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_b188e6c1949443f7a9dc3058b2a027e2~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_d2a0594c311c41739933d417c7e74b2d~mv2.jpg",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_e647940502774b179293609bad14426e~mv2.jpg",
+        "sortOrder": 7
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_a5005dd006e942618e4263b1e3a7c483~mv2.jpg",
+        "sortOrder": 8
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": "Black",
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_DRESS_IN_BLACK_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "XS",
+        "color": "White",
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_DRESS_IN_WHITE_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": "Black",
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_DRESS_IN_BLACK_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": "White",
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_DRESS_IN_WHITE_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": "Black",
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_DRESS_IN_BLACK_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": "White",
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_DRESS_IN_WHITE_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": "Black",
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_DRESS_IN_BLACK_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": "White",
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_DRESS_IN_WHITE_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": "Black",
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_DRESS_IN_BLACK_XL",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": "White",
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_DRESS_IN_WHITE_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Red Embroidered Gold Colored Dress",
+    "slug": "red-embroidered-gold-colored-dress",
+    "shortDescription": "Red Embroidered Gold Colored Dress: An elegant evening silhouette crafted for elevated occasions.",
+    "fullDescription": "Red Embroidered Gold Colored Dress is part of Maie Couture's curated edit, designed for formal dressing, receptions, and elevated celebrations. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 3500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_dad4959e3596445498ab95665e352239~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "APPOINTMENT_ONLY",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Usually ready within 4 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_dad4959e3596445498ab95665e352239~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_32dace7d0bc94f0a89245a0add9c5524~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_162644eeb176431ea4c3be688f88db1d~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_f000ae316cf346e9a5e535c117312e80~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_5bbce9dec68f4c57a70f98c07b6aaee5~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_8239055765f048b3bcbf983ccb81d7cf~mv2.jpg",
+        "sortOrder": 6
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_EMBROIDERED_GOLD_COLORED_DRESS_XS",
+        "madeToOrder": true
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_EMBROIDERED_GOLD_COLORED_DRESS_S",
+        "madeToOrder": true
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_EMBROIDERED_GOLD_COLORED_DRESS_M",
+        "madeToOrder": true
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_EMBROIDERED_GOLD_COLORED_DRESS_L",
+        "madeToOrder": true
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_EMBROIDERED_GOLD_COLORED_DRESS_XL",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 3
+  },
+  {
+    "name": "Floral Embroidered Midi Dress",
+    "slug": "floral-embroidered-midi-dress",
+    "shortDescription": "Floral Embroidered Midi Dress: An elegant evening silhouette crafted for elevated occasions.",
+    "fullDescription": "Floral Embroidered Midi Dress is part of Maie Couture's curated edit, designed for formal dressing, receptions, and elevated celebrations. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 2000.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_c6b09382d9224ee68a7349cf048c76c8~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c6b09382d9224ee68a7349cf048c76c8~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_253c62d37476457ab3481aaa352eb068~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_9dad4ef221d7494aaa23d29c22787a6e~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_911313243ab64400a074ddb1af254adc~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_bb83d3873f0144f2ba90dea6673b561e~mv2.jpg",
+        "sortOrder": 5
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_MIDI_DRESS_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_MIDI_DRESS_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_MIDI_DRESS_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_MIDI_DRESS_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_MIDI_DRESS_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Exotic Turquoise Embroidered Dress",
+    "slug": "exotic-turquoise-embroidered-dress",
+    "shortDescription": "Exotic Turquoise Embroidered Dress: An elegant evening silhouette crafted for elevated occasions.",
+    "fullDescription": "Exotic Turquoise Embroidered Dress is part of Maie Couture's curated edit, designed for formal dressing, receptions, and elevated celebrations. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 2000.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_94eaaedfe35e4ac294459066d1eec0c2~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_94eaaedfe35e4ac294459066d1eec0c2~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_a9eedf53bb934b5785cea043fb0c92ac~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_dadc3323bc524451a2db65046f0a8910~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3223b5ac860744d588f44df2e423d99c~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "EXOTIC_TURQUOISE_EMBROIDERED_DRESS_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "EXOTIC_TURQUOISE_EMBROIDERED_DRESS_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "EXOTIC_TURQUOISE_EMBROIDERED_DRESS_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "EXOTIC_TURQUOISE_EMBROIDERED_DRESS_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "EXOTIC_TURQUOISE_EMBROIDERED_DRESS_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Silver Sequin Embroidered Silk Dress",
+    "slug": "silver-sequin-embroidered-silk-dress",
+    "shortDescription": "Silver Sequin Embroidered Silk Dress: An elegant evening silhouette crafted for elevated occasions.",
+    "fullDescription": "Silver Sequin Embroidered Silk Dress is part of Maie Couture's curated edit, designed for formal dressing, receptions, and elevated celebrations. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 2500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_cd4c83302fb84f0baaa5b4caf4013bb2~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Usually ready within 4 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_cd4c83302fb84f0baaa5b4caf4013bb2~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_72eda53bbb0f4024852b25a3921a6c26~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_68bd51e2e6c04cdfb2921da9bbaa01ac~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_1a651183504d482b86a2c8f943742d5d~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_4517c10e4b05476db7cd0711d4df5c67~mv2.jpg",
+        "sortOrder": 5
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SILVER_SEQUIN_EMBROIDERED_SILK_DRESS_XS",
+        "madeToOrder": true
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SILVER_SEQUIN_EMBROIDERED_SILK_DRESS_S",
+        "madeToOrder": true
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SILVER_SEQUIN_EMBROIDERED_SILK_DRESS_M",
+        "madeToOrder": true
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SILVER_SEQUIN_EMBROIDERED_SILK_DRESS_L",
+        "madeToOrder": true
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SILVER_SEQUIN_EMBROIDERED_SILK_DRESS_XL",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 3
+  },
+  {
+    "name": "Beige Dress with Colored Embroidery Details",
+    "slug": "beige-dress-with-colored-embroidery-details",
+    "shortDescription": "Beige Dress with Colored Embroidery Details: An elegant evening silhouette crafted for elevated occasions.",
+    "fullDescription": "Beige Dress with Colored Embroidery Details is part of Maie Couture's curated edit, designed for formal dressing, receptions, and elevated celebrations. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_cab847a05e2f4f668cf8e896a21eea28~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_cab847a05e2f4f668cf8e896a21eea28~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_e618c3fa09164444b65befbccca50624~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_ab9be36435424d09b1cd34412cbee517~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_393c96b40fba460286cacb9f1499dd42~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BEIGE_DRESS_WITH_COLORED_EMBROIDERY_DETAILS_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BEIGE_DRESS_WITH_COLORED_EMBROIDERY_DETAILS_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BEIGE_DRESS_WITH_COLORED_EMBROIDERY_DETAILS_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BEIGE_DRESS_WITH_COLORED_EMBROIDERY_DETAILS_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BEIGE_DRESS_WITH_COLORED_EMBROIDERY_DETAILS_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Purple Embroidered Long Dress",
+    "slug": "purple-embroidered-long-dress",
+    "shortDescription": "Purple Embroidered Long Dress: An elegant evening silhouette crafted for elevated occasions.",
+    "fullDescription": "Purple Embroidered Long Dress is part of Maie Couture's curated edit, designed for formal dressing, receptions, and elevated celebrations. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_ccd25bde8d7a49a8a9700cab60d6879f~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_ccd25bde8d7a49a8a9700cab60d6879f~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_52549fd62c7141cd8805a1c3e4b4ca00~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_70b72203d89343b3a4a181f35319fb67~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_9378917273e54b77ab02c869047a8737~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_1eda24ed69af414d8835df7c28b1f9f7~mv2.jpg",
+        "sortOrder": 5
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "PURPLE_EMBROIDERED_LONG_DRESS_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "PURPLE_EMBROIDERED_LONG_DRESS_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "PURPLE_EMBROIDERED_LONG_DRESS_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "PURPLE_EMBROIDERED_LONG_DRESS_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "PURPLE_EMBROIDERED_LONG_DRESS_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Beige Clutch",
+    "slug": "beige-clutch",
+    "shortDescription": "Discover timeless elegance with our Beige Clutch from Maie Couture. Expertly crafted from high-quality beige fabric and enhanced with exquisite embroidery detail, this clutch is a",
+    "fullDescription": "Discover timeless elegance with our Beige Clutch from Maie Couture. Expertly crafted from high-quality beige fabric and enhanced with exquisite embroidery detail, this clutch is a stunning accent to any ensemble. Perfect for both daytime events and glamorous evenings, it exudes sophistication and style. Make a statement by adding this versatile piece to your accessory collection today.",
+    "price": 350.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_4396d263c7954edbb79c741b88369fe8~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 7 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_4396d263c7954edbb79c741b88369fe8~mv2.jpg",
+        "sortOrder": 1
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BEIGE_CLUTCH_001",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 5
+  },
+  {
+    "name": "Look Back Black Bag",
+    "slug": "look-back-black-bag",
+    "shortDescription": "Discover elegance and functionality with our Look Back Black Bag, exclusively at Maie Couture. Named for its eye-catching embroidery, this bag blends timeless style with modern fla",
+    "fullDescription": "Discover elegance and functionality with our Look Back Black Bag, exclusively at Maie Couture. Named for its eye-catching embroidery, this bag blends timeless style with modern flair. Its spacious interior holds your essentials, while vibrant hues make it a standout accessory. Elevate your look and express your style. Shop now and experience Maie Couture's exceptional quality.",
+    "price": 450.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_3e0807258f8d43bc85e231bae7d4a291~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 7 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3e0807258f8d43bc85e231bae7d4a291~mv2.jpg",
+        "sortOrder": 1
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "LOOK_BACK_BLACK_BAG_001",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 5
+  },
+  {
+    "name": "Small Window Bag in Brown",
+    "slug": "small-window-bag-in-brown",
+    "shortDescription": "Discover the exquisite charm of the Small Window Bag in Brown from Maie Couture. Crafted with meticulous attention to detail, this bag features stunning embroidery that adds a touc",
+    "fullDescription": "Discover the exquisite charm of the Small Window Bag in Brown from Maie Couture. Crafted with meticulous attention to detail, this bag features stunning embroidery that adds a touch of elegance to your ensemble. Made from genuine real leather, its durable construction ensures longevity while exuding timeless sophistication. Perfect for any occasion, the Small Window Bag seamlessly blends style and functionality for the fashion-forward individual. Elevate your accessory game with this must-have piece.",
+    "price": 450.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_f506f9c977bb4564aedfdaf88eebb3ad~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 7 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_f506f9c977bb4564aedfdaf88eebb3ad~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_4102b36233184db5b88656290278dffe~mv2.jpg",
+        "sortOrder": 2
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SMALL_WINDOW_BAG_IN_BROWN_001",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 5
+  },
+  {
+    "name": "Brown Leather Clutch",
+    "slug": "brown-leather-clutch",
+    "shortDescription": "Elevate your style with our Brown Leather Clutch, exclusively at Maie Couture. Crafted from genuine, premium leather, this clutch features a stunning mix of embroidery with vibrant",
+    "fullDescription": "Elevate your style with our Brown Leather Clutch, exclusively at Maie Couture. Crafted from genuine, premium leather, this clutch features a stunning mix of embroidery with vibrant deep pink and green hues, adding a perfect touch to the rich brown base. Ideal for any occasion, this clutch seamlessly blends elegance and functionality. Experience the superior quality and artisanal craftsmanship that defines Maie Couture. This accessory is more than just a clutch; it's a statement piece for the discerning fashion enthusiast.",
+    "price": 450.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_7a60aadb46924d17a558d723d981e2fa~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 7 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_7a60aadb46924d17a558d723d981e2fa~mv2.jpg",
+        "sortOrder": 1
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BROWN_LEATHER_CLUTCH_001",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 5
+  },
+  {
+    "name": "Flamboyant Embroidered Clutch",
+    "slug": "flamboyant-embroidered-clutch",
+    "shortDescription": "Discover the Flamboyant Embroidered Clutch from Maie Couture. This elegant piece, featuring intricate embroidery, adds sophistication to any outfit. Ideal for evening events or a s",
+    "fullDescription": "Discover the Flamboyant Embroidered Clutch from Maie Couture. This elegant piece, featuring intricate embroidery, adds sophistication to any outfit. Ideal for evening events or a stylish day out, its vibrant design and durability reflect Maie Couture's high standards. Elevate your style with this functional and stylish clutch.",
+    "price": 450.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_19e8e8c000e94248b8ab38fcb56cf056~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 7 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_19e8e8c000e94248b8ab38fcb56cf056~mv2.jpg",
+        "sortOrder": 1
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLAMBOYANT_EMBROIDERED_CLUTCH_001",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 5
+  },
+  {
+    "name": "Beige Embroidered Clutch",
+    "slug": "beige-embroidered-clutch",
+    "shortDescription": "Elevate your look with Maie Couture's Beige Embroidered Clutch. This sophisticated accessory, featuring intricate embroidery, suits both casual and formal wear. Embrace timeless el",
+    "fullDescription": "Elevate your look with Maie Couture's Beige Embroidered Clutch. This sophisticated accessory, featuring intricate embroidery, suits both casual and formal wear. Embrace timeless elegance and versatility with this luxurious, practical clutch.",
+    "price": 450.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_1beb5a43f2e549d5b85895ccc5842432~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 7 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_1beb5a43f2e549d5b85895ccc5842432~mv2.jpg",
+        "sortOrder": 1
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BEIGE_EMBROIDERED_CLUTCH_001",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 5
+  },
+  {
+    "name": "Small Window Black Leather Bag",
+    "slug": "small-window-black-leather-bag",
+    "shortDescription": "Elevate your style with Maie Couture's Small Window Black Leather Bag. Featuring intricate embroidery on premium leather, it combines luxury and craftsmanship for a timeless look.",
+    "fullDescription": "Elevate your style with Maie Couture's Small Window Black Leather Bag. Featuring intricate embroidery on premium leather, it combines luxury and craftsmanship for a timeless look. Perfectly sized for essentials, it adds elegance and functionality to any outfit, embodying quality and durability for the discerning fashionista.",
+    "price": 450.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_427901b1c809403d91ce1eddca29c38c~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 7 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_427901b1c809403d91ce1eddca29c38c~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_43a50d302ae34d8eb5e7529a8ff9f97d~mv2.jpg",
+        "sortOrder": 2
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SMALL_WINDOW_BLACK_LEATHER_BAG_001",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 5
+  },
+  {
+    "name": "Black Clutch with Red Embroidery",
+    "slug": "black-clutch-with-red-embroidery",
+    "shortDescription": "Discover elegance with our Black Clutch with Red Embroidery. At Maie Couture, we craft each piece to perfection, combining quality with contemporary and traditional design. Perfect",
+    "fullDescription": "Discover elegance with our Black Clutch with Red Embroidery. At Maie Couture, we craft each piece to perfection, combining quality with contemporary and traditional design. Perfect for any occasion, it effortlessly adds class. Elevate your accessory game with Maie Couture today.",
+    "price": 450.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_630a53bb37894cd788d112d990582b6b~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 7 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_630a53bb37894cd788d112d990582b6b~mv2.jpg",
+        "sortOrder": 1
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_CLUTCH_WITH_RED_EMBROIDERY_001",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 5
+  },
+  {
+    "name": "Navy Embroidered Clutch",
+    "slug": "navy-embroidered-clutch",
+    "shortDescription": "Discover elegance with Maie Couture's Navy Embroidered Clutch. Expert craftsmanship and intricate embroidery elevate your evening look. Perfectly sized for essentials, it combines",
+    "fullDescription": "Discover elegance with Maie Couture's Navy Embroidered Clutch. Expert craftsmanship and intricate embroidery elevate your evening look. Perfectly sized for essentials, it combines functionality and style. Trust Maie Couture for timeless pieces that reflect your sophisticated taste. Make a statement with this refined accessory.",
+    "price": 450.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_fc876ab3d92948d685672a88a83eacfe~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 7 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_fc876ab3d92948d685672a88a83eacfe~mv2.jpg",
+        "sortOrder": 1
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "NAVY_EMBROIDERED_CLUTCH_001",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 5
+  },
+  {
+    "name": "Black Leather Clutch",
+    "slug": "black-leather-clutch",
+    "shortDescription": "Elevate your evening with the Black Leather Clutch from Maie Couture. Crafted from premium leather and adorned with fine embroidery, this sleek accessory combines elegance and func",
+    "fullDescription": "Elevate your evening with the Black Leather Clutch from Maie Couture. Crafted from premium leather and adorned with fine embroidery, this sleek accessory combines elegance and functionality. Perfectly sized for essentials, it complements any outfit. Trust Maie Couture's quality and style to add luxury to your wardrobe. Discover exceptional craftsmanship in this exquisite piece.",
+    "price": 450.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_4db74fba9eb74913be22eb3e176b717d~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 7 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_4db74fba9eb74913be22eb3e176b717d~mv2.jpg",
+        "sortOrder": 1
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_LEATHER_CLUTCH_001",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 5
+  },
+  {
+    "name": "Floor-Length Open Window Vest",
+    "slug": "floor-length-open-window-vest",
+    "shortDescription": "Floor-Length Open Window Vest: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Floor-Length Open Window Vest is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 800.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_952ea0c8fbc5412284ca888e22f39336~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_952ea0c8fbc5412284ca888e22f39336~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_75fbc86d6e364ed9be5ede869d958194~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_f4309e47a6f14dbf8be349c93d9be622~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_df4e2a36dabd4a2f8942890d0ceed11c~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_d85b4a472e3044b9a3c6a88b47134797~mv2.jpg",
+        "sortOrder": 5
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLOOR_LENGTH_OPEN_WINDOW_VEST_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLOOR_LENGTH_OPEN_WINDOW_VEST_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLOOR_LENGTH_OPEN_WINDOW_VEST_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLOOR_LENGTH_OPEN_WINDOW_VEST_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLOOR_LENGTH_OPEN_WINDOW_VEST_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "White Blazer with Red Embroidery",
+    "slug": "white-blazer-with-red-embroidery",
+    "shortDescription": "White Blazer with Red Embroidery: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "White Blazer with Red Embroidery is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1300.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_5108214fd3774c44a31f30d173985f0c~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_5108214fd3774c44a31f30d173985f0c~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_01c114272d514c1bb5325659daa5f52d~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3ee340dc05f24c32bde3b4765a52a344~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_042d50e44726478896de73afc2d73174~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "WHITE_BLAZER_WITH_RED_EMBROIDERY_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "WHITE_BLAZER_WITH_RED_EMBROIDERY_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "WHITE_BLAZER_WITH_RED_EMBROIDERY_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "WHITE_BLAZER_WITH_RED_EMBROIDERY_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "WHITE_BLAZER_WITH_RED_EMBROIDERY_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Kufiyyeh Vest",
+    "slug": "kufiyyeh-vest",
+    "shortDescription": "Kufiyyeh Vest: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Kufiyyeh Vest is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 450.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_a60162311d214bd49efc2fe658ac8d13~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_a60162311d214bd49efc2fe658ac8d13~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_1432e24e3c774a4e84781f015a55d187~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3a8bfc3617b14b21a222dd4d1c8db340~mv2.jpg",
+        "sortOrder": 3
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "KUFIYYEH_VEST_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "KUFIYYEH_VEST_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "KUFIYYEH_VEST_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "KUFIYYEH_VEST_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "KUFIYYEH_VEST_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Hand-Embroidered Blue Blazer",
+    "slug": "hand-embroidered-blue-blazer",
+    "shortDescription": "Hand-Embroidered Blue Blazer: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Hand-Embroidered Blue Blazer is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1800.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_312282bcf10c4929887a5166566a501b~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 3-5 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_312282bcf10c4929887a5166566a501b~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3a8960d4c474492fa7f4ffabe5bbec5c~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_f562df7c09664417897a2fc917438685~mv2.jpg",
+        "sortOrder": 3
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HAND_EMBROIDERED_BLUE_BLAZER_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HAND_EMBROIDERED_BLUE_BLAZER_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HAND_EMBROIDERED_BLUE_BLAZER_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HAND_EMBROIDERED_BLUE_BLAZER_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HAND_EMBROIDERED_BLUE_BLAZER_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Black Blazer with Floral Embroidery Details",
+    "slug": "black-blazer-with-floral-embroidery-details",
+    "shortDescription": "Black Blazer with Floral Embroidery Details: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Black Blazer with Floral Embroidery Details is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_7604895065154e0e9ac363b2b8b92b9d~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_7604895065154e0e9ac363b2b8b92b9d~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3355b2a4cc3749289b35412e36136f1e~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_966f1c68c22e4192ac3ce5f3fe74171e~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_e0455ce29aed41f8a8ececfb41ee38c1~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_BLAZER_WITH_FLORAL_EMBROIDERY_DETAILS_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_BLAZER_WITH_FLORAL_EMBROIDERY_DETAILS_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_BLAZER_WITH_FLORAL_EMBROIDERY_DETAILS_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_BLAZER_WITH_FLORAL_EMBROIDERY_DETAILS_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_BLAZER_WITH_FLORAL_EMBROIDERY_DETAILS_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "White Blazer with Floral Embroidery Details",
+    "slug": "white-blazer-with-floral-embroidery-details",
+    "shortDescription": "White Blazer with Floral Embroidery Details: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "White Blazer with Floral Embroidery Details is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_1097095a7f464cda9089d11a16481521~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_1097095a7f464cda9089d11a16481521~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_aa7f74892bec41bda1f24ce4782313e6~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_5fb4450756dd4bf486ee44939ee4dedf~mv2.jpg",
+        "sortOrder": 3
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "WHITE_BLAZER_WITH_FLORAL_EMBROIDERY_DETAILS_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "WHITE_BLAZER_WITH_FLORAL_EMBROIDERY_DETAILS_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "WHITE_BLAZER_WITH_FLORAL_EMBROIDERY_DETAILS_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "WHITE_BLAZER_WITH_FLORAL_EMBROIDERY_DETAILS_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "WHITE_BLAZER_WITH_FLORAL_EMBROIDERY_DETAILS_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Embroidered Trench Coat",
+    "slug": "embroidered-trench-coat",
+    "shortDescription": "Embroidered Trench Coat: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Embroidered Trench Coat is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1800.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_3a5ec68c818d4547b22f5a028425cf9f~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3a5ec68c818d4547b22f5a028425cf9f~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_2d11ec6fedbe47aba9c3b237fd27adc3~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_990497b511774530a1c1308c292571c7~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_36a386ec9d844aa3a43fa4c11c6f9a39~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "EMBROIDERED_TRENCH_COAT_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "EMBROIDERED_TRENCH_COAT_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "EMBROIDERED_TRENCH_COAT_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "EMBROIDERED_TRENCH_COAT_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "EMBROIDERED_TRENCH_COAT_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Floor-Length Vest",
+    "slug": "floor-length-vest",
+    "shortDescription": "Floor-Length Vest: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Floor-Length Vest is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 800.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_850f444821ec4670acbcde92ba68b469~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Ships in 3-5 business days",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_850f444821ec4670acbcde92ba68b469~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_fa8c52dc41c948f88008e8de7f9d099c~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_5673bc6706a4449aad8323b426d993ef~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_1893f143a8ab4a099d43bd643fa662e5~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_24cd1b73ea4846d9ab186d33026fae1b~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_1327bb18d1ea431ba509eaf6eca9c4c4~mv2.jpg",
+        "sortOrder": 6
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLOOR_LENGTH_VEST_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLOOR_LENGTH_VEST_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLOOR_LENGTH_VEST_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLOOR_LENGTH_VEST_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLOOR_LENGTH_VEST_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Colorful Embroidered Cape",
+    "slug": "colorful-embroidered-cape",
+    "shortDescription": "Colorful Embroidered Cape: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Colorful Embroidered Cape is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_f31c3f1295264e6e925f356da2f6971b~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_f31c3f1295264e6e925f356da2f6971b~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_5574ef338c9e4cde8a805612ac9ec1c9~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_eeb07ac0c72646f1b8d716d2ee923e66~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_415db0c4944148108d502df98f3c0251~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_498c8e804bc043179e4498ec1581584c~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_b73573ea4ff44bddbd394dadc1e82656~mv2.jpg",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_b347609418ee45fbb6051f3944fcb1b3~mv2.jpg",
+        "sortOrder": 7
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c1700cee390b4668b62a9d9eb76c7797~mv2.jpg",
+        "sortOrder": 8
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_50262e9041fb4f1aaf6d34092137593d~mv2.jpg",
+        "sortOrder": 9
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFUL_EMBROIDERED_CAPE_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFUL_EMBROIDERED_CAPE_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFUL_EMBROIDERED_CAPE_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFUL_EMBROIDERED_CAPE_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFUL_EMBROIDERED_CAPE_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Colorfully Embroidered Kimono in Red",
+    "slug": "colorfully-embroidered-kimono-in-red",
+    "shortDescription": "Colorfully Embroidered Kimono in Red: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Colorfully Embroidered Kimono in Red is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_415db0c4944148108d502df98f3c0251~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_415db0c4944148108d502df98f3c0251~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_498c8e804bc043179e4498ec1581584c~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_b73573ea4ff44bddbd394dadc1e82656~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_b347609418ee45fbb6051f3944fcb1b3~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c1700cee390b4668b62a9d9eb76c7797~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_50262e9041fb4f1aaf6d34092137593d~mv2.jpg",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_567a86f2e32d4c6dab4633cc62c8de23~mv2.jpg",
+        "sortOrder": 7
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_164cb9742ffc44e6b348aef383e5d47a~mv2.jpg",
+        "sortOrder": 8
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_cf5d88b8f27e4b8fb4ad7aee95280a36~mv2.jpg",
+        "sortOrder": 9
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFULLY_EMBROIDERED_KIMONO_IN_RED_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFULLY_EMBROIDERED_KIMONO_IN_RED_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFULLY_EMBROIDERED_KIMONO_IN_RED_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFULLY_EMBROIDERED_KIMONO_IN_RED_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFULLY_EMBROIDERED_KIMONO_IN_RED_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Colorfully Embroidered Kimono",
+    "slug": "colorfully-embroidered-kimono",
+    "shortDescription": "Colorfully Embroidered Kimono: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Colorfully Embroidered Kimono is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_b347609418ee45fbb6051f3944fcb1b3~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_b347609418ee45fbb6051f3944fcb1b3~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c1700cee390b4668b62a9d9eb76c7797~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_50262e9041fb4f1aaf6d34092137593d~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_567a86f2e32d4c6dab4633cc62c8de23~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_164cb9742ffc44e6b348aef383e5d47a~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_cf5d88b8f27e4b8fb4ad7aee95280a36~mv2.jpg",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_415db0c4944148108d502df98f3c0251~mv2.jpg",
+        "sortOrder": 7
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_498c8e804bc043179e4498ec1581584c~mv2.jpg",
+        "sortOrder": 8
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_b73573ea4ff44bddbd394dadc1e82656~mv2.jpg",
+        "sortOrder": 9
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFULLY_EMBROIDERED_KIMONO_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFULLY_EMBROIDERED_KIMONO_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFULLY_EMBROIDERED_KIMONO_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFULLY_EMBROIDERED_KIMONO_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFULLY_EMBROIDERED_KIMONO_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Lace Detailed Embroidered Set",
+    "slug": "lace-detailed-embroidered-set",
+    "shortDescription": "Lace Detailed Embroidered Set: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Lace Detailed Hand Embroidered Set is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 2500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_8e43df2f55144bfa995840f79e9f6b64~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_8e43df2f55144bfa995840f79e9f6b64~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_1abe2cea47d6445dbb2ff22423f614e2~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_7b9db2610be84fed9b6d4386e834b72f~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_b8296acc73d14f09b134c65d163c949d~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "LACE_DETAILED_EMBROIDERED_SET_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "LACE_DETAILED_EMBROIDERED_SET_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "LACE_DETAILED_EMBROIDERED_SET_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "LACE_DETAILED_EMBROIDERED_SET_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "LACE_DETAILED_EMBROIDERED_SET_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Hard Silk Embroidered Set",
+    "slug": "hard-silk-embroidered-set",
+    "shortDescription": "Hard Silk Embroidered Set: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Hard Silk Embroidered Set is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 2000.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_b8761db8027a4b07a50243a337f15118~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_b8761db8027a4b07a50243a337f15118~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_db8449028bb44d64a0cff23f7ff89dd7~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_69eac39aa6ad4c789577aabf8224088d~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_bf9e12ca8c8541dc831f684f65eb3fbc~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HARD_SILK_EMBROIDERED_SET_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HARD_SILK_EMBROIDERED_SET_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HARD_SILK_EMBROIDERED_SET_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HARD_SILK_EMBROIDERED_SET_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HARD_SILK_EMBROIDERED_SET_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Maxi Embroidered Skirt Set",
+    "slug": "maxi-embroidered-skirt-set",
+    "shortDescription": "maxi embroidered skirt set: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "maxi embroidered skirt set is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 2000.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_ddd9f5c5761049aa924aecaada1c847c~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_fa0160c06e0a4f19a9d5fa8dfc820bde~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_6103bf854b9944238d11544e5dadbb42~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_b9362ec8575b492a8590b05e86d9dd41~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_792cb458091c410db117a075277364e0~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": "Olive Green",
+        "stockQuantity": 0,
+        "sku": "MAXI_EMBROIDERED_SKIRT_SET_XS_OG",
+        "madeToOrder": false
+      },
+      {
+        "size": "XS",
+        "color": "Pomegranate Red",
+        "stockQuantity": 0,
+        "sku": "MAXI_EMBROIDERED_SKIRT_SET_XS_PR",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": "Olive Green",
+        "stockQuantity": 0,
+        "sku": "MAXI_EMBROIDERED_SKIRT_SET_S_OG",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": "Pomegranate Red",
+        "stockQuantity": 0,
+        "sku": "MAXI_EMBROIDERED_SKIRT_SET_S_PR",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": "Olive Green",
+        "stockQuantity": 0,
+        "sku": "MAXI_EMBROIDERED_SKIRT_SET_M_OG",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": "Pomegranate Red",
+        "stockQuantity": 0,
+        "sku": "MAXI_EMBROIDERED_SKIRT_SET_M_PR",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": "Olive Green",
+        "stockQuantity": 0,
+        "sku": "MAXI_EMBROIDERED_SKIRT_SET_L_OG",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": "Pomegranate Red",
+        "stockQuantity": 0,
+        "sku": "MAXI_EMBROIDERED_SKIRT_SET_L_PR",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": "Olive Green",
+        "stockQuantity": 0,
+        "sku": "MAXI_EMBROIDERED_SKIRT_SET_XL_OG",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": "Pomegranate Red",
+        "stockQuantity": 0,
+        "sku": "MAXI_EMBROIDERED_SKIRT_SET_XL_PR",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Long Sleeve Red and Yellow Embroidered Jumpsuit",
+    "slug": "red-and-yellow-embroidered-black-jumpsuit",
+    "shortDescription": "Elevate your wardrobe with our stunning Red and Yellow Embroidered, High Neck Black Jumpsuit from Maie Couture. This chic piece combines vibrant embroidery with a classic black backdrop, offe",
+    "fullDescription": "Elevate your wardrobe with our stunning Red and Yellow Embroidered Black Jumpsuit from Maie Couture. This chic piece combines vibrant embroidery with a classic black backdrop, offering a perfect blend of elegance and bold style. Ideal for any occasion, the meticulous craftsmanship reflects our commitment to high-quality, timeless fashion. Discover the ultimate balance of comfort and sophistication, designed to make you stand out effortlessly. Experience the luxury of Maie Couture with every wear.",
+    "price": 1500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_c4c9cff7d0de4b9f97dc3cce3c87d797~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c4c9cff7d0de4b9f97dc3cce3c87d797~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_499eb35e28524185aa04a7594e1cb1bc~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_91625cb37c2748509417caa4aba41211~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_bb5b3bae95304af4a0281e9125888635~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_AND_YELLOW_EMBROIDERED_BLACK_JUMPSUIT_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_AND_YELLOW_EMBROIDERED_BLACK_JUMPSUIT_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_AND_YELLOW_EMBROIDERED_BLACK_JUMPSUIT_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_AND_YELLOW_EMBROIDERED_BLACK_JUMPSUIT_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_AND_YELLOW_EMBROIDERED_BLACK_JUMPSUIT_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Maxi Open Sleeves Jumpsuit",
+    "slug": "Maxi-open-sleeves-jumpsuit",
+    "shortDescription": "Maxi Sleeves Tatreez Jumpsuit: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Red Tatreez Jumpsuit is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1800.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_4c8f519e4c114613afb81c23c3cb93ca~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MAXI_OPEN_SLEEVES_JUMPSUIT_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MAXI_OPEN_SLEEVES_JUMPSUIT_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MAXI_OPEN_SLEEVES_JUMPSUIT_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MAXI_OPEN_SLEEVES_JUMPSUIT_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MAXI_OPEN_SLEEVES_JUMPSUIT_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Midnight Heritage Jumpsuit",
+    "slug": "midnight-heritage-jumpsuit",
+    "shortDescription": "Midnight Heritage Jumpsuit: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Midnight Heritage Jumpsuit is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_159855b05bd9427094fe8533e2ad9ba6~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MIDNIGHT_HERITAGE_JUMPSUIT_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MIDNIGHT_HERITAGE_JUMPSUIT_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MIDNIGHT_HERITAGE_JUMPSUIT_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MIDNIGHT_HERITAGE_JUMPSUIT_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MIDNIGHT_HERITAGE_JUMPSUIT_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Floral Embroidered Jumpsuit",
+    "slug": "floral-embroidered-jumpsuit",
+    "shortDescription": "Floral Embroidered Jumpsuit: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Floral Embroidered Jumpsuit is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_916cb56fa96640a7b9014b36e652aba2~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_916cb56fa96640a7b9014b36e652aba2~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_67a10d7ffd6343559e0f3adae5012d51~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_e767de455cc946f69110d3fe2be7b57b~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_62ea9d6bca1a437283fb40f55fd067be~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_0405b001859042b4a4cad749516ef9ec~mv2.jpg",
+        "sortOrder": 5
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_JUMPSUIT_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_JUMPSUIT_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_JUMPSUIT_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_JUMPSUIT_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBROIDERED_JUMPSUIT_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Red Open-Window White Jumpsuit",
+    "slug": "red-open-window-white-jumpsuit",
+    "shortDescription": "Red Open-Window White Jumpsuit: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Red Open-Window White Jumpsuit is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_c15d3556073d4ceda1711a563d5bd3df~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c15d3556073d4ceda1711a563d5bd3df~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_cf1d640d29f846c59bf0363822a50131~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_60f9f1e0f3374530b57ff54a36457a0a~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_b7c8ae2142ed466eafb40a4632b4055c~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_OPEN_WINDOW_WHITE_JUMPSUIT_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_OPEN_WINDOW_WHITE_JUMPSUIT_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_OPEN_WINDOW_WHITE_JUMPSUIT_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_OPEN_WINDOW_WHITE_JUMPSUIT_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_OPEN_WINDOW_WHITE_JUMPSUIT_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Shades of Blue Jumpsuit",
+    "slug": "shades-of-blue-jumpsuit",
+    "shortDescription": "Shades of Blue Jumpsuit: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Shades of Blue Jumpsuit is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 2000.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_0ab5fdaa687345d5b5a6a1155430f2f2~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SHADES_OF_BLUE_JUMPSUIT_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SHADES_OF_BLUE_JUMPSUIT_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SHADES_OF_BLUE_JUMPSUIT_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SHADES_OF_BLUE_JUMPSUIT_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SHADES_OF_BLUE_JUMPSUIT_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Dark Blue Embroidered Jumpsuit",
+    "slug": "dark-blue-embroidered-jumpsuit",
+    "shortDescription": "Dark Blue Embroidered Jumpsuit: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Dark Blue Embroidered Jumpsuit is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_b547b12429394c2e917e698b3ad2c3d6~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_b547b12429394c2e917e698b3ad2c3d6~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_eab7c6d24a3e4e45b97f1d7188ae16fb~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_39a262f8c7c142a296fafee982dd342b~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_8616d90cb579410d9008f7ec96776769~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "DARK_BLUE_EMBROIDERED_JUMPSUIT_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "DARK_BLUE_EMBROIDERED_JUMPSUIT_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "DARK_BLUE_EMBROIDERED_JUMPSUIT_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "DARK_BLUE_EMBROIDERED_JUMPSUIT_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "DARK_BLUE_EMBROIDERED_JUMPSUIT_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Beige Abaya",
+    "slug": "beige-abaya",
+    "shortDescription": "Beige Abaya: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Beige Abaya is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1800.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_469591bc17b747f9a2689faee50e4d98~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BEIGE_ABAYA_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BEIGE_ABAYA_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BEIGE_ABAYA_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BEIGE_ABAYA_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BEIGE_ABAYA_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Floral Color-Rich Embroidered Black Abaya",
+    "slug": "floral-color-rich-embroidered-black-abaya",
+    "shortDescription": "Color-Rich Embroidered Black Abaya: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Color-Rich Embroidered Black Abaya is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1800.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_ee478d0721024f59855b4287dc76ae08~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_COLOR_RICH_EMBROIDERED_BLACK_ABAYA_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_COLOR_RICH_EMBROIDERED_BLACK_ABAYA_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_COLOR_RICH_EMBROIDERED_BLACK_ABAYA_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_COLOR_RICH_EMBROIDERED_BLACK_ABAYA_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_COLOR_RICH_EMBROIDERED_BLACK_ABAYA_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Color-Rich Embroidered Black Abaya",
+    "slug": "color-rich-embroidered-black-abaya",
+    "shortDescription": "Color-Rich Embroidered Black Abaya: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Color-Rich Embroidered Black Abaya is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1800.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_211b83f076b44831ab162917506c15cf~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_ee478d0721024f59855b4287dc76ae08~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_87dbc37e6b634bbd8213c0a80c623138~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_6a47bb6a63684a3c9810a25d0ef0e48e~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c36e8085e7d349549180386bcd99c8c6~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_211b83f076b44831ab162917506c15cf~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_0753a8867db84021a858dffb2c2bca28~mv2.jpg",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_ccac0fe3326d453788e1213c0974e797~mv2.jpg",
+        "sortOrder": 7
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_63eaec70771b44c8b7d7c8c3f8eff0ad~mv2.jpg",
+        "sortOrder": 8
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_d6b922f0cbdc4560813cb5bf87ffef17~mv2.jpg",
+        "sortOrder": 9
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_044852a257b04b6486d617fef3370bc9~mv2.jpg",
+        "sortOrder": 10
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_ffdad8b99f944d1da0a851b8ab59da6d~mv2.jpg",
+        "sortOrder": 11
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_dee0fe491d97487bbe756fafbaadbc40~mv2.jpg",
+        "sortOrder": 12
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_792ac18d3d224d7a92c868ccba3bc47c~mv2.jpg",
+        "sortOrder": 13
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLOR_RICH_EMBROIDERED_BLACK_ABAYA_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLOR_RICH_EMBROIDERED_BLACK_ABAYA_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLOR_RICH_EMBROIDERED_BLACK_ABAYA_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLOR_RICH_EMBROIDERED_BLACK_ABAYA_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLOR_RICH_EMBROIDERED_BLACK_ABAYA_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Pop of Blue Embroidered Black Abaya",
+    "slug": "pop-of-blue-embroidered-black-abaya",
+    "shortDescription": "Color-Rich Embroidered Black Abaya: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Color-Rich Embroidered Black Abaya is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1800.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_d6b922f0cbdc4560813cb5bf87ffef17~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "POP_OF_BLUE_EMBROIDERED_BLACK_ABAYA_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "POP_OF_BLUE_EMBROIDERED_BLACK_ABAYA_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "POP_OF_BLUE_EMBROIDERED_BLACK_ABAYA_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "POP_OF_BLUE_EMBROIDERED_BLACK_ABAYA_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "POP_OF_BLUE_EMBROIDERED_BLACK_ABAYA_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Elegant Embroidered Black Abaya",
+    "slug": "elegant-embroidered-black-abaya",
+    "shortDescription": "Elegant Embroidered Black Abaya: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Elegant Embroidered Black Abaya is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_72382958d270430c925df6a4b8487938~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_72382958d270430c925df6a4b8487938~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_ac5f98c608784ffc944123145c34d08a~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c7befaa945f643ad8931246184875cd6~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_5c81927a45754fc69cdb1a3c5bacb302~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "ELEGANT_EMBROIDERED_BLACK_ABAYA_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "ELEGANT_EMBROIDERED_BLACK_ABAYA_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "ELEGANT_EMBROIDERED_BLACK_ABAYA_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "ELEGANT_EMBROIDERED_BLACK_ABAYA_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "ELEGANT_EMBROIDERED_BLACK_ABAYA_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Black Abaya with gold embroidery and ruby arms",
+    "slug": "black-abaya-with-gold-embroidery-and-ruby-arms",
+    "shortDescription": "Black Abaya with gold embroidery and ruby arms: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Black Abaya with gold embroidery and ruby arms is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 850.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_26201f887c2640d09d459ce97e6ce96b~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_26201f887c2640d09d459ce97e6ce96b~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_79d3cbbbe49e4f37af30374cbc7fc5cb~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_6639fabb97ad4ce08efd0ba3177dc543~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_68c5904635174f8b8050715bd9592d4b~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_f8b7f2874e844741861b36bf0f3e543c~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c90390ef804548b6aea549b6f695d145~mv2.jpg",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_34156b0229e441868a150b724cd9fb69~mv2.jpg",
+        "sortOrder": 7
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_597935368996430398bd51589269dbbd~mv2.jpg",
+        "sortOrder": 8
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_db511e36fe5442cdb3acc6150d00d25a~mv2.jpg",
+        "sortOrder": 9
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_ABAYA_WITH_GOLD_EMBROIDERY_AND_RUBY_ARMS_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_ABAYA_WITH_GOLD_EMBROIDERY_AND_RUBY_ARMS_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_ABAYA_WITH_GOLD_EMBROIDERY_AND_RUBY_ARMS_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_ABAYA_WITH_GOLD_EMBROIDERY_AND_RUBY_ARMS_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_ABAYA_WITH_GOLD_EMBROIDERY_AND_RUBY_ARMS_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "Colorful Embroidered Long Coat",
+    "slug": "Colorful-embroidered-coat",
+    "shortDescription": "Colorful Embroidered Coat: A refined ready-to-wear design for modern everyday elegance.",
+    "fullDescription": "Colorful Embroidered Coat is part of Maie Couture's curated edit, designed for day-to-evening styling with versatile couture finishes. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1800.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_c9a1e57e23f241c398598198e8734ff7~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFUL_EMBROIDERED_COAT_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFUL_EMBROIDERED_COAT_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFUL_EMBROIDERED_COAT_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFUL_EMBROIDERED_COAT_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "COLORFUL_EMBROIDERED_COAT_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 4
+  },
+  {
+    "name": "White and Gold Bridal Dress with a Twist",
+    "slug": "white-and-gold-bridal-dress-with-a-twist",
+    "shortDescription": "White and Gold Bridal Dress with a Twist: A couture bridal piece available through private appointment.",
+    "fullDescription": "White and Gold Bridal Dress with a Twist is part of Maie Couture's curated edit, designed for bridal appointments and custom fitting sessions. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1800.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_daa7aa40d348474dac728ac9a76d89f6~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "APPOINTMENT_ONLY",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Available by appointment",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_daa7aa40d348474dac728ac9a76d89f6~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3ff4d09a19ec4818b87548452ae32094~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_487508c62fff439fbc3e076230d7d263~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_5c7c900ee15d4a08b1aaac13084620f7~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_037626905c944fc5898e8c9092bafb76~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_eaa768a6849b4518aef00a5dd92a7557~mv2.jpg",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_8e8401c7eb374e0bb831e02ef9d54a25~mv2.jpg",
+        "sortOrder": 7
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_70d6a642fe0340c4b14324ceae52bfc1~mv2.jpg",
+        "sortOrder": 8
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_b04fb2798ff14f329da62ff05cc6e7e7~mv2.jpg",
+        "sortOrder": 9
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "WHITE_AND_GOLD_BRIDAL_DRESS_WITH_A_TWIST_001",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 1
+  },
+  {
+    "name": "Gold Embroidered White Bridal Dress",
+    "slug": "gold-embroidered-white-bridal-dress",
+    "shortDescription": "Gold Embroidered White Bridal Dress: A couture bridal piece available through private appointment.",
+    "fullDescription": "Gold Embroidered White Bridal Dress is part of Maie Couture's curated edit, designed for bridal appointments and custom fitting sessions. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 2500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_3ff4d09a19ec4818b87548452ae32094~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "APPOINTMENT_ONLY",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Available by appointment",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3ff4d09a19ec4818b87548452ae32094~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_487508c62fff439fbc3e076230d7d263~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_5c7c900ee15d4a08b1aaac13084620f7~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_037626905c944fc5898e8c9092bafb76~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_eaa768a6849b4518aef00a5dd92a7557~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_8e8401c7eb374e0bb831e02ef9d54a25~mv2.jpg",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_70d6a642fe0340c4b14324ceae52bfc1~mv2.jpg",
+        "sortOrder": 7
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_daa7aa40d348474dac728ac9a76d89f6~mv2.jpg",
+        "sortOrder": 8
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_b04fb2798ff14f329da62ff05cc6e7e7~mv2.jpg",
+        "sortOrder": 9
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "GOLD_EMBROIDERED_WHITE_BRIDAL_DRESS_001",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 1
+  },
+  {
+    "name": "Shining Bridal Dress",
+    "slug": "shining-bridal-dress",
+    "shortDescription": "Shining Bridal Dress: A couture bridal piece available through private appointment.",
+    "fullDescription": "Shining Bridal Dress is part of Maie Couture's curated edit, designed for bridal appointments and custom fitting sessions. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 2500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_6d927b17a6ea4c4c80935b3303218ee4~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "APPOINTMENT_ONLY",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Available by appointment",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_6d927b17a6ea4c4c80935b3303218ee4~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c80bc5084ac84346b72944e0c8cedb3b~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_9c50d765f2904ee78da5c3043d6b47a2~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_46783ec83be74c3bb74b54c16391cf29~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_0c05a67418c04b98a633b3477183616e~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_55208f090586409493508d5f76493783~mv2.jpg",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_fd3749095863487f89ef0c2ba494be13~mv2.jpg",
+        "sortOrder": 7
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_99b9af03e12e462db118c25df2e53a4b~mv2.jpg",
+        "sortOrder": 8
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SHINING_BRIDAL_DRESS_001",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 1
+  },
+  {
+    "name": "Red Cape Detailed Dress",
+    "slug": "red-cape-detailed-dress",
+    "shortDescription": "Red Cape Detailed Dress: A couture bridal piece available through private appointment.",
+    "fullDescription": "Red Cape Detailed Dress is part of Maie Couture's curated edit, designed for bridal appointments and custom fitting sessions. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 2500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_6654dfd0201b4d5880040389828bfc4e~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "APPOINTMENT_ONLY",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Available by appointment",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_6654dfd0201b4d5880040389828bfc4e~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_bbdf20615e4d48a484f8b3c540d5fbf9~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_4ef805e7800c4e7281284092e099efdb~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_a4f83a3d968641dca6376be38a985290~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_dd221e524af94741ac8303608db2b118~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_536762ed390e46b78e6b5d4b683170ef~mv2.jpg",
+        "sortOrder": 6
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_CAPE_DETAILED_DRESS_001",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 1
+  },
+  {
+    "name": "Gold Embroidered Dress with Cape",
+    "slug": "gold-embroidered-dress-with-cape",
+    "shortDescription": "Gold Embroidered Dress with Cape: A couture bridal piece available through private appointment.",
+    "fullDescription": "Gold Embroidered Dress with Cape is part of Maie Couture's curated edit, designed for bridal appointments and custom fitting sessions. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 3000.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_12347fc72bb04df2855cc5d354413a78~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "APPOINTMENT_ONLY",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Available by appointment",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_12347fc72bb04df2855cc5d354413a78~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_5a35f04f45294020a30632678b7bbf49~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_e548a86cae3a436e905c16e863155a39~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_830669d22d9b4f528815478f131d949d~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_d45a50c0f02546fb8c908068f030cc5b~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_73895c2d38da45fcbc431346efc46f2a~mv2.jpg",
+        "sortOrder": 6
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "GOLD_EMBROIDERED_DRESS_WITH_CAPE_001",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 1
+  },
+  {
+    "name": "Elegant Bridal Dress",
+    "slug": "elegant-bridal-dress",
+    "shortDescription": "Elegant Bridal Dress: A couture bridal piece available through private appointment.",
+    "fullDescription": "Elegant Bridal Dress is part of Maie Couture's curated edit, designed for bridal appointments and custom fitting sessions. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 3500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_7a8546ddaf4e47c586abddb502f72bed~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "APPOINTMENT_ONLY",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Available by appointment",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_7a8546ddaf4e47c586abddb502f72bed~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_e83e62e580c14225b873e5a4200913c4~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_64cdd76ed3844455be19f0f97c045ea5~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_29a61809fb8e41a5af9122292a5abff1~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3375b9c916ed43c485d0ea14223fcbf5~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_5e6e243f221e4da3aa6f63bd3612d3ad~mv2.jpg",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_af4eb0b4f8cb49d8aa0dd5a8bf9986f7~mv2.jpg",
+        "sortOrder": 7
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "ELEGANT_BRIDAL_DRESS_001",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 1
+  },
+  {
+    "name": "Floral Henna Attire",
+    "slug": "floral-henna-attire",
+    "shortDescription": "Floral Henna Attire: A couture bridal piece available through private appointment.",
+    "fullDescription": "Floral Henna Attire is part of Maie Couture's curated edit, designed for bridal appointments and custom fitting sessions. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 4500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_1236bdc0b7a946fa9c0d2d489ff2877d~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "APPOINTMENT_ONLY",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Available by appointment",
+    "images": [],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_HENNA_ATTIRE_001",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 1
+  },
+  {
+    "name": "Something Blue Dress",
+    "slug": "something-blue-dress",
+    "shortDescription": "Something Blue Dress: A couture bridal piece available through private appointment.",
+    "fullDescription": "Something Blue Dress is part of Maie Couture's curated edit, designed for bridal appointments and custom fitting sessions. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 3500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_f4269501eedc49d2a37e7218b22984df~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Usually ready within 4 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_f4269501eedc49d2a37e7218b22984df~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_68f62f32c89c4b14ac845b713c171c50~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_7c7afaf0100140f198541b9cc4e7f2e6~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_a9c3489314b846dcbe56a9a2fe6637fc~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_5ea34d372b1b4b17ba677dfd3065b87a~mv2.jpg",
+        "sortOrder": 5
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SOMETHING_BLUE_DRESS_XS",
+        "madeToOrder": true
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SOMETHING_BLUE_DRESS_S",
+        "madeToOrder": true
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SOMETHING_BLUE_DRESS_M",
+        "madeToOrder": true
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SOMETHING_BLUE_DRESS_L",
+        "madeToOrder": true
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "SOMETHING_BLUE_DRESS_XL",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 3
+  },
+  {
+    "name": "Red Embroidered White Dress",
+    "slug": "red-embroidered-white-dress",
+    "shortDescription": "Red Embroidered White Dress: A couture bridal piece available through private appointment.",
+    "fullDescription": "Red Embroidered White Dress is part of Maie Couture's curated edit, designed for bridal appointments and custom fitting sessions. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_ef84880caf7e45a88b576f3463aac3bc~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_ef84880caf7e45a88b576f3463aac3bc~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_0f5811250c604d6eadd8140a0bd3611d~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_8268f23652d44542af1f59c7c37f80f8~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_262744672cea4adaafd416dfe98dfa26~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_94a39d85daa74e7fbc4d73856a7b83b3~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_089de63a1762438890a7271c81010d52~mv2.jpg",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_89c25d6a18c849ba985e1c7a78e60303~mv2.jpg",
+        "sortOrder": 7
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_EMBROIDERED_WHITE_DRESS_XS",
+        "madeToOrder": true
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_EMBROIDERED_WHITE_DRESS_S",
+        "madeToOrder": true
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_EMBROIDERED_WHITE_DRESS_M",
+        "madeToOrder": true
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_EMBROIDERED_WHITE_DRESS_L",
+        "madeToOrder": true
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_EMBROIDERED_WHITE_DRESS_XL",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 3
+  },
+  {
+    "name": "Vest Dress",
+    "slug": "vest-dress",
+    "shortDescription": "Vest Dress: A couture bridal piece available through private appointment.",
+    "fullDescription": "Vest Dress is part of Maie Couture's curated edit, designed for bridal appointments and custom fitting sessions. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_62e15e7f479d433bae53f97a053c053b~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "APPOINTMENT_ONLY",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Available by appointment",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_62e15e7f479d433bae53f97a053c053b~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_b0e246f6d031475ea2c188c2080db5bd~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3f60c2523d9b488dbf3aba7591819197~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_6e9a881f02454c239476afd73709815e~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "VEST_DRESS_001",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 1
+  },
+  {
+    "name": "One-Shoulder Midi Dress",
+    "slug": "one-shoulder-midi-dress",
+    "shortDescription": "One-Shoulder Midi Dress: A couture bridal piece available through private appointment.",
+    "fullDescription": "One-Shoulder Midi Dress is part of Maie Couture's curated edit, designed for bridal appointments and custom fitting sessions. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 1800.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_f9e9baf764a141dd9301899d25cbe1d9~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "APPOINTMENT_ONLY",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Available by appointment",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_f9e9baf764a141dd9301899d25cbe1d9~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_36862fef28354f518b74506766a6ac9e~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_114b094ba1924144a18a556cd63fb6b9~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_7c8116ec4b6645d2ad0c01bc1c7f1feb~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "ONE_SHOULDER_MIDI_DRESS_001",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 1
+  },
+  {
+    "name": "White Floral Dress",
+    "slug": "white-floral-dress",
+    "shortDescription": "White Floral Dress: A couture bridal piece available through private appointment.",
+    "fullDescription": "White Floral Dress is part of Maie Couture's curated edit, designed for bridal appointments and custom fitting sessions. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 2500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_3ba49a1587ac45e996cbfa0be4d93a7b~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "APPOINTMENT_ONLY",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Available by appointment",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3ba49a1587ac45e996cbfa0be4d93a7b~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_ced0b3d5790d40b6bf59a790e6babeb0~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_61f3ba17cfcf40f9bda3467d634130b9~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_d0329d7ada184f9b8987042a7d024be6~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_da7b4a0d473f4e7e97d9117a0e80db1a~mv2.jpg",
+        "sortOrder": 5
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "WHITE_FLORAL_DRESS_001",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 1
+  },
+  {
+    "name": "White Bridal Dress",
+    "slug": "white-bridal-dress",
+    "shortDescription": "White Bridal Dress: A couture bridal piece available through private appointment.",
+    "fullDescription": "White Bridal Dress is part of Maie Couture's curated edit, designed for bridal appointments and custom fitting sessions. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 2000.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_c80bc5084ac84346b72944e0c8cedb3b~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "APPOINTMENT_ONLY",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Available by appointment",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c80bc5084ac84346b72944e0c8cedb3b~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_cad6ba7c4752471a95546898f758c9f7~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_9c50d765f2904ee78da5c3043d6b47a2~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_46783ec83be74c3bb74b54c16391cf29~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_0c05a67418c04b98a633b3477183616e~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_55208f090586409493508d5f76493783~mv2.jpg",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_fd3749095863487f89ef0c2ba494be13~mv2.jpg",
+        "sortOrder": 7
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_99b9af03e12e462db118c25df2e53a4b~mv2.jpg",
+        "sortOrder": 8
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "WHITE_BRIDAL_DRESS_001",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 1
+  },
+  {
+    "name": "White and Red Wear",
+    "slug": "white-and-red-wear",
+    "shortDescription": "White and Red Wear: A couture bridal piece available through private appointment.",
+    "fullDescription": "White and Red Wear is part of Maie Couture's curated edit, designed for bridal appointments and custom fitting sessions. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 2000.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_a4f83a3d968641dca6376be38a985290~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "APPOINTMENT_ONLY",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Available by appointment",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_a4f83a3d968641dca6376be38a985290~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_6654dfd0201b4d5880040389828bfc4e~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_bbdf20615e4d48a484f8b3c540d5fbf9~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_4ef805e7800c4e7281284092e099efdb~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_536762ed390e46b78e6b5d4b683170ef~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_dd221e524af94741ac8303608db2b118~mv2.jpg",
+        "sortOrder": 6
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "WHITE_AND_RED_WEAR_001",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 1
+  },
+  {
+    "name": "Katb Ktab Wear",
+    "slug": "katb-ktab-wear",
+    "shortDescription": "Katb Ktab Wear: A couture bridal piece available through private appointment.",
+    "fullDescription": "Katb Ktab Wear is part of Maie Couture's curated edit, designed for bridal appointments and custom fitting sessions. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 2500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_7d371e4e8be44662954a5d9921efa287~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "APPOINTMENT_ONLY",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": true,
+    "leadTimeNote": "Available by appointment",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_7d371e4e8be44662954a5d9921efa287~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_9915c967913245e1a499348f17599cee~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_ebccbd623e3f4af19815a68782e90e31~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3da915d21bc14c1b818b70b5e76fc2d2~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": null,
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "KATB_KTAB_WEAR_001",
+        "madeToOrder": true
+      }
+    ],
+    "categoryId": 1
+  },
+  {
+    "name": "Hand Embroidered Majdalawi Thobe",
+    "slug": "hand-embroidered-majdalawi-thobe",
+    "shortDescription": "Majdalawi Thobe, A traditional statement piece inspired by Palestinian heritage.",
+    "fullDescription": "Majdalawi Thobe: A traditional statement piece inspired by Palestinian heritage.",
+    "price": 2500.0,
+    "salePrice": null,
+    "currency": "USD",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_5e14cb015248482e9a3f8f4d4e45aa98~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Each piece is meticulously handcrafted, with production taking approximately 3 months to ensure the highest level of craftsmanship.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_5e14cb015248482e9a3f8f4d4e45aa98~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_1184ad30f08f4ada9e14ef670900f52f~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3fcf07c1a5c04a34a297b18663a5480b~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_5d15006346f647248ac9a491afe75929~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_f3b6562e94364d5190f3aafa2c1caeea~mv2.jpg",
+        "sortOrder": 5
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HAND_EMBROIDERED_MAJDALAWI_THOBE_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HAND_EMBROIDERED_MAJDALAWI_THOBE_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HAND_EMBROIDERED_MAJDALAWI_THOBE_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HAND_EMBROIDERED_MAJDALAWI_THOBE_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HAND_EMBROIDERED_MAJDALAWI_THOBE_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 2
+  },
+  {
+    "name": "Black Thobe with Red and a Touch of Yellow",
+    "slug": "black-thobe-with-red-and-a-touch-of-yellow",
+    "shortDescription": "<p>&nbsp;</p>",
+    "fullDescription": "<p>&nbsp;</p>",
+    "price": 3500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_379e39657aa648328f4d5e20da61ca6c~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_379e39657aa648328f4d5e20da61ca6c~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_1d01a2f37d614ae997f7bcd90535d78f~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_7bf85377bed147e093f03fe650d5934a~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_5445724de45846a5b24e2cd9b5579665~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_906c9a314fed494fbf0f77dfe913e170~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_be5fc138264f4ddca87e9f098da08d63~mv2.jpg",
+        "sortOrder": 6
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_THOBE_WITH_RED_AND_A_TOUCH_OF_YELLOW_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_THOBE_WITH_RED_AND_A_TOUCH_OF_YELLOW_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_THOBE_WITH_RED_AND_A_TOUCH_OF_YELLOW_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_THOBE_WITH_RED_AND_A_TOUCH_OF_YELLOW_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "BLACK_THOBE_WITH_RED_AND_A_TOUCH_OF_YELLOW_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 2
+  },
+  {
+    "name": "Red and Beige Thobe",
+    "slug": "red-and-beige-thobe",
+    "shortDescription": "<p>&nbsp;</p>",
+    "fullDescription": "<p>&nbsp;</p>",
+    "price": 3500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_afe1c7afebd84340ac49aafb8b94b7f9~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_afe1c7afebd84340ac49aafb8b94b7f9~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_be69eb4ab3f544f5a32bc260fff3a003~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_d76ce904e2a6472ba67c6e3a1b60aa20~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_ad72207b92ea40e5bee1878b61def0b6~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_caa34ece968d49d2a8bb6d62887a2901~mv2.jpg",
+        "sortOrder": 5
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_AND_BEIGE_THOBE_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_AND_BEIGE_THOBE_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_AND_BEIGE_THOBE_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_AND_BEIGE_THOBE_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "RED_AND_BEIGE_THOBE_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 2
+  },
+  {
+    "name": "Malakeh Thobe in Blue and White",
+    "slug": "malakeh-thobe-in-blue-and-white",
+    "shortDescription": "A Malak thobe is a traditional dress from Bethlehem, known for its regal presence and intricate detailing. Crafted from rich, dark fabric, it features elaborate gold or silk embroidery using the tahriri technique, concentrated on the chest panel and sl...",
+    "fullDescription": "<p>P.S: HAND EMBROIDERED THOBES CAN TAKE 3 TO 6 MONTHS IN THE MAKING, CONSULT BEFORE ORDER</p>",
+    "price": 2500.0,
+    "salePrice": null,
+    "currency": "USD",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_14267e3e2197483a99a596d84637eea3~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Each piece is meticulously handcrafted, with production taking approximately 3 months to ensure the highest level of craftsmanship.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_14267e3e2197483a99a596d84637eea3~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c6cb03f879834b83b08ccdd849e58d7b~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_eeff5bd577c545e5a86bc362b2745142~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_f705bb09a44849f59ee4fc979b977a5c~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_90506a9989a047d0b266eff77a1dcb82~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_4904f93c92e94ffc80c805cc8a143ee6~mv2.jpg",
+        "sortOrder": 6
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_8e71db9acd204f4e9d87257e09332df6~mv2.jpg",
+        "sortOrder": 7
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_d76ac81ebb3949d98f2793b77bff5175~mv2.jpg",
+        "sortOrder": 8
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MALAKEH_THOBE_IN_BLUE_AND_WHITE_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MALAKEH_THOBE_IN_BLUE_AND_WHITE_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MALAKEH_THOBE_IN_BLUE_AND_WHITE_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MALAKEH_THOBE_IN_BLUE_AND_WHITE_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MALAKEH_THOBE_IN_BLUE_AND_WHITE_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 2
+  },
+  {
+    "name": "Flamboyant Majdalawi Thobe",
+    "slug": "flamboyant-majdalawi-thobe",
+    "shortDescription": "<p>&nbsp;</p>",
+    "fullDescription": "<p>&nbsp;</p>",
+    "price": 3500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_f1e42b64b4724189a100dbb6c2d90f32~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_f1e42b64b4724189a100dbb6c2d90f32~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_1cdfe5d64fb449fe807ecf1467aab75d~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_48990509be0c4158b22f1fac1e0f4359~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_945c3696d0754ce78abf91f3f4a3e2c7~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_bb681b02bd8748f98e3c45069b8815f2~mv2.jpg",
+        "sortOrder": 5
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_64d14f0f72564a688664c099ea61a974~mv2.jpg",
+        "sortOrder": 6
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLAMBOYANT_MAJDALAWI_THOBE_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLAMBOYANT_MAJDALAWI_THOBE_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLAMBOYANT_MAJDALAWI_THOBE_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLAMBOYANT_MAJDALAWI_THOBE_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLAMBOYANT_MAJDALAWI_THOBE_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 2
+  },
+  {
+    "name": "Modernized City Thobe",
+    "slug": "modernized-city-thobe",
+    "shortDescription": "<p>&nbsp;</p>",
+    "fullDescription": "<p>&nbsp;</p>",
+    "price": 3500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_8e764625c1ba4418977bb8554093051b~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_8e764625c1ba4418977bb8554093051b~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_9e84338a330845f3b6c18f3de10562d2~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_0b07baeca6fe4bc1a8509e331daf708c~mv2.jpg",
+        "sortOrder": 3
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MODERNIZED_CITY_THOBE_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MODERNIZED_CITY_THOBE_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MODERNIZED_CITY_THOBE_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MODERNIZED_CITY_THOBE_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MODERNIZED_CITY_THOBE_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 2
+  },
+  {
+    "name": "Floral Ember Thobe",
+    "slug": "floral-ember-thobe",
+    "shortDescription": "<p>A modern touch on Palestinian embroidery that mixes between the feminine floral touch and the strong firey embers of the palestinian woman's personality</p>",
+    "fullDescription": "<p>A modern touch on Palestinian embroidery that mixes between the feminine floral touch and the strong firey embers of the palestinian woman's personality</p>",
+    "price": 3500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_66de9c4216dc4015b0168b5fe5bcc901~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 2 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_66de9c4216dc4015b0168b5fe5bcc901~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c194368367ae42be80465400981b88e2~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_238effff833d409dad35d10eb4f1aaf7~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_fe134b46fdf94428b55f20a6b7a14c4f~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3b9744bb2010422980190c79b793fd74~mv2.jpg",
+        "sortOrder": 5
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBER_THOBE_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBER_THOBE_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBER_THOBE_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBER_THOBE_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "FLORAL_EMBER_THOBE_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 2
+  },
+  {
+    "name": "Thobe with Hand Embroidery Detail",
+    "slug": "thobe-with-hand-embroidery-detail",
+    "shortDescription": "<p>Happy colors for happy days!&nbsp;</p>",
+    "fullDescription": "<p>Happy colors for happy days!&nbsp;</p>",
+    "price": 4500.0,
+    "salePrice": null,
+    "currency": "NIS",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_467b17d8c5474334a8455e703dc142db~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Usually ready within 4 weeks.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_467b17d8c5474334a8455e703dc142db~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_575bf146187845578f097b3867c10484~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_312093a16d5d4ec9820470fd8b01dd15~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_e0ff1bc0c81f42a286df57ba3e0fe6a9~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "THOBE_WITH_HAND_EMBROIDERY_DETAIL_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "THOBE_WITH_HAND_EMBROIDERY_DETAIL_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "THOBE_WITH_HAND_EMBROIDERY_DETAIL_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "THOBE_WITH_HAND_EMBROIDERY_DETAIL_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "THOBE_WITH_HAND_EMBROIDERY_DETAIL_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 2
+  },
+  {
+    "name": "Hand-Embroidered Emerald Thobe",
+    "slug": "hand-embroidered-emerald-thobe",
+    "shortDescription": "<p>A striking piece featuring traditional tatreez in vibrant shades of burgundy and flame red hand-stitched on the emerald green fabric.&nbsp;</p><p>P.S: HAND EMBROIDERED THOBES CA",
+    "fullDescription": "<p>A striking piece featuring traditional tatreez in vibrant shades of burgundy and flame red hand-stitched on the emerald green fabric.&nbsp;</p><p>P.S: HAND EMBROIDERED THOBES CAN TAKE 3 TO 6 MONTHS IN THE MAKING, CONSULT BEFORE ORDER</p>",
+    "price": 2000.0,
+    "salePrice": null,
+    "currency": "USD",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_3c008cf5f5354531b5577b9a0721752c~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Each piece is meticulously handcrafted, with production taking approximately 3 months to ensure the highest level of craftsmanship.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_3c008cf5f5354531b5577b9a0721752c~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_2fc5131547584c22af34804fa806267e~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_66811099bdad4f0fb6069c6164d253d1~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_82c77284973f42c9b007e1cf9076404c~mv2.jpg",
+        "sortOrder": 4
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HAND_EMBROIDERED_EMERALD_THOBE_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HAND_EMBROIDERED_EMERALD_THOBE_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HAND_EMBROIDERED_EMERALD_THOBE_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HAND_EMBROIDERED_EMERALD_THOBE_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "HAND_EMBROIDERED_EMERALD_THOBE_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 2
+  },
+  {
+    "name": "Majdalawi Thobe in Green",
+    "slug": "majdalawi-thobe-in-green",
+    "shortDescription": "Majdalawi Thobe in Green: A traditional statement piece inspired by Palestinian heritage.",
+    "fullDescription": "Majdalawi Thobe in Green is part of Maie Couture's curated edit, designed for heritage-inspired craftsmanship and traditional detailing. Crafted with premium materials and careful finishing, each piece balances timeless elegance with modern sophistication.",
+    "price": 2500.0,
+    "salePrice": null,
+    "currency": "USD",
+    "mainImage": "https://static.wixstatic.com/media/e126e7_6e95c2ae593248509367dedbcceaa895~mv2.jpg",
+    "available": true,
+    "published": true,
+    "featured": false,
+    "purchaseType": "DIRECT_PURCHASE",
+    "productStatus": "EVERGREEN",
+    "madeToOrder": false,
+    "leadTimeNote": "Each piece is meticulously handcrafted, with production taking approximately 3 months to ensure the highest level of craftsmanship.",
+    "images": [
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_6e95c2ae593248509367dedbcceaa895~mv2.jpg",
+        "sortOrder": 1
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_709c6a2c6c6046e1a996134dc218bf09~mv2.jpg",
+        "sortOrder": 2
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_191ceeaa594d446690c1ee55c7df57a1~mv2.jpg",
+        "sortOrder": 3
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_c741658c3d9449058e3fd89ff43c9c76~mv2.jpg",
+        "sortOrder": 4
+      },
+      {
+        "imageUrl": "https://static.wixstatic.com/media/e126e7_32f9f1f76d144ddd9bf174a1cadddcd8~mv2.jpg",
+        "sortOrder": 5
+      }
+    ],
+    "variants": [
+      {
+        "size": "XS",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MAJDALAWI_THOBE_IN_GREEN_XS",
+        "madeToOrder": false
+      },
+      {
+        "size": "S",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MAJDALAWI_THOBE_IN_GREEN_S",
+        "madeToOrder": false
+      },
+      {
+        "size": "M",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MAJDALAWI_THOBE_IN_GREEN_M",
+        "madeToOrder": false
+      },
+      {
+        "size": "L",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MAJDALAWI_THOBE_IN_GREEN_L",
+        "madeToOrder": false
+      },
+      {
+        "size": "XL",
+        "color": null,
+        "stockQuantity": 0,
+        "sku": "MAJDALAWI_THOBE_IN_GREEN_XL",
+        "madeToOrder": false
+      }
+    ],
+    "categoryId": 2
+  }
+]

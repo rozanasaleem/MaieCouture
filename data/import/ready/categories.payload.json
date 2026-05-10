@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Bridal",
+    "slug": "bridal",
+    "description": "Bridal couture for private fittings, katb ktab, engagement, and ceremony dressing.",
+    "coverImage": null,
+    "published": true,
+    "sortOrder": 1
+  },
+  {
+    "name": "Traditional Wear",
+    "slug": "traditional-wear",
+    "description": "Palestinian heritage silhouettes and traditional embroidered statements.",
+    "coverImage": null,
+    "published": true,
+    "sortOrder": 2
+  },
+  {
+    "name": "Evening Wear",
+    "slug": "evening-wear",
+    "description": "Elevated evening pieces designed for events, receptions, and special occasions.",
+    "coverImage": null,
+    "published": true,
+    "sortOrder": 3
+  },
+  {
+    "name": "Ready-to-Wear",
+    "slug": "ready-to-wear",
+    "description": "Curated day-to-evening wardrobe staples available for direct purchase.",
+    "coverImage": null,
+    "published": true,
+    "sortOrder": 4
+  },
+  {
+    "name": "Accessories",
+    "slug": "accessories",
+    "description": "Refined accessories including bags, wallets, and finishing touches.",
+    "coverImage": null,
+    "published": true,
+    "sortOrder": 5
+  },
+  {
+    "name": "Home",
+    "slug": "home",
+    "description": "Home and lifestyle pieces including soaps and gifting essentials.",
+    "coverImage": null,
+    "published": true,
+    "sortOrder": 6
+  }
+]

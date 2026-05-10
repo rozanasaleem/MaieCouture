@@ -1,0 +1,82 @@
+[
+  {
+    "name": "SOAP",
+    "slug": "soap",
+    "description": "SOAP pieces for Maie Couture.",
+    "coverImage": null,
+    "published": true,
+    "sortOrder": 1
+  },
+  {
+    "name": "DRESSES",
+    "slug": "dresses",
+    "description": "DRESSES pieces for Maie Couture.",
+    "coverImage": null,
+    "published": true,
+    "sortOrder": 2
+  },
+  {
+    "name": "bags",
+    "slug": "bags",
+    "description": "bags pieces for Maie Couture.",
+    "coverImage": null,
+    "published": true,
+    "sortOrder": 3
+  },
+  {
+    "name": "OUTWEAR",
+    "slug": "outwear",
+    "description": "OUTWEAR pieces for Maie Couture.",
+    "coverImage": null,
+    "published": true,
+    "sortOrder": 4
+  },
+  {
+    "name": "SETS",
+    "slug": "sets",
+    "description": "SETS pieces for Maie Couture.",
+    "coverImage": null,
+    "published": true,
+    "sortOrder": 5
+  },
+  {
+    "name": "JUMPSUITS",
+    "slug": "jumpsuits",
+    "description": "JUMPSUITS pieces for Maie Couture.",
+    "coverImage": null,
+    "published": true,
+    "sortOrder": 6
+  },
+  {
+    "name": "ABAYAS",
+    "slug": "abayas",
+    "description": "ABAYAS pieces for Maie Couture.",
+    "coverImage": null,
+    "published": true,
+    "sortOrder": 7
+  },
+  {
+    "name": "Bridal Katb Ktab",
+    "slug": "bridal-katb-ktab",
+    "description": "Bridal Katb Ktab pieces for Maie Couture.",
+    "coverImage": null,
+    "published": true,
+    "sortOrder": 8
+  },
+  {
+    "name": "Engagement Dresses",
+    "slug": "engagement-dresses",
+    "description": "Engagement Dresses pieces for Maie Couture.",
+    "coverImage": null,
+    "published": true,
+    "sortOrder": 9
+  },
+  {
+    "name": "TRADITIONAL WEAR",
+    "slug": "traditional-wear",
+    "description": "TRADITIONAL WEAR pieces for Maie Couture.",
+    "coverImage": null,
+    "published": true,
+    "sortOrder": 10
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "categoriesPayloadCount": 6,
+  "productsStagingCount": 78,
+  "productsReadyCount": 78,
+  "unresolvedProductsWithoutCategoryId": 0,
+  "outputs": {
+    "categoriesPayload": "/Users/rozanamatar/Documents/maie couture/data/import/ready/categories.payload.json",
+    "categoryMapTemplate": "/Users/rozanamatar/Documents/maie couture/data/import/ready/category-map.template.json",
+    "productsStaging": "/Users/rozanamatar/Documents/maie couture/data/import/ready/products.payload.staging.json",
+    "productsReady": "/Users/rozanamatar/Documents/maie couture/data/import/ready/products.payload.ready.json"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "inputDir": "/Users/rozanamatar/Documents/maie couture/data/import/prefilled",
+  "outputDir": "/Users/rozanamatar/Documents/maie couture/data/import/cleaned",
+  "categoriesWritten": 6,
+  "productsWritten": 84,
+  "variantsWritten": 48,
+  "imagesWritten": 421,
+  "duplicateImagesRemoved": 45,
+  "productCountsByCategory": {
+    "home": 6,
+    "evening-wear": 10,
+    "accessories": 10,
+    "ready-to-wear": 30,
+    "bridal": 17,
+    "traditional-wear": 11
+  },
+  "shortDescriptionsFilled": 58,
+  "fullDescriptionsFilled": 58
+}

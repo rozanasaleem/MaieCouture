@@ -1,0 +1,12 @@
+{
+  "input": "/Users/rozanamatar/Downloads/catalog_products.csv",
+  "productsInCsv": 84,
+  "variantsInCsv": 48,
+  "categoriesPrepared": 10,
+  "productsPrepared": 84,
+  "notes": [
+    "products.staging.json uses categorySlug; map slugs to category IDs before POST /admin/products",
+    "Wix image IDs were expanded to static Wix media URLs",
+    "Review purchaseType/productStatus before final import"
+  ]
+}

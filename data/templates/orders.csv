@@ -1,0 +1,1 @@
+order_number,customer_name,email,phone,shipping_address,shipping_country_code,notes,subtotal_amount,shipping_fee,total_amount,currency,payment_status,order_status,payment_provider,payment_reference,payment_session_id,payment_verified_at,created_at,updated_at
