@@ -5,6 +5,8 @@ import { getProducts } from "@/lib/api";
 import { getLocaleFromCookies } from "@/lib/i18n-server";
 import { ProductSummary } from "@/lib/types";
 
+const COMING_SOON_MODE = process.env.NEXT_PUBLIC_COMING_SOON === "true";
+
 const READY_WEAR_CARDS = [
   { slug: "abayas", labelEn: "Abayas", labelAr: "عبايات", subtype: "abayas" },
   { slug: "jumpsuits", labelEn: "Jumpsuits", labelAr: "جمبسوت", subtype: "jumpsuits" },
@@ -55,14 +57,62 @@ function matchesReadyWearSubtype(product: ProductSummary, subtype: string) {
 }
 
 export default async function Home() {
-  const products = await getProducts();
+  const locale = await getLocaleFromCookies();
+  const isArabic = locale === "ar";
   const heroImageSrc =
     process.env.NEXT_PUBLIC_HERO_IMAGE_PATH ?? "/hero-image.jpg";
+
+  if (COMING_SOON_MODE) {
+    return (
+      <div className="relative min-h-[100svh] overflow-hidden">
+        <Image
+          src={heroImageSrc}
+          alt={isArabic ? "صورة الغلاف" : "Maie Couture hero"}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.28),rgba(0,0,0,0.45))]" />
+
+        <section className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-6xl items-center px-6 py-24 text-white sm:px-10">
+          <div className="max-w-xl">
+            <p className="text-xs tracking-[0.28em] uppercase text-white/80">
+              {isArabic ? "مي سلامة كوتور" : "Maie Salameh Couture"}
+            </p>
+            <h1 className="mt-4 font-[family-name:var(--font-display)] text-5xl leading-tight sm:text-6xl">
+              {isArabic ? "قريبًا" : "Coming Soon"}
+            </h1>
+            <p className="mt-4 max-w-lg text-sm leading-7 text-white/85 sm:text-base">
+              {isArabic
+                ? "نجهّز تجربة تسوّق جديدة تجمع بين الحرفية الفلسطينية والرقي المعاصر. ترقبوا الإطلاق قريبًا."
+                : "We are preparing a refined new online experience that blends Palestinian craftsmanship with modern elegance. Launching soon."}
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex rounded-full bg-white px-6 py-3 text-[10px] tracking-[0.2em] uppercase text-[--ink] transition hover:bg-white/90"
+              >
+                {isArabic ? "تواصلوا معنا" : "Contact Us"}
+              </Link>
+              <Link
+                href="/boutiques"
+                className="inline-flex rounded-full border border-white/60 px-6 py-3 text-[10px] tracking-[0.2em] uppercase text-white transition hover:bg-white/10"
+              >
+                {isArabic ? "فروعنا" : "Visit Boutiques"}
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  const products = await getProducts();
   const founderImageSrc =
     process.env.NEXT_PUBLIC_MAIE_FOUNDER_IMAGE ??
     "/maie-founder.jpg";
-  const locale = await getLocaleFromCookies();
-  const isArabic = locale === "ar";
   const readyWearCards = READY_WEAR_CARDS.map((card) => {
     const image =
       products.find((product) => {
