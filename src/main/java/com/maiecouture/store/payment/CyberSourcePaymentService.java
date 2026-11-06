@@ -152,12 +152,16 @@ public class CyberSourcePaymentService {
                 || !order.getPaymentSessionId().equals(payload.path("metadata").path("ccJti").asText())) {
             throw new IllegalArgumentException("CyberSource result does not match the checkout session");
         }
+        if (evidenceStore != null) evidenceStore.recordCompletion(request.reference(), request.resultJwt());
         JsonNode resultNode = payload.path("data").path("completeResponse");
         if (resultNode.isMissingNode()) resultNode = payload.path("completeResponse");
         if (resultNode.isMissingNode()) resultNode = payload.path("transactionResult");
         if (resultNode.isMissingNode()) resultNode = payload;
         JsonNode details = resultNode.path("details");
         String status = normalizePaymentSignal(resultNode.path("status").asText());
+        String outcome = normalizePaymentSignal(resultNode.path("outcome").asText());
+        if (isFailedPaymentSignal(outcome) || outcome.contains("REVIEW")
+                || outcome.equals("AUTHORIZED") || outcome.equals("PENDING")) status = outcome;
         boolean failed = isFailedPaymentSignal(status);
         if (!failed) {
             if (!request.reference().equals(details.path("clientReferenceInformation").path("code").asText())) {
@@ -165,9 +169,14 @@ public class CyberSourcePaymentService {
             }
             JsonNode amount = details.path("orderInformation").path("amountDetails");
             try {
-                if (new java.math.BigDecimal(amount.path("totalAmount").asText()).compareTo(order.getTotalAmount()) != 0
+                String paymentAmount = firstText(amount, "totalAmount", "authorizedAmount");
+                if (new java.math.BigDecimal(paymentAmount == null ? "" : paymentAmount).compareTo(order.getTotalAmount()) != 0
                         || !providerCurrency(order.getCurrency()).equals(amount.path("currency").asText())) {
                     throw new IllegalArgumentException("CyberSource payment amount or currency does not match");
+                }
+                if (amount.hasNonNull("authorizedAmount")
+                        && new java.math.BigDecimal(amount.path("authorizedAmount").asText()).compareTo(order.getTotalAmount()) != 0) {
+                    throw new IllegalArgumentException("CyberSource authorized amount does not match");
                 }
             } catch (NumberFormatException exception) {
                 throw new IllegalArgumentException("CyberSource payment amount is missing or invalid", exception);

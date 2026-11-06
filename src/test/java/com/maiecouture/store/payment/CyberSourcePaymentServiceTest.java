@@ -70,6 +70,35 @@ class CyberSourcePaymentServiceTest {
         assertThrows(IllegalArgumentException.class, () -> service.complete(new CyberSourceCompleteRequest("ref-one", "token")));
     }
 
+    @Test void authorizedAmountInReviewResultRemainsPending() throws Exception {
+        when(verifier.verify("token")).thenReturn(mapper.readTree("""
+                {"metadata":{"ccJti":"capture-session"},"status":"COMPLETED","outcome":"AUTHORIZED_PENDING_REVIEW",
+                 "details":{"clientReferenceInformation":{"code":"ref-one"},
+                 "orderInformation":{"amountDetails":{"authorizedAmount":"100.00","currency":"ILS"}}}}
+                """));
+        var result = service.complete(new CyberSourceCompleteRequest("ref-one", "token"));
+        assertEquals(PaymentStatus.PENDING, result.paymentStatus());
+        assertFalse(result.verified());
+        verifyNoInteractions(notifications);
+    }
+
+    @Test void authorizationOutcomeDoesNotPayEvenWhenCompletionStatusIsCompleted() throws Exception {
+        result("COMPLETED", "ref-one", "100.00", "ILS");
+        var payload = (com.fasterxml.jackson.databind.node.ObjectNode) verifier.verify("token");
+        payload.put("outcome", "AUTHORIZED");
+        assertFalse(service.complete(new CyberSourceCompleteRequest("ref-one", "token")).verified());
+        verifyNoInteractions(notifications);
+    }
+
+    @Test void mismatchedAuthorizedAmountCannotBeHiddenByMatchingTotal() throws Exception {
+        result("COMPLETED", "ref-one", "100.00", "ILS");
+        var amounts = (com.fasterxml.jackson.databind.node.ObjectNode) verifier.verify("token")
+                .path("details").path("orderInformation").path("amountDetails");
+        amounts.put("authorizedAmount", "1.00");
+        assertThrows(IllegalArgumentException.class, () -> service.complete(new CyberSourceCompleteRequest("ref-one", "token")));
+        verify(repository, never()).save(any());
+    }
+
     @Test void completedMatchingResultPaysAndNotifiesOnce() throws Exception {
         result("COMPLETED", "ref-one", "100.00", "ILS");
         service.complete(new CyberSourceCompleteRequest("ref-one", "token"));
