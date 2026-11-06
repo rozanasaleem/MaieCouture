@@ -42,6 +42,12 @@ public class CyberSourcePaymentService {
     private final ObjectMapper objectMapper;
     private final RestClient restClient;
     private final CyberSourceResultVerifier resultVerifier;
+    private CyberSourceEvidenceStore evidenceStore;
+
+    @org.springframework.beans.factory.annotation.Autowired
+    void setEvidenceStore(CyberSourceEvidenceStore evidenceStore) {
+        this.evidenceStore = evidenceStore;
+    }
 
     @org.springframework.beans.factory.annotation.Autowired
     public CyberSourcePaymentService(
@@ -99,7 +105,12 @@ public class CyberSourcePaymentService {
         ensureConfigured();
 
         String requestBody = toJson(captureContextPayload(order));
-        CaptureContextDetails captureContext = captureContextDetails(postCaptureContext(requestBody));
+        var response = postCaptureContext(requestBody);
+        if (evidenceStore != null) {
+            evidenceStore.record(order.getId(), reference, baseUrl() + CAPTURE_CONTEXT_PATH,
+                    requestBody, response.getStatusCode().value(), response.getBody());
+        }
+        CaptureContextDetails captureContext = captureContextDetails(response.getBody());
 
         String contextId = captureContext.contextId();
         if (!StringUtils.hasText(contextId)) {
@@ -256,7 +267,7 @@ public class CyberSourcePaymentService {
         return payload;
     }
 
-    private String postCaptureContext(String requestBody) {
+    private org.springframework.http.ResponseEntity<String> postCaptureContext(String requestBody) {
         String host = host();
         String date = HTTP_DATE.format(ZonedDateTime.now(ZoneOffset.UTC));
         String digest = digest(requestBody);
@@ -272,7 +283,7 @@ public class CyberSourcePaymentService {
                 .header("Signature", signature)
                 .body(requestBody)
                 .retrieve()
-                .body(String.class);
+                .toEntity(String.class);
     }
 
     private String signature(String host, String date, String digest) {
