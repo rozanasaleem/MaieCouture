@@ -3,16 +3,16 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { cartCount, readCart } from "@/lib/cart";
+import { Locale, t } from "@/lib/i18n-shared";
 
 export function CartIndicator({
   locale,
   lightOnDark = false,
 }: {
-  locale: "en" | "ar";
+  locale: Locale;
   lightOnDark?: boolean;
 }) {
   const [count, setCount] = useState(0);
-  const isArabic = locale === "ar";
 
   useEffect(() => {
     const sync = () => setCount(cartCount(readCart()));
@@ -33,7 +33,7 @@ export function CartIndicator({
           ? "border-white/60 text-white hover:bg-white/12"
           : "border-[--line] text-[--ink] hover:bg-[--stone]"
       }`}
-      aria-label={isArabic ? "السلة" : "Cart"}
+      aria-label={t(locale, { en: "Cart", ar: "السلة", es: "Carrito" })}
     >
       <svg
         aria-hidden="true"

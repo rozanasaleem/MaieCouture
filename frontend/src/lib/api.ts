@@ -1,5 +1,7 @@
 import {
   Category,
+  CyberSourceCompleteResponse,
+  CyberSourceInitializeResponse,
   LahzaInitializeResponse,
   LahzaVerificationResponse,
   OrderResponse,
@@ -9,7 +11,9 @@ import {
 } from "@/lib/types";
 
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8080/api/v1";
+  typeof window === "undefined"
+    ? process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8080/api/v1"
+    : "/api/v1";
 const HIDDEN_TRIAL_SLUGS = new Set([
   "layal-draped-evening-dress",
   "noor-bridal-corset-dress",
@@ -71,7 +75,10 @@ async function postJson<T, B>(path: string, body: B): Promise<T> {
     let message = "Request failed";
     try {
       const error = await response.json();
-      message = error.message ?? message;
+      const details = Array.isArray(error.details)
+        ? error.details.filter(Boolean).join(" ")
+        : "";
+      message = [error.message ?? message, details].filter(Boolean).join(": ");
     } catch {
       message = `${message}: ${response.status}`;
     }
@@ -139,15 +146,29 @@ export async function quoteShipping(
   subtotalAmount: number,
   shippingCountryCode: string,
   currency: string,
+  shippingAreaCode?: string | null,
+  items?: Array<{ productId: number; quantity: number }>,
 ) {
-  return postJson<ShippingQuote, { subtotalAmount: number; shippingCountryCode: string; currency: string }>(
+  return postJson<ShippingQuote, {
+    subtotalAmount: number;
+    shippingCountryCode: string;
+    shippingAreaCode?: string | null;
+    currency: string;
+    items?: Array<{ productId: number; quantity: number }>;
+  }>(
     "/public/shipping/quote",
     {
       subtotalAmount,
       shippingCountryCode,
+      shippingAreaCode,
       currency,
+      items,
     },
   );
+}
+
+export async function getCyberSourcePaymentStatus(reference: string) {
+  return getJson<CyberSourceCompleteResponse>(`/public/payments/cybersource/status?reference=${encodeURIComponent(reference)}`);
 }
 
 export async function createOrder(payload: {
@@ -156,6 +177,8 @@ export async function createOrder(payload: {
   phone?: string;
   shippingAddress: string;
   shippingCountryCode: string;
+  shippingAreaCode?: string | null;
+  currency: string;
   notes?: string;
   items: Array<{ productId: number; variantId?: number | null; quantity: number }>;
 }) {
@@ -169,6 +192,25 @@ export async function initializeLahzaPayment(payload: {
 }) {
   return postJson<LahzaInitializeResponse, typeof payload>(
     "/public/payments/lahza/initialize",
+    payload,
+  );
+}
+
+export async function initializeCyberSourcePayment(payload: {
+  orderId: number;
+}) {
+  return postJson<CyberSourceInitializeResponse, typeof payload>(
+    "/public/payments/cybersource/initialize",
+    payload,
+  );
+}
+
+export async function completeCyberSourcePayment(payload: {
+  reference: string;
+  resultJwt: string;
+}) {
+  return postJson<CyberSourceCompleteResponse, typeof payload>(
+    "/public/payments/cybersource/complete",
     payload,
   );
 }

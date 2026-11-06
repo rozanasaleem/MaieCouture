@@ -3,6 +3,7 @@ import { ProductCard } from "@/components/product-card";
 import { getProducts } from "@/lib/api";
 import { ProductSummary } from "@/lib/types";
 import { getLocaleFromCookies } from "@/lib/i18n-server";
+import { Locale, t } from "@/lib/i18n-shared";
 
 type SearchParams = Promise<{
   category?: string;
@@ -16,6 +17,7 @@ type ShopHubCard = {
   slug: string;
   labelEn: string;
   labelAr: string;
+  labelEs: string;
   category: string;
 };
 
@@ -23,6 +25,7 @@ type ReadyWearCard = {
   slug: string;
   labelEn: string;
   labelAr: string;
+  labelEs: string;
   subtype: string;
 };
 
@@ -30,6 +33,7 @@ type BridalCard = {
   slug: string;
   labelEn: string;
   labelAr: string;
+  labelEs: string;
   subtype: string;
 };
 
@@ -37,29 +41,30 @@ type AccessoriesCard = {
   slug: string;
   labelEn: string;
   labelAr: string;
+  labelEs: string;
   subtype: string;
 };
 
 const READY_WEAR_CARDS: ReadyWearCard[] = [
-  { slug: "abayas", labelEn: "Abayas", labelAr: "عبايات", subtype: "abayas" },
-  { slug: "jumpsuits", labelEn: "Jumpsuits", labelAr: "جمبسوت", subtype: "jumpsuits" },
-  { slug: "sets", labelEn: "Sets", labelAr: "أطقم", subtype: "sets" },
-  { slug: "tops-and-blouses", labelEn: "Tops & Blouses", labelAr: "توبات وبلوزات", subtype: "tops-and-blouses" },
-  { slug: "vests-and-blazers", labelEn: "Vests & Blazers", labelAr: "فيستات وبلايزر", subtype: "vests-and-blazers" },
-  { slug: "dresses", labelEn: "Dresses", labelAr: "فساتين", subtype: "dresses" },
+  { slug: "abayas", labelEn: "Abayas", labelAr: "عبايات", labelEs: "Abayas", subtype: "abayas" },
+  { slug: "jumpsuits", labelEn: "Jumpsuits", labelAr: "جمبسوت", labelEs: "Monos", subtype: "jumpsuits" },
+  { slug: "sets", labelEn: "Sets", labelAr: "أطقم", labelEs: "Conjuntos", subtype: "sets" },
+  { slug: "tops-and-blouses", labelEn: "Tops & Blouses", labelAr: "توبات وبلوزات", labelEs: "Tops y blusas", subtype: "tops-and-blouses" },
+  { slug: "vests-and-blazers", labelEn: "Vests & Blazers", labelAr: "فيستات وبلايزر", labelEs: "Chalecos y blazers", subtype: "vests-and-blazers" },
+  { slug: "dresses", labelEn: "Dresses", labelAr: "فساتين", labelEs: "Vestidos", subtype: "dresses" },
 ];
 
 const BRIDAL_CARDS: BridalCard[] = [
-  { slug: "bridal-gowns", labelEn: "Bridal Gowns", labelAr: "فساتين الزفاف", subtype: "bridal-gowns" },
-  { slug: "katb-ktab", labelEn: "Katb Ktab & Jaha Dresses", labelAr: "كتب كتاب وجاهة", subtype: "katb-ktab" },
-  { slug: "henna-dresses", labelEn: "Henna Dresses", labelAr: "فساتين حنة", subtype: "henna-dresses" },
+  { slug: "bridal-gowns", labelEn: "Bridal Gowns", labelAr: "فساتين الزفاف", labelEs: "Vestidos de novia", subtype: "bridal-gowns" },
+  { slug: "katb-ktab", labelEn: "Katb Ktab & Jaha Dresses", labelAr: "كتب كتاب وجاهة", labelEs: "Vestidos Katb Ktab y Jaha", subtype: "katb-ktab" },
+  { slug: "henna-dresses", labelEn: "Henna Dresses", labelAr: "فساتين حنة", labelEs: "Vestidos de henna", subtype: "henna-dresses" },
 ];
 
 const ACCESSORIES_CARDS: AccessoriesCard[] = [
-  { slug: "shoes", labelEn: "Shoes", labelAr: "أحذية", subtype: "shoes" },
-  { slug: "bags", labelEn: "Bags", labelAr: "حقائب", subtype: "bags" },
-  { slug: "clutches", labelEn: "Clutches", labelAr: "كلاتش", subtype: "clutches" },
-  { slug: "scarves", labelEn: "Scarves", labelAr: "أوشحة", subtype: "scarves" },
+  { slug: "shoes", labelEn: "Shoes", labelAr: "أحذية", labelEs: "Zapatos", subtype: "shoes" },
+  { slug: "bags", labelEn: "Bags", labelAr: "حقائب", labelEs: "Bolsos", subtype: "bags" },
+  { slug: "clutches", labelEn: "Clutches", labelAr: "كلاتش", labelEs: "Clutches", subtype: "clutches" },
+  { slug: "scarves", labelEn: "Scarves", labelAr: "أوشحة", labelEs: "Panuelos", subtype: "scarves" },
 ];
 
 const SHOP_HUB_CARDS: ShopHubCard[] = [
@@ -67,21 +72,31 @@ const SHOP_HUB_CARDS: ShopHubCard[] = [
     slug: "ready-to-wear",
     labelEn: "Ready to Wear",
     labelAr: "جاهز للارتداء",
+    labelEs: "Listo para usar",
     category: "ready-to-wear",
   },
   {
     slug: "accessories",
     labelEn: "Accessories",
     labelAr: "إكسسوارات",
+    labelEs: "Accesorios",
     category: "accessories",
   },
   {
     slug: "home",
     labelEn: "Home",
     labelAr: "المنزل",
+    labelEs: "Hogar",
     category: "home",
   },
 ];
+
+function localizedLabel(
+  locale: Locale,
+  labels: { en: string; ar: string; es: string },
+) {
+  return locale === "ar" ? labels.ar : locale === "es" ? labels.es : labels.en;
+}
 
 const SUBTYPE_TOKENS: Record<string, string[]> = {
   "ready-to-wear:abayas": ["abaya"],
@@ -211,13 +226,26 @@ function hasProductsForCategory(products: ProductSummary[], category: string) {
   );
 }
 
-function readableHeading(label?: string, category?: string) {
+function readableHeading(label: string | undefined, category: string | undefined, locale: Locale) {
   if (label) {
     return label;
   }
 
   if (!category) {
-    return "The Shop";
+    return t(locale, { en: "The Shop", ar: "المتجر", es: "La tienda" });
+  }
+
+  const categoryLabels: Record<string, { en: string; ar: string; es: string }> = {
+    "ready-to-wear": { en: "Ready to Wear", ar: "جاهز للارتداء", es: "Listo para usar" },
+    accessories: { en: "Accessories", ar: "إكسسوارات", es: "Accesorios" },
+    home: { en: "Home", ar: "المنزل", es: "Hogar" },
+    bridal: { en: "Bridal", ar: "العرائس", es: "Novia" },
+    "evening-wear": { en: "Evening Wear", ar: "ملابس السهرة", es: "Ropa de noche" },
+    "traditional-wear": { en: "Traditional Wear", ar: "الزي التقليدي", es: "Ropa tradicional" },
+  };
+
+  if (categoryLabels[category]) {
+    return localizedLabel(locale, categoryLabels[category]);
   }
 
   return category
@@ -233,7 +261,6 @@ export default async function ShopPage({
 }) {
   const products = await getProducts();
   const locale = await getLocaleFromCookies();
-  const isArabic = locale === "ar";
   const { category, purchaseType, label, q, subtype } = await searchParams;
   const showShopHub = !category && !q && !purchaseType && !subtype;
 
@@ -279,28 +306,26 @@ export default async function ShopPage({
     return matchesCategory && matchesPurchaseType && matchesSubtypeFilter && matchesQuery;
   });
 
-  const heading = readableHeading(label, category);
+  const heading = readableHeading(label, category, locale);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-10">
       <div className="max-w-3xl">
         <p className="text-xs tracking-[0.26em] uppercase text-[--muted]">
           {category || purchaseType
-            ? isArabic
-              ? "تشكيلة مختارة"
-              : "Curated edit"
-            : isArabic
-              ? "المتجر"
-              : "The shop"}
+            ? t(locale, { en: "Curated edit", ar: "تشكيلة مختارة", es: "Edicion curada" })
+            : t(locale, { en: "The shop", ar: "المتجر", es: "La tienda" })}
         </p>
         <h1 className="mt-3 font-[family-name:var(--font-display)] text-[2rem] text-[--ink] sm:text-[2.4rem]">
           {heading}
         </h1>
         {purchaseType === "APPOINTMENT_ONLY" && (
           <p className="mt-3 max-w-2xl text-sm leading-7 text-[--muted]">
-            {isArabic
-              ? "هذه القطع مخصصة للاستكشاف وحجز موعد خاص، وليست للشراء المباشر عبر السلة."
-              : "These pieces are view-only and available through private appointment."}
+            {t(locale, {
+              en: "These pieces are view-only and available through private appointment.",
+              ar: "هذه القطع مخصصة للاستكشاف وحجز موعد خاص، وليست للشراء المباشر عبر السلة.",
+              es: "Estas piezas son solo para descubrir y estan disponibles mediante cita privada.",
+            })}
           </p>
         )}
       </div>
@@ -312,7 +337,7 @@ export default async function ShopPage({
             return (
               <Link
                 key={card.slug}
-                href={`/shop?category=ready-to-wear&label=${encodeURIComponent(isArabic ? card.labelAr : card.labelEn)}&subtype=${encodeURIComponent(card.subtype)}`}
+                href={`/shop?category=ready-to-wear&label=${encodeURIComponent(localizedLabel(locale, { en: card.labelEn, ar: card.labelAr, es: card.labelEs }))}&subtype=${encodeURIComponent(card.subtype)}`}
                 className="group relative block aspect-[4/5] overflow-hidden rounded-md border border-[--line] bg-[linear-gradient(180deg,#f7f4ee_0%,#ece5da_100%)]"
               >
                 {image && (
@@ -324,7 +349,7 @@ export default async function ShopPage({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/62 via-black/16 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-4">
                   <p className="font-[family-name:var(--font-display)] text-lg text-white sm:text-xl">
-                    {isArabic ? card.labelAr : card.labelEn}
+                    {localizedLabel(locale, { en: card.labelEn, ar: card.labelAr, es: card.labelEs })}
                   </p>
                 </div>
               </Link>
@@ -338,7 +363,7 @@ export default async function ShopPage({
             return (
               <Link
                 key={card.slug}
-                href={`/shop?category=bridal&label=${encodeURIComponent(isArabic ? card.labelAr : card.labelEn)}&subtype=${encodeURIComponent(card.subtype)}`}
+                href={`/shop?category=bridal&label=${encodeURIComponent(localizedLabel(locale, { en: card.labelEn, ar: card.labelAr, es: card.labelEs }))}&subtype=${encodeURIComponent(card.subtype)}`}
                 className="group relative block aspect-[4/5] overflow-hidden rounded-md border border-[--line] bg-[linear-gradient(180deg,#f7f4ee_0%,#ece5da_100%)]"
               >
                 {image && (
@@ -350,7 +375,7 @@ export default async function ShopPage({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/62 via-black/16 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-4">
                   <p className="font-[family-name:var(--font-display)] text-lg text-white sm:text-xl">
-                    {isArabic ? card.labelAr : card.labelEn}
+                    {localizedLabel(locale, { en: card.labelEn, ar: card.labelAr, es: card.labelEs })}
                   </p>
                 </div>
               </Link>
@@ -364,7 +389,7 @@ export default async function ShopPage({
             return (
               <Link
                 key={card.slug}
-                href={`/shop?category=accessories&label=${encodeURIComponent(isArabic ? card.labelAr : card.labelEn)}&subtype=${encodeURIComponent(card.subtype)}`}
+                href={`/shop?category=accessories&label=${encodeURIComponent(localizedLabel(locale, { en: card.labelEn, ar: card.labelAr, es: card.labelEs }))}&subtype=${encodeURIComponent(card.subtype)}`}
                 className="group relative block aspect-[4/5] overflow-hidden rounded-md border border-[--line] bg-[linear-gradient(180deg,#f7f4ee_0%,#ece5da_100%)]"
               >
                 {image && (
@@ -376,7 +401,7 @@ export default async function ShopPage({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/62 via-black/16 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-4">
                   <p className="font-[family-name:var(--font-display)] text-lg text-white sm:text-xl">
-                    {isArabic ? card.labelAr : card.labelEn}
+                    {localizedLabel(locale, { en: card.labelEn, ar: card.labelAr, es: card.labelEs })}
                   </p>
                 </div>
               </Link>
@@ -395,7 +420,7 @@ export default async function ShopPage({
               <Link
                 key={card.slug}
                 href={`/shop?category=${encodeURIComponent(card.category)}&label=${encodeURIComponent(
-                  isArabic ? card.labelAr : card.labelEn,
+                  localizedLabel(locale, { en: card.labelEn, ar: card.labelAr, es: card.labelEs }),
                 )}`}
                 className="group relative block aspect-[4/5] overflow-hidden rounded-md border border-[--line] bg-[linear-gradient(180deg,#f7f4ee_0%,#ece5da_100%)]"
               >
@@ -408,7 +433,7 @@ export default async function ShopPage({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/62 via-black/16 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-4">
                   <p className="font-[family-name:var(--font-display)] text-lg text-white sm:text-xl">
-                    {isArabic ? card.labelAr : card.labelEn}
+                    {localizedLabel(locale, { en: card.labelEn, ar: card.labelAr, es: card.labelEs })}
                   </p>
                 </div>
               </Link>
@@ -418,16 +443,18 @@ export default async function ShopPage({
       ) : (
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product.id} product={product} locale={locale} />
           ))}
         </div>
       )}
 
       {filteredProducts.length === 0 && (
         <div className="mt-10 rounded-[2rem] border border-[--line] bg-[var(--panel)] px-6 py-8 text-sm text-[--muted]">
-          {isArabic
-            ? "لا توجد قطع مطابقة في هذا القسم حالياً."
-            : "No matching pieces were found in this section right now."}
+          {t(locale, {
+            en: "No matching pieces were found in this section right now.",
+            ar: "لا توجد قطع مطابقة في هذا القسم حالياً.",
+            es: "No se encontraron piezas coincidentes en esta seccion por ahora.",
+          })}
         </div>
       )}
     </div>

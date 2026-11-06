@@ -1,11 +1,28 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 import { ModalShell } from "@/components/modal-shell";
-import { Locale } from "@/lib/i18n-shared";
+import { Locale, t } from "@/lib/i18n-shared";
+import { isShippingCountry, SHIPPING_COUNTRY_CODES } from "@/lib/shipping-countries";
 
 const STORAGE_KEY = "maie_selected_country";
 const FALLBACK_COUNTRY = "PS";
+
+function subscribeCountry(listener: () => void) {
+  window.addEventListener("storage", listener);
+  window.addEventListener("maie-country-updated", listener);
+  return () => {
+    window.removeEventListener("storage", listener);
+    window.removeEventListener("maie-country-updated", listener);
+  };
+}
+
+function readCountry() {
+  const saved = normalizeStoredCountryCode(window.localStorage.getItem(STORAGE_KEY));
+  if (saved) return saved;
+  const region = Intl.DateTimeFormat().resolvedOptions().locale.split("-")[1]?.toUpperCase();
+  return region && countryOptionsEn.some((option) => option.code === region) ? region : FALLBACK_COUNTRY;
+}
 
 const fallbackCountryOptionsEn = [
   { code: "PS", name: "Palestine" },
@@ -21,48 +38,35 @@ const fallbackCountryOptionsAr = [
   { code: "AE", name: "الإمارات العربية المتحدة" },
 ];
 
-function buildRegionCodesFromPairs() {
-  const regionCodes: string[] = [];
-  for (let first = 65; first <= 90; first += 1) {
-    for (let second = 65; second <= 90; second += 1) {
-      regionCodes.push(`${String.fromCharCode(first)}${String.fromCharCode(second)}`);
-    }
-  }
-  return regionCodes;
-}
+const fallbackCountryOptionsEs = [
+  { code: "PS", name: "Palestina" },
+  { code: "US", name: "Estados Unidos" },
+  { code: "GB", name: "Reino Unido" },
+  { code: "AE", name: "Emiratos Arabes Unidos" },
+];
 
-function buildCountryOptions(displayLocale: "en" | "ar") {
-  const intlWithRegions = Intl as typeof Intl & {
-    supportedValuesOf?: (key: string) => string[];
-  };
-
+function buildCountryOptions(displayLocale: "en" | "ar" | "es") {
   if (typeof Intl === "undefined" || typeof Intl.DisplayNames !== "function") {
-    return displayLocale === "ar" ? fallbackCountryOptionsAr : fallbackCountryOptionsEn;
+    if (displayLocale === "ar") {
+      return fallbackCountryOptionsAr;
+    }
+    if (displayLocale === "es") {
+      return fallbackCountryOptionsEs;
+    }
+    return fallbackCountryOptionsEn;
   }
 
   const names = new Intl.DisplayNames([displayLocale], { type: "region" });
-  let regionCodes: string[] = [];
-
-  try {
-    if (typeof intlWithRegions.supportedValuesOf === "function") {
-      regionCodes = intlWithRegions
-        .supportedValuesOf("region")
-        .filter((code) => /^[A-Z]{2}$/.test(code));
-    } else {
-      regionCodes = buildRegionCodesFromPairs();
-    }
-  } catch {
-    regionCodes = buildRegionCodesFromPairs();
-  }
-
-  const options = regionCodes
+  const options = SHIPPING_COUNTRY_CODES
     .map((code) => ({
       code,
       name:
         code === "PS"
           ? displayLocale === "ar"
             ? "فلسطين"
-            : "Palestine"
+            : displayLocale === "es"
+              ? "Palestina"
+              : "Palestine"
           : (names.of(code) ?? code),
     }))
     .filter((option) => option.code !== "IL")
@@ -72,7 +76,12 @@ function buildCountryOptions(displayLocale: "en" | "ar") {
   if (!options.some((option) => option.code === "PS")) {
     options.push({
       code: "PS",
-      name: displayLocale === "ar" ? "فلسطين" : "Palestine",
+      name:
+        displayLocale === "ar"
+          ? "فلسطين"
+          : displayLocale === "es"
+            ? "Palestina"
+            : "Palestine",
     });
     options.sort((a, b) => a.name.localeCompare(b.name));
   }
@@ -80,11 +89,18 @@ function buildCountryOptions(displayLocale: "en" | "ar") {
   if (options.length > 0) {
     return options;
   }
-  return displayLocale === "ar" ? fallbackCountryOptionsAr : fallbackCountryOptionsEn;
+  if (displayLocale === "ar") {
+    return fallbackCountryOptionsAr;
+  }
+  if (displayLocale === "es") {
+    return fallbackCountryOptionsEs;
+  }
+  return fallbackCountryOptionsEn;
 }
 
 const countryOptionsEn = buildCountryOptions("en");
 const countryOptionsAr = buildCountryOptions("ar");
+const countryOptionsEs = buildCountryOptions("es");
 
 function normalizeStoredCountryCode(raw: string | null): string | null {
   if (!raw) {
@@ -92,7 +108,7 @@ function normalizeStoredCountryCode(raw: string | null): string | null {
   }
 
   const upper = raw.trim().toUpperCase();
-  if (/^[A-Z]{2}$/.test(upper)) {
+  if (isShippingCountry(upper)) {
     return upper;
   }
 
@@ -105,7 +121,13 @@ function normalizeStoredCountryCode(raw: string | null): string | null {
   const byArabicName = countryOptionsAr.find(
     (option) => option.name.toLowerCase() === raw.trim().toLowerCase(),
   );
-  return byArabicName?.code ?? null;
+  if (byArabicName?.code) {
+    return byArabicName.code;
+  }
+  const bySpanishName = countryOptionsEs.find(
+    (option) => option.name.toLowerCase() === raw.trim().toLowerCase(),
+  );
+  return bySpanishName?.code ?? null;
 }
 
 export function CountrySelector({
@@ -121,28 +143,20 @@ export function CountrySelector({
 }) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
-  const isArabic = locale === "ar";
-  const countryOptions = isArabic ? countryOptionsAr : countryOptionsEn;
-  const [countryCode, setCountryCode] = useState(() => {
-    if (typeof window === "undefined") {
-      return FALLBACK_COUNTRY;
-    }
-    const saved = normalizeStoredCountryCode(window.localStorage.getItem(STORAGE_KEY));
-    if (saved) {
-      window.localStorage.setItem(STORAGE_KEY, saved);
-      return saved;
-    }
-    const locale = Intl.DateTimeFormat().resolvedOptions().locale;
-    const parsed = locale.split("-")[1]?.toUpperCase();
-    const supported = countryOptionsEn.some((option) => option.code === parsed);
-    const initial = supported && parsed ? parsed : FALLBACK_COUNTRY;
-    window.localStorage.setItem(STORAGE_KEY, initial);
-    return initial;
-  });
+  const countryOptions =
+    locale === "ar" ? countryOptionsAr : locale === "es" ? countryOptionsEs : countryOptionsEn;
+  const countryCode = useSyncExternalStore(subscribeCountry, readCountry, () => FALLBACK_COUNTRY);
 
   const selectedCountryLabel = useMemo(() => {
-    return countryOptions.find((option) => option.code === countryCode)?.name ?? "Country";
-  }, [countryCode, countryOptions]);
+    return (
+      countryOptions.find((option) => option.code === countryCode)?.name ??
+      t(locale, {
+        en: "Country",
+        ar: "البلد",
+        es: "Pais",
+      })
+    );
+  }, [countryCode, countryOptions, locale]);
 
   const filteredOptions = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -157,8 +171,8 @@ export function CountrySelector({
   }, [countryOptions, search]);
 
   function chooseCountry(code: string) {
-    setCountryCode(code);
     window.localStorage.setItem(STORAGE_KEY, code);
+    window.dispatchEvent(new Event("maie-country-updated"));
     setOpen(false);
   }
 
@@ -193,18 +207,32 @@ export function CountrySelector({
       <ModalShell
         open={open}
         onClose={() => setOpen(false)}
-        title={isArabic ? "اختر البلد" : "Select Country"}
-        closeLabel={isArabic ? "إغلاق" : "Close"}
+        title={t(locale, {
+          en: "Select Country",
+          ar: "اختر البلد",
+          es: "Seleccionar pais",
+        })}
+        closeLabel={t(locale, {
+          en: "Close",
+          ar: "إغلاق",
+          es: "Cerrar",
+        })}
       >
         <p className="mb-4 text-sm text-[--muted]">
-          {isArabic
-            ? "اختر بلدك لتوضيح الشحن وتجربة الدفع."
-            : "Choose your country for shipping context and checkout clarity."}
+          {t(locale, {
+            en: "Choose your country for shipping context and checkout clarity.",
+            ar: "اختر بلدك لتوضيح الشحن وتجربة الدفع.",
+            es: "Elige tu pais para aclarar el envio y la experiencia de pago.",
+          })}
         </p>
         <input
           value={search}
           onChange={(event) => setSearch(event.target.value)}
-          placeholder={isArabic ? "ابحث عن البلد" : "Search country"}
+          placeholder={t(locale, {
+            en: "Search country",
+            ar: "ابحث عن البلد",
+            es: "Buscar pais",
+          })}
           className="mb-4 w-full rounded-xl border border-[--line] px-4 py-3 text-sm text-[--ink] outline-none focus:border-[--ink]"
         />
         <div className="max-h-72 space-y-2 overflow-y-auto pr-1">
@@ -230,7 +258,11 @@ export function CountrySelector({
             onClick={() => setOpen(false)}
             className="rounded-full border border-[--line] px-4 py-2 text-[11px] tracking-[0.16em] uppercase text-[--ink] transition hover:bg-[--stone]"
           >
-            {isArabic ? "متابعة التصفح" : "Continue browsing"}
+            {t(locale, {
+              en: "Continue browsing",
+              ar: "متابعة التصفح",
+              es: "Seguir navegando",
+            })}
           </button>
         </div>
       </ModalShell>

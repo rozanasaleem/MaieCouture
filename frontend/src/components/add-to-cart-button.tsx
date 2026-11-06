@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { addToCart } from "@/lib/cart";
+import { Locale, t } from "@/lib/i18n-shared";
 
 type AddToCartButtonProps = {
   productId: number;
@@ -14,7 +15,7 @@ type AddToCartButtonProps = {
   currency: string;
   unitPrice: number | null;
   purchaseType: "DIRECT_PURCHASE" | "APPOINTMENT_ONLY" | "INQUIRE_ONLY";
-  locale: "en" | "ar";
+  locale: Locale;
   quantity?: number;
 };
 
@@ -33,7 +34,6 @@ export function AddToCartButton({
   quantity = 1,
 }: AddToCartButtonProps) {
   const [added, setAdded] = useState(false);
-  const isArabic = locale === "ar";
   const normalizedPurchaseType = String(purchaseType ?? "")
     .trim()
     .toUpperCase();
@@ -70,16 +70,10 @@ export function AddToCartButton({
       className="mt-3 inline-flex rounded-full border border-[#171513] bg-[#171513] px-6 py-3 text-xs tracking-[0.2em] uppercase text-white transition hover:bg-[#2a2622] disabled:cursor-not-allowed disabled:border-[#8a857e] disabled:bg-[#8a857e] disabled:text-white/90"
     >
       {added
-        ? isArabic
-          ? "تمت الإضافة"
-          : "Added"
+        ? t(locale, { en: "Added", ar: "تمت الإضافة", es: "Anadido" })
         : disabled
-          ? isArabic
-            ? "اختاري المقاس/اللون"
-            : "Select size/color"
-        : isArabic
-          ? "أضف إلى السلة"
-          : "Add to cart"}
+          ? t(locale, { en: "Select size/color", ar: "اختاري المقاس/اللون", es: "Selecciona talla/color" })
+        : t(locale, { en: "Add to cart", ar: "أضف إلى السلة", es: "Agregar al carrito" })}
     </button>
   );
 }

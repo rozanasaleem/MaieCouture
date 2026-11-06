@@ -2,11 +2,12 @@
 
 import { useEffect, useMemo } from "react";
 import { AddToCartButton } from "@/components/add-to-cart-button";
+import { Locale, t } from "@/lib/i18n-shared";
 import { ProductDetail } from "@/lib/types";
 
 type ProductPurchaseControlsProps = {
   product: ProductDetail;
-  locale: "en" | "ar";
+  locale: Locale;
   selectedSize: string;
   selectedColor: string;
   onSizeChange: (size: string) => void;
@@ -15,9 +16,75 @@ type ProductPurchaseControlsProps = {
 };
 
 const STANDARD_SIZE_RANGE = ["XS", "S", "M", "L", "XL"];
+const STYLE_HINTS = [
+  "dress",
+  "vest",
+  "cape",
+  "look",
+  "set",
+  "top",
+  "skirt",
+  "jacket",
+  "blazer",
+  "only",
+  "with",
+  "long",
+  "short",
+];
 
 function unique(values: Array<string | null>) {
   return [...new Set(values.filter((value): value is string => Boolean(value)))];
+}
+
+function normalizeToken(value: string) {
+  return value.trim().toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+function isLikelyColorValue(value: string) {
+  const normalized = normalizeToken(value);
+  if (!normalized) {
+    return false;
+  }
+
+  if (STYLE_HINTS.some((hint) => normalized.includes(hint))) {
+    return false;
+  }
+
+  const knownColorTokens = [
+    "black",
+    "white",
+    "ivory",
+    "cream",
+    "beige",
+    "camel",
+    "taupe",
+    "nude",
+    "gold",
+    "silver",
+    "blue",
+    "navy",
+    "azure",
+    "royal",
+    "green",
+    "olive",
+    "sage",
+    "khaki",
+    "red",
+    "burgundy",
+    "maroon",
+    "pomegranate",
+    "pink",
+    "rose",
+    "purple",
+    "lilac",
+    "orange",
+    "yellow",
+    "brown",
+    "grey",
+    "gray",
+  ];
+
+  return knownColorTokens.some((token) => normalized.includes(token));
 }
 
 function isVariantPurchasable(
@@ -46,7 +113,6 @@ export function ProductPurchaseControls({
   onColorChange,
   onVariantChange,
 }: ProductPurchaseControlsProps) {
-  const isArabic = locale === "ar";
   const allVariants = useMemo(() => product.variants, [product.variants]);
   const purchasableVariants = useMemo(
     () =>
@@ -122,6 +188,13 @@ export function ProductPurchaseControls({
     }
     return null;
   }, [allVariants, purchasableVariants, selectedSize, selectedColor]);
+  const usesStyleOptions = useMemo(
+    () =>
+      colors.length > 0 &&
+      colors.some((value) => !isLikelyColorValue(value)) &&
+      !colors.every((value) => isLikelyColorValue(value)),
+    [colors],
+  );
 
   const hasVariantOptions =
     allVariants.length > 1 || allVariants.some((variant) => variant.size || variant.color);
@@ -174,7 +247,7 @@ export function ProductPurchaseControls({
         <div className="grid gap-3 sm:grid-cols-2">
           {sizes.length > 0 && (
             <label className="text-xs tracking-[0.16em] uppercase text-[--muted]">
-              {isArabic ? "المقاس" : "Size"}
+              {t(locale, { en: "Size", ar: "المقاس", es: "Talla" })}
               <select
                 value={selectedSize}
                 onChange={(event) => {
@@ -183,7 +256,7 @@ export function ProductPurchaseControls({
                 }}
                 className="mt-2 w-full rounded-xl border border-[--line] px-3 py-3 text-sm text-[--ink] outline-none focus:border-[--ink]"
               >
-                <option value="">{isArabic ? "اختاري المقاس" : "Select size"}</option>
+                <option value="">{t(locale, { en: "Select size", ar: "اختاري المقاس", es: "Selecciona talla" })}</option>
                 {sizes.map((size) => (
                   <option
                     key={size}
@@ -191,9 +264,11 @@ export function ProductPurchaseControls({
                     disabled={!availableSizes.includes(size)}
                   >
                     {!availableSizes.includes(size)
-                      ? isArabic
+                      ? locale === "ar"
                         ? `${size} (غير متوفر)`
-                        : `${size} (Unavailable)`
+                        : locale === "es"
+                          ? `${size} (No disponible)`
+                          : `${size} (Unavailable)`
                       : size}
                   </option>
                 ))}
@@ -202,20 +277,36 @@ export function ProductPurchaseControls({
           )}
           {colors.length > 0 && (
             <label className="text-xs tracking-[0.16em] uppercase text-[--muted]">
-              {isArabic ? "اللون" : "Color"}
+              {usesStyleOptions
+                ? t(locale, { en: "Style", ar: "الخيار", es: "Estilo" })
+                : t(locale, { en: "Color", ar: "اللون", es: "Color" })}
               <select
                 value={selectedColor}
                 onChange={(event) => onColorChange(event.target.value)}
                 className="mt-2 w-full rounded-xl border border-[--line] px-3 py-3 text-sm text-[--ink] outline-none focus:border-[--ink]"
               >
-                <option value="">{isArabic ? "اختاري اللون" : "Select color"}</option>
+                <option value="">
+                  {usesStyleOptions
+                    ? t(locale, {
+                        en: "Select option",
+                        ar: "اختاري الخيار",
+                        es: "Selecciona opcion",
+                      })
+                    : t(locale, {
+                        en: "Select color",
+                        ar: "اختاري اللون",
+                        es: "Selecciona color",
+                      })}
+                </option>
                 {colors.map((color) => (
                   <option key={color} value={color} disabled={!availableColors.includes(color)}>
                     {availableColors.includes(color)
                       ? color
-                      : isArabic
+                      : locale === "ar"
                         ? `${color} (غير متوفر)`
-                        : `${color} (Unavailable)`}
+                        : locale === "es"
+                          ? `${color} (No disponible)`
+                          : `${color} (Unavailable)`}
                   </option>
                 ))}
               </select>
@@ -227,20 +318,20 @@ export function ProductPurchaseControls({
       {selectedVariant && (
         <p className="text-xs tracking-[0.12em] uppercase text-[--muted]">
           {!selectedVariantPurchasable
-            ? isArabic
-              ? "غير متوفر حاليًا"
-              : "Currently unavailable"
+            ? t(locale, {
+                en: "Currently unavailable",
+                ar: "غير متوفر حاليًا",
+                es: "No disponible actualmente",
+              })
             : selectedVariant.madeToOrder
-            ? isArabic
-              ? "تفصيل حسب الطلب"
-              : "Made to order"
+            ? t(locale, { en: "Made to order", ar: "تفصيل حسب الطلب", es: "Hecho por encargo" })
             : product.productStatus === "LIMITED"
-              ? isArabic
+              ? locale === "ar"
                 ? `كمية محدودة · ${selectedVariant.stockQuantity}`
-                : `Limited pieces · ${selectedVariant.stockQuantity}`
-              : isArabic
-                ? "متوفر"
-                : "Available"}
+                : locale === "es"
+                  ? `Piezas limitadas · ${selectedVariant.stockQuantity}`
+                  : `Limited pieces · ${selectedVariant.stockQuantity}`
+              : t(locale, { en: "Available", ar: "متوفر", es: "Disponible" })}
         </p>
       )}
 

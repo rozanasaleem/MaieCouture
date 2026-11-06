@@ -7,6 +7,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Maie Couture",
   description: "Luxury bridal, evening, and ready-to-wear crafted for modern ceremony and occasion dressing.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default async function RootLayout({

@@ -5,8 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CountrySelector } from "@/components/country-selector";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { CurrencySelector } from "@/components/currency-selector";
 import { CartIndicator } from "@/components/cart-indicator";
-import { Locale } from "@/lib/i18n-shared";
+import { Locale, t } from "@/lib/i18n-shared";
 
 type NavItem = {
   label: string;
@@ -20,64 +21,62 @@ type NavSection = {
 };
 
 function navSectionsFor(locale: Locale): NavSection[] {
-  const isArabic = locale === "ar";
   return [
     {
-      label: isArabic ? "اكتشف" : "Discover",
+      label: t(locale, { en: "Discover", ar: "اكتشف", es: "Descubrir" }),
       items: [
         {
-          label: isArabic ? "فساتين الزفاف" : "Bridal Gowns",
-          href: `/shop?category=bridal&label=${encodeURIComponent(isArabic ? "فساتين الزفاف" : "Bridal Gowns")}&subtype=${encodeURIComponent("bridal-gowns")}`,
+          label: t(locale, { en: "Bridal Gowns", ar: "فساتين الزفاف", es: "Vestidos de novia" }),
+          href: `/shop?category=bridal&label=${encodeURIComponent(t(locale, { en: "Bridal Gowns", ar: "فساتين الزفاف", es: "Vestidos de novia" }))}&subtype=${encodeURIComponent("bridal-gowns")}`,
         },
         {
-          label: isArabic ? "كتب كتاب وجاهة" : "Katb Ktab & Jaha Dresses",
-          href: `/shop?category=bridal&label=${encodeURIComponent(isArabic ? "كتب كتاب وجاهة" : "Katb Ktab & Jaha Dresses")}&subtype=${encodeURIComponent("katb-ktab")}`,
+          label: t(locale, { en: "Katb Ktab & Jaha Dresses", ar: "كتب كتاب وجاهة", es: "Vestidos Katb Ktab y Jaha" }),
+          href: `/shop?category=bridal&label=${encodeURIComponent(t(locale, { en: "Katb Ktab & Jaha Dresses", ar: "كتب كتاب وجاهة", es: "Vestidos Katb Ktab y Jaha" }))}&subtype=${encodeURIComponent("katb-ktab")}`,
         },
         {
-          label: isArabic ? "فساتين حنة" : "Henna Dresses",
-          href: `/shop?category=bridal&label=${encodeURIComponent(isArabic ? "فساتين حنة" : "Henna Dresses")}&subtype=${encodeURIComponent("henna-dresses")}`,
+          label: t(locale, { en: "Henna Dresses", ar: "فساتين حنة", es: "Vestidos de henna" }),
+          href: `/shop?category=bridal&label=${encodeURIComponent(t(locale, { en: "Henna Dresses", ar: "فساتين حنة", es: "Vestidos de henna" }))}&subtype=${encodeURIComponent("henna-dresses")}`,
         },
         {
-          label: isArabic ? "ملابس السهرة" : "Evening Wear",
-          href: `/shop?category=evening-wear&label=${encodeURIComponent(isArabic ? "ملابس السهرة" : "Evening Wear")}`,
+          label: t(locale, { en: "Evening Wear", ar: "ملابس السهرة", es: "Ropa de noche" }),
+          href: `/shop?category=evening-wear&label=${encodeURIComponent(t(locale, { en: "Evening Wear", ar: "ملابس السهرة", es: "Ropa de noche" }))}`,
         },
         {
-          label: isArabic ? "الزي التقليدي" : "Traditional Wear",
-          href: `/shop?category=traditional-wear&label=${encodeURIComponent(isArabic ? "الزي التقليدي" : "Traditional Wear")}`,
+          label: t(locale, { en: "Traditional Wear", ar: "الزي التقليدي", es: "Ropa tradicional" }),
+          href: `/shop?category=traditional-wear&label=${encodeURIComponent(t(locale, { en: "Traditional Wear", ar: "الزي التقليدي", es: "Ropa tradicional" }))}`,
         },
       ],
     },
     {
-      label: isArabic ? "تسوق" : "Shop",
+      label: t(locale, { en: "Shop", ar: "تسوق", es: "Comprar" }),
       items: [
         {
-          label: isArabic ? "جاهز للارتداء" : "Ready to Wear",
+          label: t(locale, { en: "Ready to Wear", ar: "جاهز للارتداء", es: "Listo para usar" }),
           href: `/shop?category=ready-to-wear&label=${encodeURIComponent(
-            isArabic ? "جاهز للارتداء" : "Ready to Wear",
+            t(locale, { en: "Ready to Wear", ar: "جاهز للارتداء", es: "Listo para usar" }),
           )}`,
         },
         {
-          label: isArabic ? "الإكسسوارات" : "Accessories",
+          label: t(locale, { en: "Accessories", ar: "الإكسسوارات", es: "Accesorios" }),
           href: `/shop?category=accessories&label=${encodeURIComponent(
-            isArabic ? "الإكسسوارات" : "Accessories",
+            t(locale, { en: "Accessories", ar: "الإكسسوارات", es: "Accesorios" }),
           )}`,
         },
         {
-          label: isArabic ? "المنزل" : "Home",
+          label: t(locale, { en: "Home", ar: "المنزل", es: "Hogar" }),
           href: `/shop?category=home&label=${encodeURIComponent(
-            isArabic ? "المنزل" : "Home",
+            t(locale, { en: "Home", ar: "المنزل", es: "Hogar" }),
           )}`,
         },
       ],
     },
-    { label: isArabic ? "عن الدار" : "About", href: "/about" },
-    { label: isArabic ? "تواصل" : "Contact", href: "/contact" },
+    { label: t(locale, { en: "About", ar: "عن الدار", es: "Sobre la casa" }), href: "/about" },
+    { label: t(locale, { en: "Contact", ar: "تواصل", es: "Contacto" }), href: "/contact" },
   ];
 }
 
 export function SiteHeader({ locale }: { locale: Locale }) {
   const navSections = navSectionsFor(locale);
-  const isArabic = locale === "ar";
   const pathname = usePathname();
   const isHomePath = pathname === "/";
   const homeToneClass = isHomePath ? "text-white" : "text-[--ink]";
@@ -91,18 +90,31 @@ export function SiteHeader({ locale }: { locale: Locale }) {
       }`}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:gap-6 lg:px-10">
-        <div className="flex shrink-0 items-center gap-2 lg:gap-4">
-          <div
-            className={`pointer-events-auto absolute z-[60] hidden items-center gap-2 lg:flex ${
-              isHomePath
-                ? "left-3 top-2 px-1.5 py-0.5"
-                : "left-6 top-3"
-            }`}
-          >
+        <div className="flex shrink-0 items-center gap-2 lg:min-w-[11rem] lg:gap-4">
+          <div className="hidden lg:flex lg:flex-col lg:items-start lg:gap-2">
+            <div
+              className={`pointer-events-auto flex items-center gap-2 ${
+                isHomePath ? "px-1.5 py-0.5" : ""
+              }`}
+            >
             <CountrySelector subtle locale={locale} lightOnDark={isHomePath} />
             <LanguageSwitcher locale={locale} lightOnDark={isHomePath} />
+            <CurrencySelector subtle locale={locale} lightOnDark={isHomePath} />
+            </div>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/maie-logo-black.png"
+                alt="Maie Couture"
+                width={164}
+                height={58}
+                priority
+                className={`h-auto w-[88px] sm:w-[96px] md:w-[112px] lg:w-[124px] ${
+                  isHomePath ? "brightness-0 invert" : ""
+                }`}
+              />
+            </Link>
           </div>
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center lg:hidden">
             <Image
               src="/maie-logo-black.png"
               alt="Maie Couture"
@@ -162,7 +174,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
                   ? "border-white/60 text-white hover:bg-white/12"
                   : "border-[--line] text-[--ink] hover:bg-[--stone]"
               }`}
-              aria-label={isArabic ? "القائمة" : "Menu"}
+              aria-label={t(locale, { en: "Menu", ar: "القائمة", es: "Menu" })}
             >
               <svg aria-hidden viewBox="0 0 20 20" className="h-4 w-4">
                 <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
@@ -170,9 +182,10 @@ export function SiteHeader({ locale }: { locale: Locale }) {
             </summary>
             <div className="absolute right-0 top-full z-50 mt-3 w-[min(20rem,calc(100vw-1.25rem))] rounded-xl border border-[--line] bg-white p-3 shadow-[0_18px_48px_rgba(32,25,21,0.12)]">
               <div className="space-y-3">
-                <div className="flex items-center justify-between rounded-xl border border-[--line] px-4 py-3">
+                <div className="flex items-center justify-between gap-3 rounded-xl border border-[--line] px-4 py-3">
                   <CountrySelector subtle locale={locale} />
                   <LanguageSwitcher locale={locale} />
+                  <CurrencySelector subtle locale={locale} />
                 </div>
                 <MobileSearchForm locale={locale} />
                 {navSections.map((section) =>
@@ -219,8 +232,6 @@ function SearchPopover({
   locale: Locale;
   lightOnDark?: boolean;
 }) {
-  const isArabic = locale === "ar";
-
   return (
     <details className="group relative">
       <summary
@@ -229,7 +240,7 @@ function SearchPopover({
             ? "border-white/60 text-white hover:bg-white/12"
             : "border-[--line] text-[--ink] hover:bg-[--stone]"
         }`}
-        aria-label={isArabic ? "بحث" : "Search"}
+        aria-label={t(locale, { en: "Search", ar: "بحث", es: "Buscar" })}
       >
         <span className="text-xs">⌕</span>
       </summary>
@@ -238,13 +249,17 @@ function SearchPopover({
           <input
             name="q"
             type="search"
-            placeholder={isArabic ? "ابحثي عن قطعة" : "Search pieces"}
+            placeholder={t(locale, {
+              en: "Search pieces",
+              ar: "ابحثي عن قطعة",
+              es: "Buscar piezas",
+            })}
             className="h-9 w-full rounded-full border border-[--line] bg-white px-4 text-sm text-[--ink] outline-none placeholder:text-[--muted] focus:border-[--ink]"
           />
           <button
             type="submit"
             className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[--line] text-[--ink] transition hover:bg-[--stone]"
-            aria-label={isArabic ? "بحث" : "Search"}
+            aria-label={t(locale, { en: "Search", ar: "بحث", es: "Buscar" })}
           >
             <span className="text-sm">⌕</span>
           </button>
@@ -255,20 +270,22 @@ function SearchPopover({
 }
 
 function MobileSearchForm({ locale }: { locale: Locale }) {
-  const isArabic = locale === "ar";
-
   return (
     <form action="/shop" method="get" className="flex items-center gap-2 rounded-xl border border-[--line] p-2">
       <input
         name="q"
         type="search"
-        placeholder={isArabic ? "ابحثي عن قطعة" : "Search pieces"}
+        placeholder={t(locale, {
+          en: "Search pieces",
+          ar: "ابحثي عن قطعة",
+          es: "Buscar piezas",
+        })}
         className="h-9 w-full rounded-full border border-[--line] bg-white px-4 text-sm text-[--ink] outline-none placeholder:text-[--muted] focus:border-[--ink]"
       />
       <button
         type="submit"
         className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[--line] text-[--ink] transition hover:bg-[--stone]"
-        aria-label={isArabic ? "بحث" : "Search"}
+        aria-label={t(locale, { en: "Search", ar: "بحث", es: "Buscar" })}
       >
         <span className="text-sm">⌕</span>
       </button>

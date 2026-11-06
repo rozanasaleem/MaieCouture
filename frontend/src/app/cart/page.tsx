@@ -10,49 +10,67 @@ import {
   updateCartQuantity,
 } from "@/lib/cart";
 import {
+  getPreferredDisplayCurrency,
   formatMoney,
+  sumMoneyInCurrency,
   toDisplayMoney,
 } from "@/lib/currency-client";
 import { getLocaleFromDocument } from "@/lib/i18n-client";
+import { t } from "@/lib/i18n-shared";
 
 export default function CartPage() {
   const locale = getLocaleFromDocument();
-  const isArabic = locale === "ar";
   const [items, setItems] = useState(readCart());
+  const [, setCurrencyVersion] = useState(0);
 
   useEffect(() => {
     const sync = () => setItems(readCart());
+    const syncCurrency = () => setCurrencyVersion((current) => current + 1);
     window.addEventListener("maie-cart-updated", sync);
+    window.addEventListener("maie-currency-updated", syncCurrency);
     window.addEventListener("storage", sync);
     return () => {
       window.removeEventListener("maie-cart-updated", sync);
+      window.removeEventListener("maie-currency-updated", syncCurrency);
       window.removeEventListener("storage", sync);
     };
   }, []);
 
   const subtotal = useMemo(() => cartSubtotal(items), [items]);
-  const baseCurrency = useMemo(() => cartBaseCurrency(items), [items]);
-  const subtotalDisplay = toDisplayMoney(subtotal, baseCurrency);
+  const preferredCurrency = getPreferredDisplayCurrency();
+  const subtotalDisplay = useMemo(
+    () =>
+      sumMoneyInCurrency(
+        items.map((item) => ({
+          amount: item.unitPrice * item.quantity,
+          currency: item.currency,
+        })),
+        preferredCurrency,
+      ),
+    [items, preferredCurrency],
+  );
 
   if (items.length === 0) {
     return (
       <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6">
         <p className="text-[11px] tracking-[0.24em] uppercase text-[--muted]">
-          {isArabic ? "السلة" : "Cart"}
+          {t(locale, { en: "Cart", ar: "السلة", es: "Carrito" })}
         </p>
         <h1 className="mt-4 font-[family-name:var(--font-display)] text-4xl text-[--ink] sm:text-5xl">
-          {isArabic ? "سلتك فارغة" : "Your cart is empty"}
+          {t(locale, { en: "Your cart is empty", ar: "سلتك فارغة", es: "Tu carrito esta vacio" })}
         </h1>
         <p className="mt-4 text-sm text-[--muted]">
-          {isArabic
-            ? "ابدئي باستكشاف التصاميم وإضافة القطع المناسبة لك."
-            : "Start exploring the collections and add pieces you love."}
+          {t(locale, {
+            en: "Start exploring the collections and add pieces you love.",
+            ar: "ابدئي باستكشاف التصاميم وإضافة القطع المناسبة لك.",
+            es: "Empieza a descubrir las colecciones y agrega las piezas que te encantan.",
+          })}
         </p>
         <Link
           href="/shop"
           className="mt-8 inline-flex rounded-full bg-[--ink] px-6 py-3 text-xs tracking-[0.2em] uppercase text-white"
         >
-          {isArabic ? "تسوق الآن" : "Shop now"}
+          {t(locale, { en: "Shop now", ar: "تسوق الآن", es: "Comprar ahora" })}
         </Link>
       </div>
     );
@@ -61,10 +79,10 @@ export default function CartPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-10">
       <p className="text-[11px] tracking-[0.24em] uppercase text-[--muted]">
-        {isArabic ? "السلة" : "Cart"}
+        {t(locale, { en: "Cart", ar: "السلة", es: "Carrito" })}
       </p>
       <h1 className="mt-3 font-[family-name:var(--font-display)] text-4xl text-[--ink] sm:text-5xl">
-        {isArabic ? "راجعي طلبك" : "Review your order"}
+        {t(locale, { en: "Review your order", ar: "راجعي طلبك", es: "Revisa tu pedido" })}
       </h1>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
@@ -100,13 +118,13 @@ export default function CartPage() {
                     onClick={() => removeFromCart(item.productId, item.variantId)}
                     className="text-xs tracking-[0.14em] uppercase text-[--muted] underline underline-offset-4"
                   >
-                    {isArabic ? "حذف" : "Remove"}
+                    {t(locale, { en: "Remove", ar: "حذف", es: "Eliminar" })}
                   </button>
                 </div>
 
                 <div className="mt-4 flex items-center justify-between">
                   <label className="text-sm text-[--muted]">
-                    {isArabic ? "الكمية" : "Quantity"}
+                    {t(locale, { en: "Quantity", ar: "الكمية", es: "Cantidad" })}
                     <input
                       type="number"
                       min={1}
@@ -132,16 +150,16 @@ export default function CartPage() {
 
         <aside className="h-fit rounded-[1.5rem] border border-[--line] bg-[--panel] p-5 sm:p-6">
           <h2 className="font-[family-name:var(--font-display)] text-3xl text-[--ink]">
-            {isArabic ? "الملخص" : "Summary"}
+            {t(locale, { en: "Summary", ar: "الملخص", es: "Resumen" })}
           </h2>
           <div className="mt-5 space-y-2 text-sm">
             <div className="flex items-center justify-between text-[--muted]">
-              <span>{isArabic ? "المجموع الفرعي" : "Subtotal"}</span>
+              <span>{t(locale, { en: "Subtotal", ar: "المجموع الفرعي", es: "Subtotal" })}</span>
               <span>{formatMoney(subtotalDisplay.amount, subtotalDisplay.currency)}</span>
             </div>
             <div className="flex items-center justify-between text-[--muted]">
-              <span>{isArabic ? "الشحن" : "Shipping"}</span>
-              <span>{isArabic ? "يُحسب عند الدفع" : "Calculated at checkout"}</span>
+              <span>{t(locale, { en: "Shipping", ar: "الشحن", es: "Envio" })}</span>
+              <span>{t(locale, { en: "Calculated at checkout", ar: "يُحسب عند الدفع", es: "Se calcula al finalizar la compra" })}</span>
             </div>
           </div>
 
@@ -149,7 +167,7 @@ export default function CartPage() {
             href="/checkout"
             className="mt-6 inline-flex w-full justify-center rounded-full bg-[--ink] px-5 py-3 text-xs tracking-[0.2em] uppercase text-white"
           >
-            {isArabic ? "المتابعة إلى الدفع" : "Continue to checkout"}
+            {t(locale, { en: "Continue to checkout", ar: "المتابعة إلى الدفع", es: "Continuar al pago" })}
           </Link>
         </aside>
       </div>

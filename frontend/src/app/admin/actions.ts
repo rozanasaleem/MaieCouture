@@ -31,6 +31,11 @@ type AdminProduct = {
   productStatus: "EVERGREEN" | "LIMITED" | "NEW" | "SOLD_OUT" | "ARCHIVED";
   madeToOrder: boolean;
   leadTimeNote: string | null;
+  galleryImageDetails?: Array<{
+    imageUrl: string;
+    sortOrder: number;
+    color: string | null;
+  }>;
   galleryImages: string[];
   variants: Array<{
     id: number;
@@ -41,6 +46,106 @@ type AdminProduct = {
     madeToOrder: boolean;
   }>;
 };
+
+function nullableString(value: FormDataEntryValue | null) {
+  const stringValue = String(value ?? "").trim();
+  return stringValue.length > 0 ? stringValue : null;
+}
+
+function nullableNumber(value: FormDataEntryValue | null) {
+  const stringValue = String(value ?? "").trim();
+  if (!stringValue) return null;
+  const numberValue = Number(stringValue);
+  return Number.isFinite(numberValue) ? numberValue : null;
+}
+
+function imageRows(mainImage: string, galleryImages: string) {
+  const urls = [mainImage, ...galleryImages.split(/\r?\n/)]
+    .map((url) => url.trim())
+    .filter(Boolean);
+
+  return Array.from(new Set(urls)).map((imageUrl, index) => ({
+    imageUrl,
+    sortOrder: index + 1,
+    color: null,
+  }));
+}
+
+export async function createProduct(formData: FormData) {
+  const name = String(formData.get("name") ?? "").trim();
+  const slug = String(formData.get("slug") ?? "").trim();
+  const mainImage = String(formData.get("mainImage") ?? "").trim();
+  const categoryId = Number(formData.get("categoryId"));
+  const currency = String(formData.get("currency") ?? "ILS").trim();
+  const purchaseType = String(
+    formData.get("purchaseType") ?? "DIRECT_PURCHASE",
+  );
+  const productStatus = String(formData.get("productStatus") ?? "EVERGREEN");
+  const size = nullableString(formData.get("variantSize"));
+  const color = nullableString(formData.get("variantColor"));
+  const sku = nullableString(formData.get("variantSku"));
+  const stockQuantity = Number(formData.get("stockQuantity") ?? 0);
+
+  if (!name || !slug || !mainImage || !categoryId) {
+    throw new Error("Name, slug, main image, and category are required.");
+  }
+
+  await adminFetch("/admin/products", {
+    method: "POST",
+    body: JSON.stringify({
+      name,
+      slug,
+      shortDescription: nullableString(formData.get("shortDescription")),
+      fullDescription: nullableString(formData.get("fullDescription")),
+      price: nullableNumber(formData.get("price")),
+      salePrice: nullableNumber(formData.get("salePrice")),
+      currency: currency || "ILS",
+      mainImage,
+      available: formData.get("available") === "on",
+      published: formData.get("visibility") === "ACTIVE",
+      featured: formData.get("featured") === "on",
+      purchaseType,
+      productStatus,
+      madeToOrder: formData.get("madeToOrder") === "on",
+      leadTimeNote: nullableString(formData.get("leadTimeNote")),
+      categoryId,
+      images: imageRows(mainImage, String(formData.get("galleryImages") ?? "")),
+      variants:
+        sku || size || color
+          ? [
+              {
+                size,
+                color,
+                stockQuantity: Number.isFinite(stockQuantity)
+                  ? stockQuantity
+                  : 0,
+                sku: sku ?? `${slug.toUpperCase()}-DEFAULT`,
+                madeToOrder: formData.get("madeToOrder") === "on",
+              },
+            ]
+          : [],
+    }),
+  });
+
+  revalidatePath("/admin");
+}
+
+export async function updateOrderStatus(formData: FormData) {
+  const id = Number(formData.get("id"));
+  const orderStatus = String(formData.get("orderStatus") ?? "").trim();
+  const paymentStatus = String(formData.get("paymentStatus") ?? "").trim();
+  if (!id || !orderStatus) return;
+
+  await adminFetch(`/admin/orders/${id}/status`, {
+    method: "PATCH",
+    body: JSON.stringify({
+      orderStatus,
+      paymentStatus: paymentStatus || null,
+    }),
+  });
+
+  revalidatePath("/admin");
+}
 
 export async function setCategoryPublished(formData: FormData) {
   const id = Number(formData.get("id"));
@@ -100,10 +205,17 @@ export async function setProductPublished(formData: FormData) {
       madeToOrder: current.madeToOrder,
       leadTimeNote: current.leadTimeNote,
       categoryId: current.categoryId,
-      images: (current.galleryImages ?? []).map((imageUrl, index) => ({
-        imageUrl,
-        sortOrder: index + 1,
-      })),
+      images:
+        current.galleryImageDetails?.map((image) => ({
+          imageUrl: image.imageUrl,
+          sortOrder: image.sortOrder,
+          color: image.color,
+        })) ??
+        (current.galleryImages ?? []).map((imageUrl, index) => ({
+          imageUrl,
+          sortOrder: index + 1,
+          color: null,
+        })),
       variants: (current.variants ?? []).map((variant) => ({
         size: variant.size,
         color: variant.color,
@@ -152,10 +264,17 @@ export async function setProductAvailable(formData: FormData) {
       madeToOrder: current.madeToOrder,
       leadTimeNote: current.leadTimeNote,
       categoryId: current.categoryId,
-      images: (current.galleryImages ?? []).map((imageUrl, index) => ({
-        imageUrl,
-        sortOrder: index + 1,
-      })),
+      images:
+        current.galleryImageDetails?.map((image) => ({
+          imageUrl: image.imageUrl,
+          sortOrder: image.sortOrder,
+          color: image.color,
+        })) ??
+        (current.galleryImages ?? []).map((imageUrl, index) => ({
+          imageUrl,
+          sortOrder: index + 1,
+          color: null,
+        })),
       variants: (current.variants ?? []).map((variant) => ({
         size: variant.size,
         color: variant.color,
@@ -205,10 +324,17 @@ export async function toggleProductArchive(formData: FormData) {
       madeToOrder: current.madeToOrder,
       leadTimeNote: current.leadTimeNote,
       categoryId: current.categoryId,
-      images: (current.galleryImages ?? []).map((imageUrl, index) => ({
-        imageUrl,
-        sortOrder: index + 1,
-      })),
+      images:
+        current.galleryImageDetails?.map((image) => ({
+          imageUrl: image.imageUrl,
+          sortOrder: image.sortOrder,
+          color: image.color,
+        })) ??
+        (current.galleryImages ?? []).map((imageUrl, index) => ({
+          imageUrl,
+          sortOrder: index + 1,
+          color: null,
+        })),
       variants: (current.variants ?? []).map((variant) => ({
         size: variant.size,
         color: variant.color,

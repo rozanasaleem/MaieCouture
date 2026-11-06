@@ -39,6 +39,11 @@ export type ProductDetail = {
   productStatus: "EVERGREEN" | "LIMITED" | "NEW" | "SOLD_OUT" | "ARCHIVED";
   madeToOrder: boolean;
   leadTimeNote: string | null;
+  galleryImageDetails?: Array<{
+    imageUrl: string;
+    sortOrder: number;
+    color: string | null;
+  }>;
   galleryImages: string[];
   variants: Array<{
     id: number;
@@ -52,6 +57,7 @@ export type ProductDetail = {
 
 export type ShippingQuote = {
   shippingCountryCode: string | null;
+  shippingAreaCode: string | null;
   subtotalAmount: number;
   shippingFee: number;
   totalAmount: number;
@@ -66,6 +72,7 @@ export type OrderResponse = {
   phone: string | null;
   shippingAddress: string;
   shippingCountryCode: string | null;
+  shippingAreaCode: string | null;
   paymentStatus: "PENDING" | "PAID" | "FAILED" | "REFUNDED";
   orderStatus: "PENDING" | "PROCESSING" | "SHIPPED" | "COMPLETED" | "CANCELLED";
   subtotalAmount: number;
@@ -90,6 +97,24 @@ export type LahzaInitializeResponse = {
   reference: string;
   checkoutUrl: string;
   paymentStatus: "PENDING" | "PAID" | "FAILED" | "REFUNDED";
+};
+
+export type CyberSourceInitializeResponse = {
+  orderId: number;
+  orderNumber: string;
+  reference: string;
+  captureContext: string | null;
+  clientLibrary: string | null;
+  clientLibraryIntegrity: string | null;
+  paymentStatus: "PENDING" | "PAID" | "FAILED" | "REFUNDED";
+  mock: boolean;
+};
+
+export type CyberSourceCompleteResponse = {
+  reference: string;
+  paymentStatus: "PENDING" | "PAID" | "FAILED" | "REFUNDED";
+  orderStatus: "PENDING" | "PROCESSING" | "SHIPPED" | "COMPLETED" | "CANCELLED";
+  verified: boolean;
 };
 
 export type LahzaVerificationResponse = {

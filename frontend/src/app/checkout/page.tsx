@@ -4,18 +4,24 @@ import Link from "next/link";
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import {
   createOrder,
+  initializeCyberSourcePayment,
   initializeLahzaPayment,
   quoteShipping,
 } from "@/lib/api";
-import { cartBaseCurrency, cartSubtotal, clearCart, readCart } from "@/lib/cart";
+import { clearCart, readCart } from "@/lib/cart";
 import {
+  getPreferredDisplayCurrency,
   formatMoney,
+  sumMoneyInCurrency,
   toDisplayMoney,
 } from "@/lib/currency-client";
 import { getLocaleFromDocument } from "@/lib/i18n-client";
+import { Locale, t } from "@/lib/i18n-shared";
+import { isShippingCountry, SHIPPING_COUNTRY_CODES } from "@/lib/shipping-countries";
 
 const DEFAULT_COUNTRY = "PS";
 const COUNTRY_STORAGE_KEY = "maie_selected_country";
+const PAYMENT_PROVIDER = process.env.NEXT_PUBLIC_PAYMENT_PROVIDER ?? "cybersource";
 
 type CheckoutCountryOption = {
   code: string;
@@ -27,12 +33,37 @@ type PhoneCodeOption = {
   label: string;
 };
 
-const fallbackCountryOptions: CheckoutCountryOption[] = [
-  { code: "PS", name: "Palestine" },
-  { code: "US", name: "United States" },
-  { code: "GB", name: "United Kingdom" },
-  { code: "AE", name: "United Arab Emirates" },
-];
+type PalestineShippingAreaOption = {
+  code: "WEST_BANK" | "JERUSALEM" | "AREAS_48";
+  labels: Record<Locale, string>;
+};
+
+type PalestineCityOption = {
+  value: string;
+  labels: Record<Locale, string>;
+  areaCode: PalestineShippingAreaOption["code"];
+};
+
+const fallbackCountryOptionsByLocale: Record<Locale, CheckoutCountryOption[]> = {
+  en: [
+    { code: "PS", name: "Palestine" },
+    { code: "US", name: "United States" },
+    { code: "GB", name: "United Kingdom" },
+    { code: "AE", name: "United Arab Emirates" },
+  ],
+  ar: [
+    { code: "PS", name: "فلسطين" },
+    { code: "US", name: "الولايات المتحدة" },
+    { code: "GB", name: "المملكة المتحدة" },
+    { code: "AE", name: "الإمارات العربية المتحدة" },
+  ],
+  es: [
+    { code: "PS", name: "Palestina" },
+    { code: "US", name: "Estados Unidos" },
+    { code: "GB", name: "Reino Unido" },
+    { code: "AE", name: "Emiratos Arabes Unidos" },
+  ],
+};
 
 const PHONE_CODE_OPTIONS: PhoneCodeOption[] = [
   { code: "+970", label: "Palestine (+970)" },
@@ -56,40 +87,55 @@ const PHONE_CODE_OPTIONS: PhoneCodeOption[] = [
   { code: "+92", label: "Pakistan (+92)" },
 ];
 
-function buildRegionCodesFromPairs() {
-  const regionCodes: string[] = [];
-  for (let first = 65; first <= 90; first += 1) {
-    for (let second = 65; second <= 90; second += 1) {
-      regionCodes.push(`${String.fromCharCode(first)}${String.fromCharCode(second)}`);
-    }
-  }
-  return regionCodes;
+const PALESTINE_CITY_OPTIONS: PalestineCityOption[] = [
+  { value: "Ramallah", labels: { en: "Ramallah", ar: "رام الله", es: "Ramala" }, areaCode: "WEST_BANK" },
+  { value: "Al-Bireh", labels: { en: "Al-Bireh", ar: "البيرة", es: "Al Bireh" }, areaCode: "WEST_BANK" },
+  { value: "Rawabi", labels: { en: "Rawabi", ar: "روابي", es: "Rawabi" }, areaCode: "WEST_BANK" },
+  { value: "Birzeit", labels: { en: "Birzeit", ar: "بيرزيت", es: "Birzeit" }, areaCode: "WEST_BANK" },
+  { value: "Bethlehem", labels: { en: "Bethlehem", ar: "بيت لحم", es: "Belen" }, areaCode: "WEST_BANK" },
+  { value: "Beit Jala", labels: { en: "Beit Jala", ar: "بيت جالا", es: "Beit Jala" }, areaCode: "WEST_BANK" },
+  { value: "Beit Sahour", labels: { en: "Beit Sahour", ar: "بيت ساحور", es: "Beit Sahour" }, areaCode: "WEST_BANK" },
+  { value: "Hebron", labels: { en: "Hebron", ar: "الخليل", es: "Hebron" }, areaCode: "WEST_BANK" },
+  { value: "Nablus", labels: { en: "Nablus", ar: "نابلس", es: "Nablus" }, areaCode: "WEST_BANK" },
+  { value: "Jenin", labels: { en: "Jenin", ar: "جنين", es: "Jenin" }, areaCode: "WEST_BANK" },
+  { value: "Tulkarem", labels: { en: "Tulkarem", ar: "طولكرم", es: "Tulkarem" }, areaCode: "WEST_BANK" },
+  { value: "Qalqilya", labels: { en: "Qalqilya", ar: "قلقيلية", es: "Qalqilya" }, areaCode: "WEST_BANK" },
+  { value: "Jericho", labels: { en: "Jericho", ar: "أريحا", es: "Jerico" }, areaCode: "WEST_BANK" },
+  { value: "Salfit", labels: { en: "Salfit", ar: "سلفيت", es: "Salfit" }, areaCode: "WEST_BANK" },
+  { value: "Tubas", labels: { en: "Tubas", ar: "طوباس", es: "Tubas" }, areaCode: "WEST_BANK" },
+  { value: "Jerusalem", labels: { en: "Jerusalem", ar: "القدس", es: "Jerusalen" }, areaCode: "JERUSALEM" },
+  { value: "Haifa", labels: { en: "Haifa", ar: "حيفا", es: "Haifa" }, areaCode: "AREAS_48" },
+  { value: "Jaffa", labels: { en: "Jaffa", ar: "يافا", es: "Jaffa" }, areaCode: "AREAS_48" },
+  { value: "Nazareth", labels: { en: "Nazareth", ar: "الناصرة", es: "Nazaret" }, areaCode: "AREAS_48" },
+  { value: "Acre", labels: { en: "Acre", ar: "عكا", es: "Acre" }, areaCode: "AREAS_48" },
+  { value: "Umm al-Fahm", labels: { en: "Umm al-Fahm", ar: "أم الفحم", es: "Umm al-Fahm" }, areaCode: "AREAS_48" },
+  { value: "Sakhnin", labels: { en: "Sakhnin", ar: "سخنين", es: "Sakhnin" }, areaCode: "AREAS_48" },
+  { value: "Shefa-Amr", labels: { en: "Shefa-Amr", ar: "شفاعمرو", es: "Shefa-Amr" }, areaCode: "AREAS_48" },
+  { value: "Arraba", labels: { en: "Arraba", ar: "عرابة", es: "Arraba" }, areaCode: "AREAS_48" },
+  { value: "Tamra", labels: { en: "Tamra", ar: "طمرة", es: "Tamra" }, areaCode: "AREAS_48" },
+  { value: "Tayibe", labels: { en: "Tayibe", ar: "الطيبة", es: "Tayibe" }, areaCode: "AREAS_48" },
+  { value: "Tira", labels: { en: "Tira", ar: "الطيرة", es: "Tira" }, areaCode: "AREAS_48" },
+  { value: "Rahat", labels: { en: "Rahat", ar: "رهط", es: "Rahat" }, areaCode: "AREAS_48" },
+  { value: "Lod", labels: { en: "Lod", ar: "اللد", es: "Lod" }, areaCode: "AREAS_48" },
+  { value: "Ramle", labels: { en: "Ramle", ar: "الرملة", es: "Ramle" }, areaCode: "AREAS_48" },
+  { value: "Kafr Qasim", labels: { en: "Kafr Qasim", ar: "كفر قاسم", es: "Kafr Qasim" }, areaCode: "AREAS_48" },
+  { value: "Kafr Kanna", labels: { en: "Kafr Kanna", ar: "كفر كنا", es: "Kafr Kanna" }, areaCode: "AREAS_48" },
+];
+
+function palestineCityLabel(city: PalestineCityOption, locale: Locale) {
+  return city.labels[locale] ?? city.labels.en;
 }
 
-function buildCheckoutCountryOptions(): CheckoutCountryOption[] {
+function buildCheckoutCountryOptions(locale: Locale): CheckoutCountryOption[] {
   if (typeof Intl === "undefined" || typeof Intl.DisplayNames !== "function") {
-    return fallbackCountryOptions;
+    return fallbackCountryOptionsByLocale[locale];
   }
 
-  const intlWithRegions = Intl as typeof Intl & {
-    supportedValuesOf?: (key: string) => string[];
-  };
-  const names = new Intl.DisplayNames(["en"], { type: "region" });
+  const names = new Intl.DisplayNames([locale === "ar" ? "ar" : locale === "es" ? "es" : "en"], {
+    type: "region",
+  });
 
-  let regionCodes: string[] = [];
-  try {
-    if (typeof intlWithRegions.supportedValuesOf === "function") {
-      regionCodes = intlWithRegions
-        .supportedValuesOf("region")
-        .filter((code) => /^[A-Z]{2}$/.test(code));
-    } else {
-      regionCodes = buildRegionCodesFromPairs();
-    }
-  } catch {
-    regionCodes = buildRegionCodesFromPairs();
-  }
-
-  const options = regionCodes
+  const options = SHIPPING_COUNTRY_CODES
     .map((code) => ({
       code,
       name: names.of(code) ?? code,
@@ -99,21 +145,25 @@ function buildCheckoutCountryOptions(): CheckoutCountryOption[] {
     .sort((a, b) => a.name.localeCompare(b.name));
 
   if (!options.some((option) => option.code === "PS")) {
-    options.push({ code: "PS", name: "Palestine" });
+    options.push(
+      locale === "ar"
+        ? { code: "PS", name: "فلسطين" }
+        : locale === "es"
+          ? { code: "PS", name: "Palestina" }
+          : { code: "PS", name: "Palestine" },
+    );
     options.sort((a, b) => a.name.localeCompare(b.name));
   }
 
-  return options.length > 0 ? options : fallbackCountryOptions;
+  return options.length > 0 ? options : fallbackCountryOptionsByLocale[locale];
 }
-
-const checkoutCountryOptions = buildCheckoutCountryOptions();
 
 function normalizeCountryCode(raw: string | null): string | null {
   if (!raw) {
     return null;
   }
   const upper = raw.trim().toUpperCase();
-  if (/^[A-Z]{2}$/.test(upper)) {
+  if (isShippingCountry(upper)) {
     return upper;
   }
   if (upper === "PALESTINE" || raw.trim() === "فلسطين") {
@@ -125,13 +175,15 @@ function normalizeCountryCode(raw: string | null): string | null {
 export default function CheckoutPage() {
   const [mounted, setMounted] = useState(false);
   const locale = mounted ? getLocaleFromDocument() : "en";
-  const isArabic = locale === "ar";
 
   const [items, setItems] = useState(readCart());
+  const [, setCurrencyVersion] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [shippingFee, setShippingFee] = useState(0);
+  const [shippingQuote, setShippingQuote] = useState<{ key: string; fee: number | null } | null>(null);
+  const [shippingRetry, setShippingRetry] = useState(0);
   const [countryCode, setCountryCode] = useState(DEFAULT_COUNTRY);
+  const [shippingAreaCode, setShippingAreaCode] = useState<PalestineShippingAreaOption["code"]>("WEST_BANK");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -143,6 +195,21 @@ export default function CheckoutPage() {
   const [region, setRegion] = useState("");
   const [postalCode, setPostalCode] = useState("");
   const [notes, setNotes] = useState("");
+  const checkoutCountryOptions = useMemo(() => buildCheckoutCountryOptions(locale), [locale]);
+  const selectedPalestineCity = useMemo(
+    () => PALESTINE_CITY_OPTIONS.find((option) => option.value === city) ?? null,
+    [city],
+  );
+  const effectiveShippingAreaCode = selectedPalestineCity?.areaCode ?? shippingAreaCode;
+  const destinationAreaCode = countryCode === "PS" ? effectiveShippingAreaCode : region.trim();
+  const shippingSummaryLocation = countryCode === "PS"
+    ? selectedPalestineCity
+      ? palestineCityLabel(selectedPalestineCity, locale)
+      : t(locale, { en: "select city", ar: "اختر المدينة", es: "selecciona ciudad" })
+    : "";
+  const paymentButtonLabel = PAYMENT_PROVIDER === "cybersource"
+    ? t(locale, { en: "Continue to secure payment", ar: "المتابعة للدفع الآمن", es: "Continuar al pago seguro" })
+    : t(locale, { en: "Pay with Lahza", ar: "الدفع عبر لحظة", es: "Pagar con Lahza" });
 
   useEffect(() => {
     setMounted(true);
@@ -154,39 +221,106 @@ export default function CheckoutPage() {
       window.localStorage.setItem(COUNTRY_STORAGE_KEY, savedCountry);
     }
     const sync = () => setItems(readCart());
+    const syncCurrency = () => setCurrencyVersion((current) => current + 1);
     window.addEventListener("maie-cart-updated", sync);
+    window.addEventListener("maie-currency-updated", syncCurrency);
     window.addEventListener("storage", sync);
     return () => {
       window.removeEventListener("maie-cart-updated", sync);
+      window.removeEventListener("maie-currency-updated", syncCurrency);
       window.removeEventListener("storage", sync);
     };
   }, []);
 
   useEffect(() => {
     window.localStorage.setItem(COUNTRY_STORAGE_KEY, countryCode);
-  }, [countryCode]);
+    if (countryCode === "PS" && city && !PALESTINE_CITY_OPTIONS.some((option) => option.value === city)) {
+      setCity("");
+    }
+  }, [city, countryCode]);
 
-  const subtotal = useMemo(() => cartSubtotal(items), [items]);
-  const baseCurrency = useMemo(() => cartBaseCurrency(items), [items]);
-  const total = subtotal + shippingFee;
-  const subtotalDisplay = toDisplayMoney(subtotal, baseCurrency);
-  const shippingDisplay = toDisplayMoney(shippingFee, baseCurrency);
-  const totalDisplay = toDisplayMoney(total, baseCurrency);
+  const preferredCurrency = getPreferredDisplayCurrency();
+  const subtotalDisplay = useMemo(
+    () =>
+      sumMoneyInCurrency(
+        items.map((item) => ({
+          amount: item.unitPrice * item.quantity,
+          currency: item.currency,
+        })),
+        preferredCurrency,
+      ),
+    [items, preferredCurrency],
+  );
+  const shippingDisplay = useMemo(
+    () => ({
+      amount: Number((shippingQuote?.fee ?? 0).toFixed(2)),
+      currency: subtotalDisplay.currency,
+      estimated: false,
+    }),
+    [shippingQuote, subtotalDisplay.currency],
+  );
+  const shippingQuoteItems = useMemo(
+    () =>
+      items.map((item) => ({
+        productId: item.productId,
+        quantity: item.quantity,
+      })),
+    [items],
+  );
+  const totalDisplay = useMemo(
+    () => ({
+      amount: Number((subtotalDisplay.amount + shippingDisplay.amount).toFixed(2)),
+      currency: subtotalDisplay.currency,
+      estimated: subtotalDisplay.estimated,
+    }),
+    [shippingDisplay.amount, subtotalDisplay.amount, subtotalDisplay.currency, subtotalDisplay.estimated],
+  );
+
+  const shippingKey = items.length === 0 || (countryCode === "PS" && !selectedPalestineCity)
+    ? null
+    : JSON.stringify([countryCode, destinationAreaCode, subtotalDisplay.amount, subtotalDisplay.currency, shippingQuoteItems, shippingRetry]);
+  const currentShippingQuote = shippingQuote?.key === shippingKey ? shippingQuote : null;
+  const shippingReady = currentShippingQuote != null && currentShippingQuote.fee != null;
+  const shippingFailed = currentShippingQuote != null && currentShippingQuote.fee == null;
+  const paymentDisabled = loading || !shippingReady;
 
   useEffect(() => {
-    if (subtotal <= 0) {
-      setShippingFee(0);
-      return;
-    }
-    quoteShipping(subtotal, countryCode, baseCurrency)
-      .then((quote) => setShippingFee(quote.shippingFee))
-      .catch(() => setShippingFee(0));
-  }, [baseCurrency, countryCode, subtotal]);
+    if (!shippingKey) return;
+    let cancelled = false;
+    quoteShipping(
+      subtotalDisplay.amount,
+      countryCode,
+      subtotalDisplay.currency,
+      destinationAreaCode,
+      shippingQuoteItems,
+    )
+      .then((quote) => {
+        if (!cancelled) setShippingQuote({ key: shippingKey, fee: Number.isFinite(quote.shippingFee) && quote.shippingFee >= 0 ? quote.shippingFee : null });
+      })
+      .catch((quoteError) => {
+        console.error("Shipping quote failed", quoteError);
+        if (!cancelled) setShippingQuote({ key: shippingKey, fee: null });
+      });
+    return () => { cancelled = true; };
+  }, [
+    countryCode,
+    effectiveShippingAreaCode,
+    destinationAreaCode,
+    selectedPalestineCity,
+    shippingQuoteItems,
+    subtotalDisplay.amount,
+    subtotalDisplay.currency,
+    shippingKey,
+  ]);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (!shippingReady) {
+      setError(t(locale, { en: "Please wait for a shipping quote before continuing.", ar: "يرجى انتظار حساب تكلفة الشحن قبل المتابعة.", es: "Espera el calculo del envio antes de continuar." }));
+      return;
+    }
     if (items.length === 0) {
-      setError(isArabic ? "السلة فارغة." : "Cart is empty.");
+      setError(t(locale, { en: "Cart is empty.", ar: "السلة فارغة.", es: "El carrito esta vacio." }));
       return;
     }
 
@@ -197,10 +331,18 @@ export default function CheckoutPage() {
         ? phoneCountryCode.trim()
         : `+${phoneCountryCode.trim().replace(/\D/g, "")}`;
       const customerName = [firstName.trim(), lastName.trim()].filter(Boolean).join(" ");
+      if (countryCode === "PS" && !selectedPalestineCity) {
+        setError(t(locale, { en: "Please select your city.", ar: "يرجى اختيار المدينة.", es: "Selecciona tu ciudad." }));
+        setLoading(false);
+        return;
+      }
+      const cityLine = countryCode === "PS" && selectedPalestineCity
+        ? palestineCityLabel(selectedPalestineCity, locale)
+        : city.trim();
       const shippingAddress = [
         addressLine1.trim(),
         addressLine2.trim(),
-        [city.trim(), region.trim(), postalCode.trim()].filter(Boolean).join(", "),
+        [cityLine, region.trim(), postalCode.trim()].filter(Boolean).join(", "),
       ]
         .filter(Boolean)
         .join("\n");
@@ -211,6 +353,8 @@ export default function CheckoutPage() {
         phone: phone.trim() ? `${normalizedPhoneCode} ${phone.trim()}` : "",
         shippingAddress,
         shippingCountryCode: countryCode,
+        shippingAreaCode: destinationAreaCode,
+        currency: preferredCurrency,
         notes,
         items: items.map((item) => ({
           productId: item.productId,
@@ -218,6 +362,25 @@ export default function CheckoutPage() {
           quantity: item.quantity,
         })),
       });
+
+      if (PAYMENT_PROVIDER === "cybersource") {
+        const payment = await initializeCyberSourcePayment({ orderId: order.id });
+        if (!payment.captureContext || !payment.clientLibrary || !payment.clientLibraryIntegrity || payment.mock) {
+          throw new Error(
+            "CyberSource is not fully enabled yet. Add the sandbox merchant credentials before taking live payments.",
+          );
+        }
+        window.sessionStorage.setItem("maie_cybersource_capture_context", payment.captureContext);
+        window.sessionStorage.setItem("maie_cybersource_reference", payment.reference);
+        window.sessionStorage.setItem("maie_cybersource_client_library_integrity", payment.clientLibraryIntegrity);
+        if (payment.clientLibrary) {
+          window.sessionStorage.setItem("maie_cybersource_client_library", payment.clientLibrary);
+        } else {
+          window.sessionStorage.removeItem("maie_cybersource_client_library");
+        }
+        window.location.href = `/checkout/cybersource?reference=${encodeURIComponent(payment.reference)}`;
+        return;
+      }
 
       const payment = await initializeLahzaPayment({
         orderId: order.id,
@@ -228,8 +391,16 @@ export default function CheckoutPage() {
       clearCart();
       window.location.href = payment.checkoutUrl;
     } catch (submissionError) {
-      const message =
+      const rawMessage =
         submissionError instanceof Error ? submissionError.message : "Checkout failed.";
+      const message = rawMessage.toLowerCase().includes("payment provider")
+        || rawMessage.toLowerCase().includes("cybersource")
+        ? t(locale, {
+            en: "Payment could not be started. Please try again or contact the atelier.",
+            ar: "تعذر بدء عملية الدفع. يرجى المحاولة مرة أخرى أو التواصل مع الأتيليه.",
+            es: "No se pudo iniciar el pago. Intentalo de nuevo o contacta al atelier.",
+          })
+        : rawMessage;
       setError(message);
     } finally {
       setLoading(false);
@@ -239,9 +410,11 @@ export default function CheckoutPage() {
   if (!mounted) {
     return (
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-10">
-        <p className="text-[11px] tracking-[0.24em] uppercase text-[--muted]">Checkout</p>
+        <p className="text-[11px] tracking-[0.24em] uppercase text-[--muted]">
+          {t(locale, { en: "Checkout", ar: "الدفع", es: "Pago" })}
+        </p>
         <h1 className="mt-3 font-[family-name:var(--font-display)] text-4xl text-[--ink] sm:text-5xl">
-          Loading checkout...
+          {t(locale, { en: "Loading checkout...", ar: "جاري تحميل صفحة الدفع...", es: "Cargando pago..." })}
         </h1>
       </div>
     );
@@ -251,21 +424,23 @@ export default function CheckoutPage() {
     return (
       <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6">
         <p className="text-[11px] tracking-[0.24em] uppercase text-[--muted]">
-          {isArabic ? "الدفع" : "Checkout"}
+          {t(locale, { en: "Checkout", ar: "الدفع", es: "Pago" })}
         </p>
         <h1 className="mt-4 font-[family-name:var(--font-display)] text-4xl text-[--ink] sm:text-5xl">
-          {isArabic ? "السلة فارغة" : "Cart is empty"}
+          {t(locale, { en: "Cart is empty", ar: "السلة فارغة", es: "El carrito esta vacio" })}
         </h1>
         <p className="mt-4 text-sm text-[--muted]">
-          {isArabic
-            ? "أضيفي منتجات أولًا ثم عودي لإتمام الدفع."
-            : "Add products first, then return to complete checkout."}
+          {t(locale, {
+            en: "Add products first, then return to complete checkout.",
+            ar: "أضيفي منتجات أولًا ثم عودي لإتمام الدفع.",
+            es: "Agrega productos primero y luego vuelve para completar el pago.",
+          })}
         </p>
         <Link
           href="/shop"
           className="mt-8 inline-flex rounded-full bg-[--ink] px-6 py-3 text-xs tracking-[0.2em] uppercase text-white"
         >
-          {isArabic ? "تسوق الآن" : "Shop now"}
+          {t(locale, { en: "Shop now", ar: "تسوق الآن", es: "Comprar ahora" })}
         </Link>
       </div>
     );
@@ -274,10 +449,10 @@ export default function CheckoutPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 pb-28 sm:px-6 sm:pb-10 lg:px-10">
       <p className="text-[11px] tracking-[0.24em] uppercase text-[--muted]">
-        {isArabic ? "الدفع" : "Checkout"}
+        {t(locale, { en: "Checkout", ar: "الدفع", es: "Pago" })}
       </p>
       <h1 className="mt-3 font-[family-name:var(--font-display)] text-4xl text-[--ink] sm:text-5xl">
-        {isArabic ? "أكملي طلبك" : "Complete your order"}
+        {t(locale, { en: "Complete your order", ar: "أكملي طلبك", es: "Completa tu pedido" })}
       </h1>
 
       <div className="mt-6">
@@ -285,15 +460,11 @@ export default function CheckoutPage() {
           type="submit"
           form="checkout-form"
           disabled={loading || items.length === 0}
-          className="inline-flex rounded-full bg-[--ink] px-6 py-3 text-xs tracking-[0.2em] uppercase text-white disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex rounded-full bg-black px-6 py-3 text-xs tracking-[0.2em] uppercase text-white shadow-[0_10px_24px_rgba(0,0,0,0.12)] transition hover:bg-neutral-800 disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:text-white"
         >
           {loading
-            ? isArabic
-              ? "جاري المعالجة..."
-              : "Processing..."
-            : isArabic
-              ? "الدفع عبر لحظة"
-              : "Pay with Lahza"}
+            ? t(locale, { en: "Processing...", ar: "جاري المعالجة...", es: "Procesando..." })
+            : paymentButtonLabel}
         </button>
       </div>
 
@@ -305,12 +476,12 @@ export default function CheckoutPage() {
         <section className="space-y-4 rounded-[1.5rem] border border-[--line] bg-white p-5 sm:p-6">
           <div>
             <h2 className="font-[family-name:var(--font-display)] text-3xl text-[--ink]">
-              {isArabic ? "بيانات التواصل" : "Contact"}
+              {t(locale, { en: "Contact", ar: "بيانات التواصل", es: "Contacto" })}
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="text-sm text-[--muted]">
-              {isArabic ? "الاسم الأول" : "First name"}
+              {t(locale, { en: "First name", ar: "الاسم الأول", es: "Nombre" })}
               <input
                 required
                 value={firstName}
@@ -319,7 +490,7 @@ export default function CheckoutPage() {
               />
             </label>
             <label className="text-sm text-[--muted]">
-              {isArabic ? "اسم العائلة" : "Last name"}
+              {t(locale, { en: "Last name", ar: "اسم العائلة", es: "Apellido" })}
               <input
                 required
                 value={lastName}
@@ -338,7 +509,7 @@ export default function CheckoutPage() {
               />
             </label>
             <label className="text-sm text-[--muted] sm:col-span-2">
-              {isArabic ? "الهاتف" : "Phone"}
+              {t(locale, { en: "Phone", ar: "الهاتف", es: "Telefono" })}
               <div className="mt-2 grid gap-2 sm:grid-cols-[12rem_1fr]">
                 <select
                   required
@@ -356,7 +527,7 @@ export default function CheckoutPage() {
                   required
                   value={phone}
                   onChange={(event) => setPhone(event.target.value)}
-                  placeholder={isArabic ? "رقم الهاتف" : "Phone number"}
+                  placeholder={t(locale, { en: "Phone number", ar: "رقم الهاتف", es: "Numero de telefono" })}
                   className="w-full rounded-xl border border-[--line] px-3 py-3 text-[--ink] outline-none focus:border-[--ink]"
                 />
               </div>
@@ -365,17 +536,23 @@ export default function CheckoutPage() {
 
           <div className="border-t border-[--line] pt-4">
             <h3 className="font-[family-name:var(--font-display)] text-2xl text-[--ink]">
-              {isArabic ? "بيانات التوصيل" : "Delivery"}
+              {t(locale, { en: "Delivery", ar: "بيانات التوصيل", es: "Entrega" })}
             </h3>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="text-sm text-[--muted]">
-              {isArabic ? "البلد / المنطقة" : "Country / Region"}
+              {t(locale, { en: "Country / Region", ar: "البلد / المنطقة", es: "Pais / Region" })}
               <select
                 required
                 value={countryCode}
-                onChange={(event) => setCountryCode(event.target.value.toUpperCase())}
+                onChange={(event) => {
+                  const nextCountryCode = event.target.value.toUpperCase();
+                  setCountryCode(nextCountryCode);
+                  if (nextCountryCode === "PS") {
+                    setCity("");
+                  }
+                }}
                 className="mt-2 w-full rounded-xl border border-[--line] px-3 py-3 text-[--ink] outline-none focus:border-[--ink]"
               >
                 {checkoutCountryOptions.map((option) => (
@@ -386,16 +563,41 @@ export default function CheckoutPage() {
               </select>
             </label>
             <label className="text-sm text-[--muted]">
-              {isArabic ? "المدينة" : "City"}
-              <input
-                required
-                value={city}
-                onChange={(event) => setCity(event.target.value)}
-                className="mt-2 w-full rounded-xl border border-[--line] px-3 py-3 text-[--ink] outline-none focus:border-[--ink]"
-              />
+              {t(locale, { en: "City", ar: "المدينة", es: "Ciudad" })}
+              {countryCode === "PS" ? (
+                <select
+                  required
+                  value={city}
+                  onChange={(event) => {
+                    const nextCity = event.target.value;
+                    setCity(nextCity);
+                    const cityOption = PALESTINE_CITY_OPTIONS.find((option) => option.value === nextCity);
+                    if (cityOption) {
+                      setShippingAreaCode(cityOption.areaCode);
+                    }
+                  }}
+                  className="mt-2 w-full rounded-xl border border-[--line] px-3 py-3 text-[--ink] outline-none focus:border-[--ink]"
+                >
+                  <option value="">
+                    {t(locale, { en: "Select city", ar: "اختر المدينة", es: "Selecciona ciudad" })}
+                  </option>
+                  {PALESTINE_CITY_OPTIONS.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {palestineCityLabel(option, locale)}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  required
+                  value={city}
+                  onChange={(event) => setCity(event.target.value)}
+                  className="mt-2 w-full rounded-xl border border-[--line] px-3 py-3 text-[--ink] outline-none focus:border-[--ink]"
+                />
+              )}
             </label>
             <label className="text-sm text-[--muted]">
-              {isArabic ? "المنطقة / المحافظة" : "State / Region"}
+              {t(locale, { en: "State / Region", ar: "المنطقة / المحافظة", es: "Provincia / Region" })}
               <input
                 required
                 value={region}
@@ -404,7 +606,7 @@ export default function CheckoutPage() {
               />
             </label>
             <label className="text-sm text-[--muted]">
-              {isArabic ? "الرمز البريدي" : "Postal code"}
+              {t(locale, { en: "Postal code", ar: "الرمز البريدي", es: "Codigo postal" })}
               <input
                 value={postalCode}
                 onChange={(event) => setPostalCode(event.target.value)}
@@ -414,7 +616,7 @@ export default function CheckoutPage() {
           </div>
 
           <label className="block text-sm text-[--muted]">
-            {isArabic ? "العنوان" : "Address"}
+            {t(locale, { en: "Address", ar: "العنوان", es: "Direccion" })}
             <input
               required
               value={addressLine1}
@@ -424,7 +626,7 @@ export default function CheckoutPage() {
           </label>
 
           <label className="block text-sm text-[--muted]">
-            {isArabic ? "الشقة / الطابق (اختياري)" : "Apartment, suite, etc. (optional)"}
+            {t(locale, { en: "Apartment, suite, etc. (optional)", ar: "الشقة / الطابق (اختياري)", es: "Apartamento, suite, etc. (opcional)" })}
             <input
               value={addressLine2}
               onChange={(event) => setAddressLine2(event.target.value)}
@@ -433,7 +635,7 @@ export default function CheckoutPage() {
           </label>
 
           <label className="block text-sm text-[--muted]">
-            {isArabic ? "ملاحظات (اختياري)" : "Notes (optional)"}
+            {t(locale, { en: "Notes (optional)", ar: "ملاحظات (اختياري)", es: "Notas (opcional)" })}
             <textarea
               value={notes}
               onChange={(event) => setNotes(event.target.value)}
@@ -443,22 +645,18 @@ export default function CheckoutPage() {
 
           <button
             type="submit"
-            disabled={loading || items.length === 0}
-            className="w-full rounded-full bg-[--ink] px-5 py-3 text-xs tracking-[0.2em] uppercase text-white disabled:cursor-not-allowed disabled:opacity-60 lg:hidden"
+            disabled={paymentDisabled}
+            className="w-full rounded-full bg-black px-5 py-3 text-xs tracking-[0.2em] uppercase text-white shadow-[0_10px_24px_rgba(0,0,0,0.12)] transition hover:bg-neutral-800 disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:text-white lg:hidden"
           >
             {loading
-              ? isArabic
-                ? "جاري المعالجة..."
-                : "Processing..."
-              : isArabic
-                ? "الدفع عبر لحظة"
-                : "Pay with Lahza"}
+              ? t(locale, { en: "Processing...", ar: "جاري المعالجة...", es: "Procesando..." })
+              : paymentButtonLabel}
           </button>
         </section>
 
         <section className="space-y-4 rounded-[1.5rem] border border-[--line] bg-[--panel] p-5 sm:p-6">
           <h2 className="font-[family-name:var(--font-display)] text-3xl text-[--ink]">
-            {isArabic ? "ملخص الطلب" : "Order summary"}
+            {t(locale, { en: "Order summary", ar: "ملخص الطلب", es: "Resumen del pedido" })}
           </h2>
           <div className="space-y-3">
             {items.map((item) => {
@@ -481,51 +679,61 @@ export default function CheckoutPage() {
 
           <div className="space-y-2 border-t border-[--line] pt-4 text-sm">
             <div className="flex items-center justify-between text-[--muted]">
-              <span>{isArabic ? "المجموع الفرعي" : "Subtotal"}</span>
+              <span>{t(locale, { en: "Subtotal", ar: "المجموع الفرعي", es: "Subtotal" })}</span>
               <span>{formatMoney(subtotalDisplay.amount, subtotalDisplay.currency)}</span>
             </div>
             <div className="flex items-center justify-between text-[--muted]">
-              <span>{isArabic ? "الشحن" : "Shipping"}</span>
-              <span>{formatMoney(shippingDisplay.amount, shippingDisplay.currency)}</span>
+              <span>
+                {t(locale, { en: "Shipping", ar: "الشحن", es: "Envio" })}
+                {countryCode === "PS" ? ` (${shippingSummaryLocation})` : ""}
+              </span>
+              <span>{shippingReady
+                ? formatMoney(shippingDisplay.amount, shippingDisplay.currency)
+                : shippingKey == null
+                  ? t(locale, { en: "Select city", ar: "اختر المدينة", es: "Selecciona ciudad" })
+                  : shippingFailed
+                    ? t(locale, { en: "Unavailable", ar: "غير متاح", es: "No disponible" })
+                    : t(locale, { en: "Calculating...", ar: "جار الحساب...", es: "Calculando..." })}</span>
             </div>
             <div className="flex items-center justify-between pt-2 font-semibold text-[--ink]">
-              <span>{isArabic ? "الإجمالي" : "Total"}</span>
-              <span>{formatMoney(totalDisplay.amount, totalDisplay.currency)}</span>
+              <span>{t(locale, { en: "Total", ar: "الإجمالي", es: "Total" })}</span>
+              <span>{shippingReady ? formatMoney(totalDisplay.amount, totalDisplay.currency) : "--"}</span>
             </div>
           </div>
+
+          {shippingFailed && (
+            <p role="alert" className="text-sm text-red-600">
+              {t(locale, { en: "Shipping could not be calculated.", ar: "تعذر حساب تكلفة الشحن.", es: "No se pudo calcular el envio." })}{" "}
+              <button type="button" className="underline" onClick={() => setShippingRetry((value) => value + 1)}>
+                {t(locale, { en: "Retry", ar: "حاول مجددا", es: "Reintentar" })}
+              </button>
+            </p>
+          )}
 
           {error && <p className="text-sm text-red-600">{error}</p>}
 
           <button
             type="submit"
-            disabled={loading || items.length === 0}
-            className="w-full rounded-full bg-[--ink] px-5 py-3 text-xs tracking-[0.2em] uppercase text-white disabled:cursor-not-allowed disabled:opacity-60"
+            disabled={paymentDisabled}
+            className="w-full rounded-full bg-black px-5 py-3 text-xs tracking-[0.2em] uppercase text-white shadow-[0_10px_24px_rgba(0,0,0,0.12)] transition hover:bg-neutral-800 disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:text-white"
           >
             {loading
-              ? isArabic
-                ? "جاري المعالجة..."
-                : "Processing..."
-              : isArabic
-                ? "الدفع عبر لحظة"
-                : "Pay with Lahza"}
+              ? t(locale, { en: "Processing...", ar: "جاري المعالجة...", es: "Procesando..." })
+              : paymentButtonLabel}
           </button>
         </section>
       </form>
 
-      <div className="fixed bottom-4 left-4 right-4 z-50 rounded-2xl border border-[--line] bg-white/95 p-3 shadow-[0_14px_40px_rgba(0,0,0,0.16)] backdrop-blur sm:left-auto sm:right-6 sm:w-[22rem]">
+      <div className="fixed bottom-4 left-4 right-4 z-50 rounded-2xl border border-[--line] bg-white/95 p-3 shadow-[0_14px_40px_rgba(0,0,0,0.16)] backdrop-blur lg:hidden">
         <button
           type="submit"
           form="checkout-form"
-          disabled={loading || items.length === 0}
-          className="w-full rounded-full bg-[--ink] px-5 py-3 text-xs tracking-[0.2em] uppercase text-white disabled:cursor-not-allowed disabled:opacity-60"
+          disabled={paymentDisabled}
+          className="w-full rounded-full bg-black px-5 py-3 text-xs tracking-[0.2em] uppercase text-white shadow-[0_10px_24px_rgba(0,0,0,0.12)] transition hover:bg-neutral-800 disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:text-white"
         >
           {loading
-            ? isArabic
-              ? "جاري المعالجة..."
-              : "Processing..."
-            : isArabic
-              ? "الدفع عبر لحظة"
-              : "Pay with Lahza"}
+            ? t(locale, { en: "Processing...", ar: "جاري المعالجة...", es: "Procesando..." })
+            : paymentButtonLabel}
         </button>
       </div>
     </div>

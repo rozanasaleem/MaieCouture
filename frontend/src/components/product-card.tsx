@@ -1,8 +1,49 @@
 import Link from "next/link";
 import { PriceDisplay } from "@/components/price-display";
+import { Locale } from "@/lib/i18n-shared";
 import { ProductSummary } from "@/lib/types";
 
-export function ProductCard({ product }: { product: ProductSummary }) {
+function localizedField(value: string | null | undefined, locale: Locale) {
+  if (!value) {
+    return "";
+  }
+
+  const trimmed = value.trim();
+  const bracketMatch = trimmed.match(/\[en\]([\s\S]*?)\[\/en\][\s\S]*?\[ar\]([\s\S]*?)\[\/ar\]/i);
+  if (bracketMatch) {
+    return locale === "ar" ? bracketMatch[2].trim() : bracketMatch[1].trim();
+  }
+
+  const pipeParts = trimmed.split("||").map((part) => part.trim()).filter(Boolean);
+  if (pipeParts.length >= 2) {
+    return locale === "ar" ? pipeParts[1] : pipeParts[0];
+  }
+
+  return trimmed;
+}
+
+function cleanDescription(value: string) {
+  return value
+    .replace(/<[^>]*>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+export function ProductCard({
+  product,
+  locale,
+}: {
+  product: ProductSummary;
+  locale: Locale;
+}) {
+  const shortDescription = cleanDescription(localizedField(product.shortDescription, locale));
+  const normalizedPurchaseType = String(product.purchaseType ?? "")
+    .trim()
+    .toUpperCase();
+  const appointmentOnlyFlow = normalizedPurchaseType !== "DIRECT_PURCHASE";
+
   return (
     <Link
       href={`/product/${product.slug}`}
@@ -27,16 +68,28 @@ export function ProductCard({ product }: { product: ProductSummary }) {
       </div>
 
       <div className="space-y-3 px-4 py-4 sm:px-5 sm:py-5">
-        <p className="text-sm leading-7 text-[--muted]">
-          {product.shortDescription}
-        </p>
+        {shortDescription ? (
+          <p className="text-sm leading-7 text-[--muted]">
+            {shortDescription}
+          </p>
+        ) : null}
         <div className="flex flex-col gap-2 text-sm">
-          <span className="font-[family-name:var(--font-display)] text-xl text-[--ink]">
-            <PriceDisplay
-              amount={product.salePrice ?? product.price}
-              currency={product.currency}
-            />
-          </span>
+          {appointmentOnlyFlow ? (
+            <span className="text-[11px] tracking-[0.22em] uppercase text-[--muted]">
+              {locale === "ar"
+                ? "بموعد خاص"
+                : locale === "es"
+                  ? "Solo con cita"
+                  : "By appointment"}
+            </span>
+          ) : (
+            <span className="font-[family-name:var(--font-display)] text-xl text-[--ink]">
+              <PriceDisplay
+                amount={product.salePrice ?? product.price}
+                currency={product.currency}
+              />
+            </span>
+          )}
         </div>
       </div>
     </Link>

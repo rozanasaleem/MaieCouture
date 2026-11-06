@@ -46,6 +46,22 @@ export function LanguageSwitcher({
       <span>/</span>
       <button
         type="button"
+        onClick={() => switchLocale("es")}
+        className={`rounded px-1.5 py-0.5 transition ${
+          locale === "es"
+            ? lightOnDark
+              ? "text-white"
+              : "text-[--ink]"
+            : lightOnDark
+              ? "hover:text-white"
+              : "hover:text-[--ink]"
+        }`}
+      >
+        ES
+      </button>
+      <span>/</span>
+      <button
+        type="button"
         onClick={() => switchLocale("ar")}
         className={`rounded px-1.5 py-0.5 transition ${
           locale === "ar"
