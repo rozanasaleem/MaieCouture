@@ -22,9 +22,17 @@ public record ProductDetailResponse(
         ProductStatus productStatus,
         boolean madeToOrder,
         String leadTimeNote,
+        List<ImageResponse> galleryImageDetails,
         List<String> galleryImages,
         List<VariantResponse> variants
 ) {
+
+    public record ImageResponse(
+            String imageUrl,
+            Integer sortOrder,
+            String color
+    ) {
+    }
 
     public record VariantResponse(
             Long id,
@@ -56,6 +64,14 @@ public record ProductDetailResponse(
                 product.getProductStatus(),
                 product.isMadeToOrder(),
                 product.getLeadTimeNote(),
+                product.getImages().stream()
+                        .sorted((left, right) -> Integer.compare(left.getSortOrder(), right.getSortOrder()))
+                        .map(image -> new ImageResponse(
+                                image.getImageUrl(),
+                                image.getSortOrder(),
+                                image.getColor()
+                        ))
+                        .toList(),
                 product.getImages().stream()
                         .sorted((left, right) -> Integer.compare(left.getSortOrder(), right.getSortOrder()))
                         .map(ProductImage::getImageUrl)

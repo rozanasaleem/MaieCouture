@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
         AdminSeedProperties.class,
         ShippingProperties.class,
         LahzaProperties.class,
+        CyberSourceProperties.class,
         NotificationsProperties.class
 })
 public class ApplicationConfig {

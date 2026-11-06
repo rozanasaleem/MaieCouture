@@ -28,6 +28,9 @@ public class ProductImage {
     @Column(nullable = false)
     private Integer sortOrder = 0;
 
+    @Column(length = 80)
+    private String color;
+
     public Long getId() {
         return id;
     }
@@ -54,5 +57,13 @@ public class ProductImage {
 
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 }

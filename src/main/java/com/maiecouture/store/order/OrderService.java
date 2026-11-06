@@ -24,17 +24,20 @@ public class OrderService {
     private final ProductRepository productRepository;
     private final ShippingService shippingService;
     private final OrderNotificationService orderNotificationService;
+    private final CurrencyConversionService currencyConversionService;
 
     public OrderService(
             OrderRepository orderRepository,
             ProductRepository productRepository,
             ShippingService shippingService,
-            OrderNotificationService orderNotificationService
+            OrderNotificationService orderNotificationService,
+            CurrencyConversionService currencyConversionService
     ) {
         this.orderRepository = orderRepository;
         this.productRepository = productRepository;
         this.shippingService = shippingService;
         this.orderNotificationService = orderNotificationService;
+        this.currencyConversionService = currencyConversionService;
     }
 
     public List<OrderResponse> getOrders() {
@@ -54,11 +57,13 @@ public class OrderService {
         order.setPhone(request.phone());
         order.setShippingAddress(request.shippingAddress());
         order.setShippingCountryCode(normalizeCountryCode(request.shippingCountryCode()));
+        order.setShippingAreaCode(normalizeShippingAreaCode(order.getShippingCountryCode(), request.shippingAreaCode()));
         order.setNotes(request.notes());
+        String orderCurrency = currencyConversionService.normalizeCurrency(request.currency());
 
         List<OrderItem> items = new ArrayList<>();
+        List<ShippingService.ShippingLine> shippingLines = new ArrayList<>();
         BigDecimal totalAmount = BigDecimal.ZERO;
-        String orderCurrency = null;
 
         for (CreateOrderRequest.OrderLineRequest line : request.items()) {
             Product product = productRepository.findById(line.productId())
@@ -85,26 +90,26 @@ public class OrderService {
             }
 
             String productCurrency = normalizeCurrency(product.getCurrency());
-            if (orderCurrency == null) {
-                orderCurrency = productCurrency;
-            } else if (!orderCurrency.equals(productCurrency)) {
-                throw new IllegalArgumentException(
-                        "All items in one order must use the same currency. Found: " + orderCurrency + " and " + productCurrency
-                );
-            }
+            BigDecimal convertedUnitPrice = currencyConversionService.convert(unitPrice, productCurrency, orderCurrency);
 
-            item.setUnitPrice(unitPrice);
-            item.setLineTotal(unitPrice.multiply(BigDecimal.valueOf(line.quantity())));
+            item.setUnitPrice(convertedUnitPrice);
+            item.setLineTotal(convertedUnitPrice.multiply(BigDecimal.valueOf(line.quantity())).setScale(2, RoundingMode.HALF_UP));
             items.add(item);
 
             totalAmount = totalAmount.add(item.getLineTotal());
+            shippingLines.add(new ShippingService.ShippingLine(product.getId(), line.quantity()));
             decrementStock(item.getVariant(), line.quantity(), product);
             product.touch();
         }
 
-        order.setCurrency(orderCurrency != null ? orderCurrency : "NIS");
+        order.setCurrency(orderCurrency);
         BigDecimal subtotalAmount = totalAmount.setScale(2, RoundingMode.HALF_UP);
-        BigDecimal shippingFee = shippingService.calculateFee(request.shippingCountryCode());
+        BigDecimal shippingFee = shippingService.calculateFee(
+                order.getShippingCountryCode(),
+                order.getShippingAreaCode(),
+                orderCurrency,
+                shippingLines
+        );
         order.setSubtotalAmount(subtotalAmount);
         order.setShippingFee(shippingFee);
         order.setTotalAmount(subtotalAmount.add(shippingFee).setScale(2, RoundingMode.HALF_UP));
@@ -175,13 +180,25 @@ public class OrderService {
     }
 
     private String normalizeCurrency(String currency) {
-        if (currency == null || currency.isBlank()) {
-            return "NIS";
+        return currencyConversionService.normalizeCurrency(currency);
+    }
+
+    private String normalizeShippingAreaCode(String countryCode, String shippingAreaCode) {
+        if (!"PS".equals(countryCode)) {
+            if (shippingAreaCode == null) return null;
+            String area = shippingAreaCode.trim().toUpperCase(java.util.Locale.ROOT).replace('-', '_').replace(' ', '_');
+            return java.util.Set.of("SCOTLAND", "GB_SCT", "WALES", "GB_WLS", "NORTHERN_IRELAND", "GB_NIR",
+                    "CANARY_ISLANDS", "ES_CN", "MADEIRA", "PT_30").contains(area) ? area : null;
         }
-        String code = currency.trim().toUpperCase();
-        if (code.equals("NIS") || code.equals("ILS")) {
-            return "NIS";
+        if (shippingAreaCode == null || shippingAreaCode.isBlank()) {
+            return "WEST_BANK";
         }
-        return code;
+
+        return switch (shippingAreaCode.trim().toUpperCase()) {
+            case "JERUSALEM" -> "JERUSALEM";
+            case "AREAS_48" -> "AREAS_48";
+            case "WEST_BANK" -> "WEST_BANK";
+            default -> "WEST_BANK";
+        };
     }
 }

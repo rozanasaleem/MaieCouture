@@ -103,8 +103,12 @@ public class LahzaPaymentService {
     }
 
     private Order findOrderByReference(String reference) {
-        return orderRepository.findByPaymentReference(reference)
+        Order order = orderRepository.findByPaymentReference(reference)
                 .orElseThrow(() -> new ResourceNotFoundException("Order not found for payment reference: " + reference));
+        if (!PROVIDER.equals(order.getPaymentProvider())) {
+            throw new IllegalArgumentException("Order does not belong to Lahza");
+        }
+        return order;
     }
 
     private boolean verifyAndApplyPayment(Order order, String callbackStatus, String callbackTransactionId) {
@@ -237,6 +241,13 @@ public class LahzaPaymentService {
     }
 
     private String toLahzaCurrency(String currency) {
-        return "ILS";
+        if (currency == null || currency.isBlank()) {
+            return "ILS";
+        }
+        String code = currency.trim().toUpperCase();
+        if (code.equals("NIS")) {
+            return "ILS";
+        }
+        return code;
     }
 }

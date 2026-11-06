@@ -159,6 +159,7 @@ public class ProductService {
             image.setProduct(product);
             image.setImageUrl(imageRequest.imageUrl());
             image.setSortOrder(imageRequest.sortOrder());
+            image.setColor(imageRequest.color());
             images.add(image);
         }
         return images;

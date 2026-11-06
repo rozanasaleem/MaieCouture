@@ -8,6 +8,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public record ShippingProperties(
         String domesticCountryCode,
         BigDecimal domesticFee,
+        BigDecimal westBankFee,
+        BigDecimal jerusalemFee,
+        BigDecimal areas48Fee,
         BigDecimal internationalFee,
         BigDecimal fallbackFee,
         Map<String, BigDecimal> countryFees

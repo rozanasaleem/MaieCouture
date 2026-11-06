@@ -33,7 +33,7 @@ server:
 
 app:
   cors:
-    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:5173}
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000,https://localhost:3000,http://localhost:5173}
   admin:
     seed:
       email: ${ADMIN_SEED_EMAIL:admin@maiecouture.com}
@@ -41,20 +41,35 @@ app:
   shipping:
     domestic-country-code: ${SHIPPING_DOMESTIC_COUNTRY_CODE:PS}
     domestic-fee: ${SHIPPING_DOMESTIC_FEE:5.00}
+    west-bank-fee: ${SHIPPING_WEST_BANK_FEE:25.00}
+    jerusalem-fee: ${SHIPPING_JERUSALEM_FEE:50.00}
+    areas48-fee: ${SHIPPING_AREAS48_FEE:75.00}
     international-fee: ${SHIPPING_INTERNATIONAL_FEE:25.00}
     fallback-fee: ${SHIPPING_FALLBACK_FEE:15.00}
-    country-fees:
-      PS: ${SHIPPING_FEE_PS:5.00}
-      IL: ${SHIPPING_FEE_IL:15.00}
-      JO: ${SHIPPING_FEE_JO:20.00}
-      AE: ${SHIPPING_FEE_AE:25.00}
-      SA: ${SHIPPING_FEE_SA:25.00}
-      QA: ${SHIPPING_FEE_QA:25.00}
+  currency:
+    ils-per-usd: ${ILS_PER_USD:3.05}
+    ils-per-eur: ${ILS_PER_EUR:3.45}
+    ils-per-jod: ${ILS_PER_JOD:4.25}
   lahza:
     enabled: ${LAHZA_ENABLED:false}
     base-url: ${LAHZA_BASE_URL:https://api.lahza.io}
     secret-key: ${LAHZA_SECRET_KEY:}
     callback-url: ${LAHZA_CALLBACK_URL:http://localhost:8080/api/v1/public/payments/lahza/callback}
+  cybersource:
+    enabled: ${CYBERSOURCE_ENABLED:false}
+    base-url: ${CYBERSOURCE_BASE_URL:https://apitest.cybersource.com}
+    merchant-id: ${CYBERSOURCE_MERCHANT_ID:}
+    key-id: ${CYBERSOURCE_KEY_ID:}
+    secret-key: ${CYBERSOURCE_SECRET_KEY:}
+    target-origins: ${CYBERSOURCE_TARGET_ORIGINS:https://localhost:3000}
+    client-version: ${CYBERSOURCE_CLIENT_VERSION:}
+    allowed-card-networks: ${CYBERSOURCE_ALLOWED_CARD_NETWORKS:VISA,MASTERCARD}
+    allowed-payment-types: ${CYBERSOURCE_ALLOWED_PAYMENT_TYPES:PANENTRY}
+    country: ${CYBERSOURCE_COUNTRY:US}
+    locale: ${CYBERSOURCE_LOCALE:en_US}
+    complete-type: ${CYBERSOURCE_COMPLETE_TYPE:CAPTURE}
+    decision-manager-enabled: ${CYBERSOURCE_DECISION_MANAGER_ENABLED:false}
+    consumer-authentication: ${CYBERSOURCE_CONSUMER_AUTHENTICATION:}
   notifications:
     enabled: ${ORDER_EMAIL_ENABLED:false}
     from-email: ${ORDER_EMAIL_FROM:no-reply@maiecouture.com}

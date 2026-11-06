@@ -28,7 +28,8 @@ public record ProductRequest(
 ) {
     public record ProductImageRequest(
             @NotBlank String imageUrl,
-            @NotNull Integer sortOrder
+            @NotNull Integer sortOrder,
+            String color
     ) {
     }
 

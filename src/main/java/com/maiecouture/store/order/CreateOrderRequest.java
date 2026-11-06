@@ -14,6 +14,8 @@ public record CreateOrderRequest(
         String phone,
         @NotBlank String shippingAddress,
         String shippingCountryCode,
+        String shippingAreaCode,
+        String currency,
         String notes,
         @NotEmpty List<@Valid OrderLineRequest> items
 ) {

@@ -61,6 +61,9 @@ public class Order {
     @Column(length = 3)
     private String shippingCountryCode;
 
+    @Column(length = 40)
+    private String shippingAreaCode;
+
     @Column(nullable = false, length = 3)
     private String currency = "USD";
 
@@ -182,6 +185,14 @@ public class Order {
 
     public void setShippingCountryCode(String shippingCountryCode) {
         this.shippingCountryCode = shippingCountryCode;
+    }
+
+    public String getShippingAreaCode() {
+        return shippingAreaCode;
+    }
+
+    public void setShippingAreaCode(String shippingAreaCode) {
+        this.shippingAreaCode = shippingAreaCode;
     }
 
     public String getCurrency() {
