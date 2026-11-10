@@ -39,8 +39,9 @@ export default function CartPage() {
     () =>
       sumMoneyInCurrency(
         items.map((item) => ({
-          amount: item.unitPrice * item.quantity,
+          amount: item.unitPrice,
           currency: item.currency,
+          quantity: item.quantity,
         })),
         preferredCurrency,
       ),
@@ -86,11 +87,7 @@ export default function CartPage() {
         <section className="space-y-4">
           {items.map((item) => {
             const unitDisplay = toDisplayMoney(item.unitPrice, item.currency, preferredCurrency);
-            const lineDisplay = toDisplayMoney(
-              item.unitPrice * item.quantity,
-              item.currency,
-              preferredCurrency,
-            );
+            const lineDisplay = { ...unitDisplay, amount: unitDisplay.amount * item.quantity };
 
             return (
               <div

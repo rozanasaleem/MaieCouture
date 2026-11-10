@@ -69,4 +69,6 @@ assert.equal(shared.normalizeCountryCode('PS,US'), null);
 assert.equal(shared.normalizeCountryCode(' ps '), 'PS');
 document.documentElement.dataset.country = 'US';
 assert.equal(money.toDisplayMoney(1800, 'ILS', 'ILS').currency, 'ILS', 'Rendering uses the shared hydration snapshot');
+assert.equal(money.sumMoneyInCurrency([{amount:1800, currency:'ILS', quantity:2}], 'USD').amount, 1180.32,
+  'Convert and round unit prices before multiplying quantity, matching the backend order total');
 console.log('Store preference checks passed: location defaults, manual overrides, currency events, legacy selections and hydration currency.');

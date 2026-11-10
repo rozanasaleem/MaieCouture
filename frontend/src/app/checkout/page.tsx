@@ -229,8 +229,9 @@ export default function CheckoutPage() {
     () =>
       sumMoneyInCurrency(
         items.map((item) => ({
-          amount: item.unitPrice * item.quantity,
+          amount: item.unitPrice,
           currency: item.currency,
+          quantity: item.quantity,
         })),
         preferredCurrency,
       ),
@@ -700,11 +701,8 @@ export default function CheckoutPage() {
           </h2>
           <div className="space-y-3">
             {items.map((item) => {
-              const lineDisplay = toDisplayMoney(
-                item.unitPrice * item.quantity,
-                item.currency,
-                preferredCurrency,
-              );
+              const unitDisplay = toDisplayMoney(item.unitPrice, item.currency, preferredCurrency);
+              const lineDisplay = { ...unitDisplay, amount: unitDisplay.amount * item.quantity };
               return (
                 <div key={item.productId} className="flex items-center justify-between text-sm">
                   <span className="max-w-[70%] text-[--muted]">

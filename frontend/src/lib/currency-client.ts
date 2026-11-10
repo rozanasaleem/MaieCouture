@@ -171,7 +171,7 @@ export function convertMoneyValue(
 }
 
 export function sumMoneyInCurrency(
-  lines: Array<{ amount: number; currency: string }>,
+  lines: Array<{ amount: number; currency: string; quantity?: number }>,
   targetCurrency: string,
 ): DisplayMoney {
   const normalizedTarget = normalizeCurrencyCode(targetCurrency);
@@ -181,7 +181,8 @@ export function sumMoneyInCurrency(
   for (const line of lines) {
     const normalizedLineCurrency = normalizeCurrencyCode(line.currency);
     const converted = convertMoney(line.amount, normalizedLineCurrency, normalizedTarget);
-    total += converted ?? line.amount;
+    // The backend rounds each converted unit price before multiplying quantity.
+    total += (converted ?? line.amount) * (line.quantity ?? 1);
     if (normalizedLineCurrency !== normalizedTarget) {
       estimated = true;
     }
