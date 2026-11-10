@@ -1,28 +1,11 @@
 "use client";
 
-import { useMemo, useState, useSyncExternalStore } from "react";
+import { useMemo, useState } from "react";
+import { usePreferredCountry } from "@/components/store-preferences";
+import { setPreferredCountry } from "@/lib/country-client";
 import { ModalShell } from "@/components/modal-shell";
 import { Locale, t } from "@/lib/i18n-shared";
-import { isShippingCountry, SHIPPING_COUNTRY_CODES } from "@/lib/shipping-countries";
-
-const STORAGE_KEY = "maie_selected_country";
-const FALLBACK_COUNTRY = "PS";
-
-function subscribeCountry(listener: () => void) {
-  window.addEventListener("storage", listener);
-  window.addEventListener("maie-country-updated", listener);
-  return () => {
-    window.removeEventListener("storage", listener);
-    window.removeEventListener("maie-country-updated", listener);
-  };
-}
-
-function readCountry() {
-  const saved = normalizeStoredCountryCode(window.localStorage.getItem(STORAGE_KEY));
-  if (saved) return saved;
-  const region = Intl.DateTimeFormat().resolvedOptions().locale.split("-")[1]?.toUpperCase();
-  return region && countryOptionsEn.some((option) => option.code === region) ? region : FALLBACK_COUNTRY;
-}
+import { SHIPPING_COUNTRY_CODES } from "@/lib/shipping-countries";
 
 const fallbackCountryOptionsEn = [
   { code: "PS", name: "Palestine" },
@@ -102,34 +85,6 @@ const countryOptionsEn = buildCountryOptions("en");
 const countryOptionsAr = buildCountryOptions("ar");
 const countryOptionsEs = buildCountryOptions("es");
 
-function normalizeStoredCountryCode(raw: string | null): string | null {
-  if (!raw) {
-    return null;
-  }
-
-  const upper = raw.trim().toUpperCase();
-  if (isShippingCountry(upper)) {
-    return upper;
-  }
-
-  const byName = countryOptionsEn.find(
-    (option) => option.name.toLowerCase() === raw.trim().toLowerCase(),
-  );
-  if (byName?.code) {
-    return byName.code;
-  }
-  const byArabicName = countryOptionsAr.find(
-    (option) => option.name.toLowerCase() === raw.trim().toLowerCase(),
-  );
-  if (byArabicName?.code) {
-    return byArabicName.code;
-  }
-  const bySpanishName = countryOptionsEs.find(
-    (option) => option.name.toLowerCase() === raw.trim().toLowerCase(),
-  );
-  return bySpanishName?.code ?? null;
-}
-
 export function CountrySelector({
   compact = false,
   subtle = false,
@@ -145,7 +100,7 @@ export function CountrySelector({
   const [search, setSearch] = useState("");
   const countryOptions =
     locale === "ar" ? countryOptionsAr : locale === "es" ? countryOptionsEs : countryOptionsEn;
-  const countryCode = useSyncExternalStore(subscribeCountry, readCountry, () => FALLBACK_COUNTRY);
+  const countryCode = usePreferredCountry();
 
   const selectedCountryLabel = useMemo(() => {
     return (
@@ -171,8 +126,7 @@ export function CountrySelector({
   }, [countryOptions, search]);
 
   function chooseCountry(code: string) {
-    window.localStorage.setItem(STORAGE_KEY, code);
-    window.dispatchEvent(new Event("maie-country-updated"));
+    setPreferredCountry(code);
     setOpen(false);
   }
 

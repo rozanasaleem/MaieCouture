@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { usePreferredCurrency } from "@/components/store-preferences";
 import {
   cartBaseCurrency,
   cartSubtotal,
@@ -10,7 +11,6 @@ import {
   updateCartQuantity,
 } from "@/lib/cart";
 import {
-  getPreferredDisplayCurrency,
   formatMoney,
   sumMoneyInCurrency,
   toDisplayMoney,
@@ -20,24 +20,21 @@ import { t } from "@/lib/i18n-shared";
 
 export default function CartPage() {
   const locale = getLocaleFromDocument();
-  const [items, setItems] = useState(readCart());
-  const [, setCurrencyVersion] = useState(0);
+  const [items, setItems] = useState<ReturnType<typeof readCart>>([]);
+  const preferredCurrency = usePreferredCurrency();
 
   useEffect(() => {
     const sync = () => setItems(readCart());
-    const syncCurrency = () => setCurrencyVersion((current) => current + 1);
+    sync();
     window.addEventListener("maie-cart-updated", sync);
-    window.addEventListener("maie-currency-updated", syncCurrency);
     window.addEventListener("storage", sync);
     return () => {
       window.removeEventListener("maie-cart-updated", sync);
-      window.removeEventListener("maie-currency-updated", syncCurrency);
       window.removeEventListener("storage", sync);
     };
   }, []);
 
   const subtotal = useMemo(() => cartSubtotal(items), [items]);
-  const preferredCurrency = getPreferredDisplayCurrency();
   const subtotalDisplay = useMemo(
     () =>
       sumMoneyInCurrency(
@@ -88,10 +85,11 @@ export default function CartPage() {
       <div className="mt-8 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
         <section className="space-y-4">
           {items.map((item) => {
-            const unitDisplay = toDisplayMoney(item.unitPrice, item.currency);
+            const unitDisplay = toDisplayMoney(item.unitPrice, item.currency, preferredCurrency);
             const lineDisplay = toDisplayMoney(
               item.unitPrice * item.quantity,
               item.currency,
+              preferredCurrency,
             );
 
             return (

@@ -68,8 +68,8 @@ app:
     country: ${CYBERSOURCE_COUNTRY:US}
     locale: ${CYBERSOURCE_LOCALE:en_US}
     complete-type: ${CYBERSOURCE_COMPLETE_TYPE:CAPTURE}
-    decision-manager-enabled: ${CYBERSOURCE_DECISION_MANAGER_ENABLED:false}
-    consumer-authentication: ${CYBERSOURCE_CONSUMER_AUTHENTICATION:}
+    decision-manager-enabled: ${CYBERSOURCE_DECISION_MANAGER_ENABLED:true}
+    consumer-authentication: ${CYBERSOURCE_CONSUMER_AUTHENTICATION:3DS}
   notifications:
     enabled: ${ORDER_EMAIL_ENABLED:false}
     from-email: ${ORDER_EMAIL_FROM:no-reply@maiecouture.com}

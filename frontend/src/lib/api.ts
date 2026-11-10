@@ -198,6 +198,17 @@ export async function initializeLahzaPayment(payload: {
 
 export async function initializeCyberSourcePayment(payload: {
   orderId: number;
+  billTo: {
+    firstName: string;
+    lastName: string;
+    address1: string;
+    address2?: string;
+    locality: string;
+    administrativeArea: string;
+    postalCode: string;
+    country: string;
+    phoneNumber: string;
+  };
 }) {
   return postJson<CyberSourceInitializeResponse, typeof payload>(
     "/public/payments/cybersource/initialize",

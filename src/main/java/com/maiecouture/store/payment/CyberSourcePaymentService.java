@@ -104,7 +104,7 @@ public class CyberSourcePaymentService {
 
         ensureConfigured();
 
-        String requestBody = toJson(captureContextPayload(order));
+        String requestBody = toJson(captureContextPayload(order, request.billTo()));
         var response = postCaptureContext(requestBody);
         if (evidenceStore != null) {
             evidenceStore.record(order.getId(), reference, baseUrl() + CAPTURE_CONTEXT_PATH,
@@ -227,7 +227,7 @@ public class CyberSourcePaymentService {
                 order.getPaymentStatus() == PaymentStatus.PAID);
     }
 
-    private Map<String, Object> captureContextPayload(Order order) {
+    private Map<String, Object> captureContextPayload(Order order, CyberSourceInitializeRequest.BillingInformation billing) {
         Map<String, Object> payload = new LinkedHashMap<>();
         payload.put("targetOrigins", nonEmpty(properties.targetOrigins(), List.of("https://localhost:3000")));
         if (StringUtils.hasText(properties.clientVersion())) {
@@ -263,7 +263,24 @@ public class CyberSourcePaymentService {
 
         Map<String, Object> orderInformation = new LinkedHashMap<>();
         orderInformation.put("amountDetails", amountDetails);
-        orderInformation.put("billTo", Map.of("email", order.getEmail()));
+        Map<String, Object> billTo = new LinkedHashMap<>();
+        billTo.put("email", order.getEmail());
+        if (billing != null) {
+            billTo.put("firstName", billing.firstName().trim());
+            billTo.put("lastName", billing.lastName().trim());
+            billTo.put("address1", billing.address1().trim());
+            if (StringUtils.hasText(billing.address2())) {
+                billTo.put("address2", billing.address2().trim());
+            }
+            billTo.put("locality", billing.locality().trim());
+            billTo.put("administrativeArea", billing.administrativeArea().trim());
+            if (StringUtils.hasText(billing.postalCode())) {
+                billTo.put("postalCode", billing.postalCode().trim());
+            }
+            billTo.put("country", billing.country());
+            billTo.put("phoneNumber", billing.phoneNumber().trim());
+        }
+        orderInformation.put("billTo", billTo);
 
         Map<String, Object> clientReferenceInformation = new LinkedHashMap<>();
         clientReferenceInformation.put("code", order.getPaymentReference());

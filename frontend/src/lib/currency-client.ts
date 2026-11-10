@@ -1,24 +1,22 @@
 "use client";
 
 import { getLocaleFromDocument } from "@/lib/i18n-client";
+import { getPreferredCountry } from "@/lib/country-client";
 
-export const COUNTRY_STORAGE_KEY = "maie_selected_country";
+export { COUNTRY_STORAGE_KEY } from "@/lib/country-shared";
 export const DISPLAY_CURRENCY_STORAGE_KEY = "maie_display_currency";
 export const CURRENCY_UPDATED_EVENT = "maie-currency-updated";
 
 export type SupportedCurrency = "USD" | "ILS" | "EUR" | "JOD";
+const EURO_COUNTRIES = new Set([
+  "AT", "BE", "BG", "HR", "CY", "EE", "FI", "FR", "DE", "GR", "IE", "IT", "LV", "LT",
+  "LU", "MT", "NL", "PT", "SK", "SI", "ES", "AD", "MC", "SM", "VA", "ME", "XK",
+]);
 export type DisplayMoney = {
   amount: number;
   currency: SupportedCurrency;
   estimated: boolean;
 };
-
-function readSelectedCountry(): string | null {
-  if (typeof window === "undefined") {
-    return null;
-  }
-  return window.localStorage.getItem(COUNTRY_STORAGE_KEY);
-}
 
 function readSelectedCurrency(): SupportedCurrency | null {
   if (typeof window === "undefined") {
@@ -31,16 +29,19 @@ function readSelectedCurrency(): SupportedCurrency | null {
   return normalizeCurrencyCode(stored);
 }
 
-function getDefaultDisplayCurrencyForCountry(country: string | null): SupportedCurrency {
-  return country === "PS" ? "ILS" : "USD";
+export function getDefaultDisplayCurrencyForCountry(country: string | null): SupportedCurrency {
+  if (country === "PS") return "ILS";
+  if (country === "JO") return "JOD";
+  if (EURO_COUNTRIES.has(country ?? "")) return "EUR";
+  return "USD";
 }
 
-export function getPreferredDisplayCurrency(): SupportedCurrency {
+export function getPreferredDisplayCurrency(detectedCountry?: string): SupportedCurrency {
   const selectedCurrency = readSelectedCurrency();
   if (selectedCurrency) {
     return selectedCurrency;
   }
-  const country = readSelectedCountry();
+  const country = getPreferredCountry(detectedCountry);
   return getDefaultDisplayCurrencyForCountry(country);
 }
 
@@ -196,9 +197,9 @@ export function sumMoneyInCurrency(
 export function toDisplayMoney(
   amount: number,
   baseCurrency: string,
+  preferredCurrency: SupportedCurrency = getPreferredDisplayCurrency(),
 ): DisplayMoney {
   const normalizedBase = normalizeCurrencyCode(baseCurrency);
-  const preferredCurrency = getPreferredDisplayCurrency();
 
   if (normalizedBase === preferredCurrency) {
     return {

@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useRef, useSyncExternalStore } from "react";
+import { useMemo, useRef } from "react";
+import { usePreferredCurrency } from "@/components/store-preferences";
 import {
-  getPreferredDisplayCurrency,
   setPreferredDisplayCurrency,
   SupportedCurrency,
 } from "@/lib/currency-client";
@@ -21,15 +21,6 @@ const CURRENCY_OPTIONS: Array<{
   { code: "JOD", shortLabel: "JOD", en: "Jordanian Dinar", ar: "دينار أردني", es: "Dinar jordano" },
 ];
 
-function subscribeCurrency(listener: () => void) {
-  window.addEventListener("maie-currency-updated", listener);
-  window.addEventListener("storage", listener);
-  return () => {
-    window.removeEventListener("maie-currency-updated", listener);
-    window.removeEventListener("storage", listener);
-  };
-}
-
 export function CurrencySelector({
   subtle = false,
   locale = "en",
@@ -40,7 +31,7 @@ export function CurrencySelector({
   lightOnDark?: boolean;
 }) {
   const detailsRef = useRef<HTMLDetailsElement | null>(null);
-  const currency = useSyncExternalStore(subscribeCurrency, getPreferredDisplayCurrency, () => "USD" as SupportedCurrency);
+  const currency = usePreferredCurrency();
 
   const selected = useMemo(
     () => CURRENCY_OPTIONS.find((option) => option.code === currency) ?? CURRENCY_OPTIONS[1],

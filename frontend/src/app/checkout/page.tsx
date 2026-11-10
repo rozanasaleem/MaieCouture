@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import { usePreferredCountry, usePreferredCurrency } from "@/components/store-preferences";
+import { setPreferredCountry } from "@/lib/country-client";
 import {
   createOrder,
   initializeCyberSourcePayment,
@@ -10,17 +12,14 @@ import {
 } from "@/lib/api";
 import { clearCart, readCart } from "@/lib/cart";
 import {
-  getPreferredDisplayCurrency,
   formatMoney,
   sumMoneyInCurrency,
   toDisplayMoney,
 } from "@/lib/currency-client";
 import { getLocaleFromDocument } from "@/lib/i18n-client";
 import { Locale, t } from "@/lib/i18n-shared";
-import { isShippingCountry, SHIPPING_COUNTRY_CODES } from "@/lib/shipping-countries";
+import { SHIPPING_COUNTRY_CODES } from "@/lib/shipping-countries";
 
-const DEFAULT_COUNTRY = "PS";
-const COUNTRY_STORAGE_KEY = "maie_selected_country";
 const PAYMENT_PROVIDER = process.env.NEXT_PUBLIC_PAYMENT_PROVIDER ?? "cybersource";
 
 type CheckoutCountryOption = {
@@ -158,31 +157,19 @@ function buildCheckoutCountryOptions(locale: Locale): CheckoutCountryOption[] {
   return options.length > 0 ? options : fallbackCountryOptionsByLocale[locale];
 }
 
-function normalizeCountryCode(raw: string | null): string | null {
-  if (!raw) {
-    return null;
-  }
-  const upper = raw.trim().toUpperCase();
-  if (isShippingCountry(upper)) {
-    return upper;
-  }
-  if (upper === "PALESTINE" || raw.trim() === "فلسطين") {
-    return "PS";
-  }
-  return null;
-}
-
 export default function CheckoutPage() {
   const [mounted, setMounted] = useState(false);
   const locale = mounted ? getLocaleFromDocument() : "en";
 
-  const [items, setItems] = useState(readCart());
-  const [, setCurrencyVersion] = useState(0);
+  const [items, setItems] = useState<ReturnType<typeof readCart>>([]);
+  const preferredCurrency = usePreferredCurrency();
+  const preferredCountry = usePreferredCountry();
+  const shippingCountryEdited = useRef(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [shippingQuote, setShippingQuote] = useState<{ key: string; fee: number | null } | null>(null);
   const [shippingRetry, setShippingRetry] = useState(0);
-  const [countryCode, setCountryCode] = useState(DEFAULT_COUNTRY);
+  const [countryCode, setCountryCode] = useState(preferredCountry);
   const [shippingAreaCode, setShippingAreaCode] = useState<PalestineShippingAreaOption["code"]>("WEST_BANK");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -194,6 +181,11 @@ export default function CheckoutPage() {
   const [city, setCity] = useState("");
   const [region, setRegion] = useState("");
   const [postalCode, setPostalCode] = useState("");
+  const [billingSameAsDelivery, setBillingSameAsDelivery] = useState(true);
+  const [billing, setBilling] = useState({
+    firstName: "", lastName: "", address1: "", address2: "", locality: "",
+    administrativeArea: "", postalCode: "", country: "PS", phoneNumber: "",
+  });
   const [notes, setNotes] = useState("");
   const checkoutCountryOptions = useMemo(() => buildCheckoutCountryOptions(locale), [locale]);
   const selectedPalestineCity = useMemo(
@@ -213,33 +205,26 @@ export default function CheckoutPage() {
 
   useEffect(() => {
     setMounted(true);
-    const savedCountry = normalizeCountryCode(
-      window.localStorage.getItem(COUNTRY_STORAGE_KEY),
-    );
-    if (savedCountry) {
-      setCountryCode(savedCountry);
-      window.localStorage.setItem(COUNTRY_STORAGE_KEY, savedCountry);
-    }
     const sync = () => setItems(readCart());
-    const syncCurrency = () => setCurrencyVersion((current) => current + 1);
+    sync();
     window.addEventListener("maie-cart-updated", sync);
-    window.addEventListener("maie-currency-updated", syncCurrency);
     window.addEventListener("storage", sync);
     return () => {
       window.removeEventListener("maie-cart-updated", sync);
-      window.removeEventListener("maie-currency-updated", syncCurrency);
       window.removeEventListener("storage", sync);
     };
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem(COUNTRY_STORAGE_KEY, countryCode);
+    if (!shippingCountryEdited.current) setCountryCode(preferredCountry);
+  }, [preferredCountry]);
+
+  useEffect(() => {
     if (countryCode === "PS" && city && !PALESTINE_CITY_OPTIONS.some((option) => option.value === city)) {
       setCity("");
     }
   }, [city, countryCode]);
 
-  const preferredCurrency = getPreferredDisplayCurrency();
   const subtotalDisplay = useMemo(
     () =>
       sumMoneyInCurrency(
@@ -364,7 +349,14 @@ export default function CheckoutPage() {
       });
 
       if (PAYMENT_PROVIDER === "cybersource") {
-        const payment = await initializeCyberSourcePayment({ orderId: order.id });
+        const billTo = billingSameAsDelivery ? {
+          firstName: firstName.trim(), lastName: lastName.trim(),
+          address1: addressLine1.trim(), address2: addressLine2.trim(),
+          locality: cityLine, administrativeArea: region.trim(),
+          postalCode: postalCode.trim(), country: countryCode,
+          phoneNumber: `${normalizedPhoneCode}${phone.replace(/\D/g, "")}`,
+        } : Object.fromEntries(Object.entries(billing).map(([key, value]) => [key, value.trim()])) as typeof billing;
+        const payment = await initializeCyberSourcePayment({ orderId: order.id, billTo });
         if (!payment.captureContext || !payment.clientLibrary || !payment.clientLibraryIntegrity || payment.mock) {
           throw new Error(
             "CyberSource is not fully enabled yet. Add the sandbox merchant credentials before taking live payments.",
@@ -548,7 +540,9 @@ export default function CheckoutPage() {
                 value={countryCode}
                 onChange={(event) => {
                   const nextCountryCode = event.target.value.toUpperCase();
+                  shippingCountryEdited.current = true;
                   setCountryCode(nextCountryCode);
+                  setPreferredCountry(nextCountryCode);
                   if (nextCountryCode === "PS") {
                     setCity("");
                   }
@@ -608,6 +602,7 @@ export default function CheckoutPage() {
             <label className="text-sm text-[--muted]">
               {t(locale, { en: "Postal code", ar: "الرمز البريدي", es: "Codigo postal" })}
               <input
+                required={PAYMENT_PROVIDER === "cybersource" && billingSameAsDelivery && ["US", "CA", "GB"].includes(countryCode)}
                 value={postalCode}
                 onChange={(event) => setPostalCode(event.target.value)}
                 className="mt-2 w-full rounded-xl border border-[--line] px-3 py-3 text-[--ink] outline-none focus:border-[--ink]"
@@ -633,6 +628,51 @@ export default function CheckoutPage() {
               className="mt-2 w-full rounded-xl border border-[--line] px-3 py-3 text-[--ink] outline-none focus:border-[--ink]"
             />
           </label>
+
+          {PAYMENT_PROVIDER === "cybersource" && (
+            <fieldset className="space-y-4 border-t border-[--line] pt-4">
+              <legend className="font-[family-name:var(--font-display)] text-2xl text-[--ink]">
+                {t(locale, { en: "Billing address", ar: "عنوان الفاتورة", es: "Direccion de facturacion" })}
+              </legend>
+              <label className="flex items-center gap-2 text-sm text-[--ink]">
+                <input type="checkbox" checked={billingSameAsDelivery}
+                  onChange={(event) => setBillingSameAsDelivery(event.target.checked)} />
+                {t(locale, { en: "Billing details are the same as delivery details", ar: "بيانات الفاتورة مطابقة لبيانات التوصيل", es: "Los datos de facturacion son los mismos que los de entrega" })}
+              </label>
+              {!billingSameAsDelivery && (
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {([
+                    ["firstName", { en: "First name", ar: "الاسم الأول", es: "Nombre" }],
+                    ["lastName", { en: "Last name", ar: "اسم العائلة", es: "Apellido" }],
+                    ["address1", { en: "Address", ar: "العنوان", es: "Direccion" }],
+                    ["address2", { en: "Apartment, suite (optional)", ar: "الشقة (اختياري)", es: "Apartamento (opcional)" }],
+                    ["locality", { en: "City", ar: "المدينة", es: "Ciudad" }],
+                    ["administrativeArea", { en: "State / Region", ar: "المنطقة / المحافظة", es: "Provincia / Region" }],
+                    ["postalCode", { en: "Postal code", ar: "الرمز البريدي", es: "Codigo postal" }],
+                    ["phoneNumber", { en: "Phone including country code", ar: "الهاتف مع رمز الدولة", es: "Telefono con codigo de pais" }],
+                  ] as const).map(([field, label]) => (
+                    <label key={field} className="text-sm text-[--muted]">
+                      {t(locale, label)}
+                      <input value={billing[field]}
+                        required={field !== "address2" && (field !== "postalCode" || ["US", "CA", "GB"].includes(billing.country))}
+                        maxLength={field === "postalCode" ? 10 : field === "phoneNumber" ? 20 : field === "locality" || field === "administrativeArea" ? 50 : 60}
+                        autoComplete={`billing ${field === "firstName" ? "given-name" : field === "lastName" ? "family-name" : field === "address1" ? "address-line1" : field === "address2" ? "address-line2" : field === "locality" ? "address-level2" : field === "administrativeArea" ? "address-level1" : field === "postalCode" ? "postal-code" : "tel"}`}
+                        onChange={(event) => setBilling((current) => ({ ...current, [field]: event.target.value }))}
+                        className="mt-2 w-full rounded-xl border border-[--line] px-3 py-3 text-[--ink] outline-none focus:border-[--ink]" />
+                    </label>
+                  ))}
+                  <label className="text-sm text-[--muted]">
+                    {t(locale, { en: "Country / Region", ar: "البلد / المنطقة", es: "Pais / Region" })}
+                    <select required value={billing.country} autoComplete="billing country"
+                      onChange={(event) => setBilling((current) => ({ ...current, country: event.target.value }))}
+                      className="mt-2 w-full rounded-xl border border-[--line] px-3 py-3 text-[--ink] outline-none focus:border-[--ink]">
+                      {checkoutCountryOptions.map((option) => <option key={option.code} value={option.code}>{option.name} ({option.code})</option>)}
+                    </select>
+                  </label>
+                </div>
+              )}
+            </fieldset>
+          )}
 
           <label className="block text-sm text-[--muted]">
             {t(locale, { en: "Notes (optional)", ar: "ملاحظات (اختياري)", es: "Notas (opcional)" })}
@@ -663,6 +703,7 @@ export default function CheckoutPage() {
               const lineDisplay = toDisplayMoney(
                 item.unitPrice * item.quantity,
                 item.currency,
+                preferredCurrency,
               );
               return (
                 <div key={item.productId} className="flex items-center justify-between text-sm">

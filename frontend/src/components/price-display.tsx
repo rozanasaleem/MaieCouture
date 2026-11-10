@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { usePreferredCurrency } from "@/components/store-preferences";
 import { formatMoney, toDisplayMoney } from "@/lib/currency-client";
 
 type PriceDisplayProps = {
@@ -16,23 +16,13 @@ export function PriceDisplay({
   fallback = "Available on request",
   showEstimateLabel = false,
 }: PriceDisplayProps) {
-  const [, setVersion] = useState(0);
-
-  useEffect(() => {
-    const sync = () => setVersion((current) => current + 1);
-    window.addEventListener("maie-currency-updated", sync);
-    window.addEventListener("storage", sync);
-    return () => {
-      window.removeEventListener("maie-currency-updated", sync);
-      window.removeEventListener("storage", sync);
-    };
-  }, []);
+  const preferredCurrency = usePreferredCurrency();
 
   if (amount == null) {
     return <>{fallback}</>;
   }
 
-  const display = toDisplayMoney(amount, currency);
+  const display = toDisplayMoney(amount, currency, preferredCurrency);
   const formatted = formatMoney(display.amount, display.currency);
 
   if (!showEstimateLabel || !display.estimated) {

@@ -163,15 +163,31 @@ class CyberSourcePaymentServiceTest {
     @Test void initializeVerifiesContextAndReturnsPerSessionIntegrity() throws Exception {
         var builder = org.springframework.web.client.RestClient.builder();
         var server = org.springframework.test.web.client.MockRestServiceServer.bindTo(builder).build();
-        service = new CyberSourcePaymentService(repository, properties(true), notifications, mapper, verifier, builder);
+        var bankProperties = new CyberSourceProperties(true, "https://apitest.cybersource.com", "test-merchant", "test-key", "c2VjcmV0",
+                List.of("https://maiecouture.com"), null, List.of("VISA"), List.of("PANENTRY"), "US", "en_US", "CAPTURE", true, "3DS");
+        service = new CyberSourcePaymentService(repository, bankProperties, notifications, mapper, verifier, builder);
         when(repository.findById(34L)).thenReturn(Optional.of(order));
         when(verifier.verify("signed.capture.context")).thenReturn(mapper.readTree("""
                 {"jti":"verified-context","ctx":[{"data":{"clientLibrary":"https://testup.cybersource.com/session/UnifiedCheckout.js","clientLibraryIntegrity":"sha384-session-specific"}}]}
                 """));
         server.expect(org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo("https://apitest.cybersource.com/uc/v1/sessions"))
                 .andExpect(org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath("$.data.orderInformation.billTo.email").value("sandbox@example.com"))
+                .andExpect(org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath("$.completeMandate.type").value("CAPTURE"))
+                .andExpect(org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath("$.completeMandate.consumerAuthentication").value("3DS"))
+                .andExpect(org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath("$.completeMandate.decisionManager").value(true))
+                .andExpect(org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath("$.data.orderInformation.billTo.firstName").value("Sandbox"))
+                .andExpect(org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath("$.data.orderInformation.billTo.lastName").value("Review"))
+                .andExpect(org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath("$.data.orderInformation.billTo.address1").value("1 Market Street"))
+                .andExpect(org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath("$.data.orderInformation.billTo.address2").value("Suite 2"))
+                .andExpect(org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath("$.data.orderInformation.billTo.locality").value("San Francisco"))
+                .andExpect(org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath("$.data.orderInformation.billTo.administrativeArea").value("CA"))
+                .andExpect(org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath("$.data.orderInformation.billTo.postalCode").value("94105"))
+                .andExpect(org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath("$.data.orderInformation.billTo.country").value("US"))
+                .andExpect(org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath("$.data.orderInformation.billTo.phoneNumber").value("+14155550123"))
                 .andRespond(org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess("signed.capture.context", org.springframework.http.MediaType.TEXT_PLAIN));
-        var result = service.initialize(new CyberSourceInitializeRequest(34L));
+        var result = service.initialize(new CyberSourceInitializeRequest(34L,
+                new CyberSourceInitializeRequest.BillingInformation(" Sandbox ", "Review", "1 Market Street", "Suite 2",
+                        "San Francisco", "CA", "94105", "US", "+14155550123")));
         assertEquals("sha384-session-specific", result.clientLibraryIntegrity());
         assertEquals("verified-context", order.getPaymentSessionId());
         verify(verifier).verify("signed.capture.context");
